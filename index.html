@@ -83,7 +83,8 @@
       padding: 9px 18px; border-radius: 50px; text-decoration: none;
       transition: var(--transition); white-space: nowrap;
     }
-    .nav-cta:hover { box-shadow: 0 6px 20px rgba(93,191,176,0.4); transform: translateY(-1px); }
+    .nav-cta { box-shadow: 0 0 10px rgba(93,191,176,0.35); }
+    .nav-cta:hover { box-shadow: 0 0 20px rgba(93,191,176,0.7), 0 0 40px rgba(93,191,176,0.3); transform: translateY(-1px); }
 
     /* HERO — SPLIT */
     .hero {
@@ -135,9 +136,12 @@
       padding: 15px 32px; border-radius: 50px; text-decoration: none;
       transition: var(--transition); border: none; cursor: pointer; align-self: flex-start;
       white-space: nowrap;
-      box-shadow: 0 4px 20px rgba(93,191,176,0.3);
+      box-shadow: 0 0 16px rgba(93,191,176,0.5), 0 0 32px rgba(93,191,176,0.25), 0 4px 16px rgba(0,0,0,0.2);
     }
-    .btn-primary:hover { box-shadow: 0 8px 32px rgba(93,191,176,0.55), 0 0 40px rgba(128,112,160,0.2); transform: translateY(-2px); }
+    .btn-primary:hover {
+      box-shadow: 0 0 24px rgba(93,191,176,0.8), 0 0 60px rgba(93,191,176,0.4), 0 0 100px rgba(128,112,160,0.25);
+      transform: translateY(-2px);
+    }
     .hero-trust {
       display: flex; flex-direction: column; gap: 10px; margin-top: 32px;
       padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.1);
@@ -415,9 +419,9 @@
       font-family: var(--font-display); font-weight: 700; font-size: 15px;
       padding: 16px 32px; border-radius: 50px; text-decoration: none;
       transition: var(--transition); white-space: nowrap;
-      box-shadow: 0 4px 20px rgba(255,255,255,0.2);
+      box-shadow: 0 0 16px rgba(255,255,255,0.35), 0 0 40px rgba(255,255,255,0.15);
     }
-    .btn-white:hover { box-shadow: 0 8px 36px rgba(255,255,255,0.45); transform: translateY(-2px); }
+    .btn-white:hover { box-shadow: 0 0 24px rgba(255,255,255,0.6), 0 0 60px rgba(255,255,255,0.3); transform: translateY(-2px); }
     .btn-outline-white {
       display: inline-flex; align-items: center; gap: 8px;
       color: var(--branco); font-family: var(--font-display); font-weight: 600; font-size: 15px;
