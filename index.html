@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INNOVA MOVIMENTO | Fisioterapia Premium em BH — Avaliação Gratuita</title>
+  <meta name="description" content="Fisioterapia personalizada em Belo Horizonte, Santo Agostinho. Gyrotonic exclusivo, Pilates Clínico e atendimento individual. 60 avaliações 5.0★ no Google. Agende sua avaliação gratuita.">
+  <meta property="og:title" content="INNOVA MOVIMENTO | Fisioterapia Premium em BH">
+  <meta property="og:description" content="Tratamento personalizado para quem já passou por tudo. Avaliação gratuita.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+    /* ==========================================
+       CSS CUSTOM PROPERTIES — INNOVA SYSTEM
+       ========================================== */
+    :root {
+      --roxo: #8070A0;
+      --turquesa: #5DBFB0;
+      --roxo-profundo: #3D2E5E;
+      --turquesa-claro: #A8E0DA;
+      --roxo-suave: #C4B8D8;
+      --gradient: linear-gradient(135deg, #5DBFB0 0%, #8070A0 100%);
+      --creme: #F7F5F2;
+      --cinza-quente: #E8E4DF;
+      --cinza-medio: #9A958F;
+      --cinza-escuro: #2C2A28;
+      --quase-preto: #1A1815;
+      --texto: #2C2A28;
+      --font-d: 'Outfit', sans-serif;
+      --font-b: 'Lora', serif;
+      --t-hero: clamp(36px, 5.5vw, 76px);
+      --t-h1: clamp(28px, 3.5vw, 54px);
+      --t-h2: clamp(22px, 2.5vw, 40px);
+      --t-h3: clamp(18px, 1.8vw, 26px);
+      --pad: clamp(64px, 8vw, 112px);
+    }
+
+    /* ==========================================
+       RESET & BASE
+       ========================================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-b); color: var(--texto); background: var(--creme); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 48px); }
+    section { padding: var(--pad) 0; position: relative; }
+
+    .label {
+      font-family: var(--font-d);
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--turquesa);
+      margin-bottom: 14px;
+      display: block;
+    }
+    .label--light { color: var(--turquesa-claro); }
+
+    /* ==========================================
+       REVEAL ANIMATIONS
+       ========================================== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s cubic-bezier(0.22,1,0.36,1), transform 0.65s cubic-bezier(0.22,1,0.36,1);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .d1 { transition-delay: 0.1s; }
+    .d2 { transition-delay: 0.2s; }
+    .d3 { transition-delay: 0.3s; }
+    .d4 { transition-delay: 0.4s; }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
+
+    /* ==========================================
+       BUTTONS
+       ========================================== */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--font-d); font-weight: 600; font-size: 16px;
+      padding: 16px 32px; border-radius: 50px; cursor: pointer; border: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      white-space: nowrap;
+    }
+    .btn--primary { background: var(--gradient); color: #fff; box-shadow: 0 4px 20px rgba(93,191,176,0.25); }
+    .btn--primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(93,191,176,0.4); }
+    .btn--primary:active { transform: translateY(0); }
+    .btn--white { background: #fff; color: var(--roxo); box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
+    .btn--white:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.2); }
+
+    /* ==========================================
+       NAVIGATION
+       ========================================== */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 20px clamp(20px,4vw,48px);
+      display: flex; align-items: center; justify-content: space-between;
+      transition: background 0.3s ease, padding 0.3s ease;
+    }
+    .nav.scrolled { background: rgba(26,24,21,0.93); backdrop-filter: blur(12px); padding-top: 12px; padding-bottom: 12px; }
+    .nav__logo img { height: 34px; width: auto; }
+    .nav__links { display: flex; align-items: center; gap: 32px; }
+    .nav__links a {
+      font-family: var(--font-d); font-weight: 400; font-size: 14px;
+      color: rgba(255,255,255,0.8); letter-spacing: 0.02em;
+      position: relative; transition: color 0.2s ease;
+    }
+    .nav__links a::after { content: ''; position: absolute; bottom: -3px; left: 0; width: 0; height: 1px; background: var(--turquesa); transition: width 0.3s ease; }
+    .nav__links a:hover { color: #fff; }
+    .nav__links a:hover::after { width: 100%; }
+    .nav__cta {
+      font-family: var(--font-d); font-size: 13px; font-weight: 600;
+      color: var(--turquesa) !important; border: 1.5px solid var(--turquesa);
+      padding: 8px 20px; border-radius: 50px;
+      transition: background 0.2s ease, color 0.2s ease !important;
+    }
+    .nav__cta::after { display: none !important; }
+    .nav__cta:hover { background: var(--turquesa) !important; color: #fff !important; }
+    .nav__ham { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+    .nav__ham span { display: block; width: 24px; height: 2px; background: #fff; border-radius: 2px; transition: 0.3s ease; }
+    .nav__overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 150; }
+    .nav__overlay.open { display: block; }
+    .nav__drawer {
+      position: fixed; top: 0; right: 0; bottom: 0; width: min(300px,85vw);
+      background: var(--quase-preto); z-index: 200;
+      padding: 80px 32px 32px;
+      display: flex; flex-direction: column; gap: 8px;
+      transform: translateX(100%); transition: transform 0.35s cubic-bezier(0.22,1,0.36,1);
+    }
+    .nav__drawer.open { transform: translateX(0); }
+    .nav__drawer a { font-family: var(--font-d); font-size: 17px; color: rgba(255,255,255,0.82); font-weight: 500; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .nav__drawer-close { position: absolute; top: 20px; right: 20px; background: none; border: none; color: #fff; font-size: 24px; cursor: pointer; }
+
+    /* ==========================================
+       01 HERO
+       ========================================== */
+    .hero {
+      min-height: 100vh; background: var(--quase-preto);
+      display: flex; align-items: center;
+      position: relative; overflow: hidden;
+      padding: 120px 0 80px;
+    }
+    .hero__bg {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(93,191,176,0.10) 0%, rgba(128,112,160,0.16) 60%, transparent 100%);
+      pointer-events: none;
+    }
+    .hero__silhouette {
+      position: absolute; right: clamp(-40px,-2vw,0px); top: 50%; transform: translateY(-50%);
+      width: clamp(260px,36vw,520px); opacity: 0.06; pointer-events: none;
+    }
+    .hero__content { position: relative; z-index: 2; max-width: 720px; }
+    .hero__tag {
+      font-family: var(--font-d); font-size: 11px; font-weight: 500;
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--turquesa);
+      margin-bottom: 20px; display: flex; align-items: center; gap: 10px;
+    }
+    .hero__tag::before { content: ''; display: block; width: 32px; height: 1px; background: var(--turquesa); }
+    .hero h1 {
+      font-family: var(--font-d); font-weight: 700; font-size: var(--t-hero);
+      line-height: 1.06; letter-spacing: -0.025em; color: #fff; margin-bottom: 24px;
+    }
+    .hero h1 em {
+      font-style: normal;
+      background: var(--gradient);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .hero__sub {
+      font-family: var(--font-b); font-style: italic;
+      font-size: clamp(16px,1.6vw,20px); color: rgba(255,255,255,0.7);
+      line-height: 1.6; margin-bottom: 36px; max-width: 540px;
+    }
+    .hero__ctas { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 48px; }
+    .hero__trust { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+    .hero__trust-item { display: flex; align-items: center; gap: 8px; font-family: var(--font-d); font-size: 13px; color: rgba(255,255,255,0.6); }
+    .hero__trust-item .ico { color: var(--turquesa); font-size: 14px; }
+    .hero__trust-item strong { color: rgba(255,255,255,0.88); }
+    .hero__scroll {
+      position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      color: rgba(255,255,255,0.35); font-family: var(--font-d); font-size: 10px;
+      letter-spacing: 0.1em; text-transform: uppercase;
+    }
+    .hero__arrow {
+      width: 18px; height: 18px;
+      border-right: 1.5px solid rgba(255,255,255,0.3);
+      border-bottom: 1.5px solid rgba(255,255,255,0.3);
+      transform: rotate(45deg);
+      animation: bounce 2s infinite ease-in-out;
+    }
+    @keyframes bounce {
+      0%,100% { transform: rotate(45deg) translateY(0); opacity: 0.35; }
+      50% { transform: rotate(45deg) translateY(7px); opacity: 0.75; }
+    }
+
+    /* ==========================================
+       SECTION HEADER
+       ========================================== */
+    .sec-head { text-align: center; max-width: 700px; margin: 0 auto 56px; }
+    .sec-head h2 {
+      font-family: var(--font-d); font-weight: 700; font-size: var(--t-h1);
+      line-height: 1.1; letter-spacing: -0.02em; color: var(--quase-preto); margin-bottom: 14px;
+    }
+    .sec-head p { font-size: 18px; color: var(--cinza-medio); line-height: 1.6; }
+    .sec-head--dark h2 { color: #fff; }
+    .sec-head--dark p { color: rgba(255,255,255,0.55); }
+
+    /* ==========================================
+       02 PROBLEMA
+       ========================================== */
+    .problema { background: var(--creme); }
+    .problema__grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: clamp(40px,6vw,80px); align-items: start; margin-top: 48px;
+    }
+    .problema__texto h2 {
+      font-family: var(--font-d); font-weight: 700; font-size: var(--t-h1);
+      line-height: 1.1; letter-spacing: -0.02em; color: var(--quase-preto); margin-bottom: 24px;
+    }
+    .problema__texto p { font-size: 17px; color: var(--cinza-escuro); line-height: 1.72; margin-bottom: 16px; }
+    .problema__cards { display: flex; flex-direction: column; gap: 14px; }
+    .anti-card { border-left: 3px solid var(--turquesa); padding: 18px 24px; background: transparent; transition: background 0.2s ease; }
+    .anti-card:hover { background: rgba(93,191,176,0.05); }
+    .anti-card p { font-family: var(--font-d); font-weight: 500; font-size: 15px; color: var(--cinza-escuro); line-height: 1.5; }
+
+    /* ==========================================
+       03 SERVIÇOS
+       ========================================== */
+    .servicos { background: var(--cinza-escuro); }
+    .servicos__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: clamp(14px,2.5vw,22px); }
+    .svc {
+      background: rgba(255,255,255,0.04); border: 1px solid rgba(93,191,176,0.18);
+      border-radius: 16px; padding: clamp(28px,3.5vw,42px) clamp(24px,3vw,34px);
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .svc:hover { transform: translateY(-4px); border-color: var(--turquesa); box-shadow: 0 16px 48px rgba(93,191,176,0.12); }
+    .svc--feat { border-color: rgba(93,191,176,0.45); background: rgba(93,191,176,0.05); }
+    .svc__badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--gradient); color: #fff;
+      font-family: var(--font-d); font-size: 11px; font-weight: 600;
+      letter-spacing: 0.06em; padding: 5px 12px; border-radius: 50px; margin-bottom: 20px;
+    }
+    .svc__icon { width: 44px; height: 44px; margin-bottom: 18px; color: var(--turquesa); }
+    .svc h3 { font-family: var(--font-d); font-weight: 600; font-size: var(--t-h3); color: #fff; margin-bottom: 6px; line-height: 1.25; }
+    .svc__sub { font-family: var(--font-d); font-size: 13px; color: var(--turquesa); margin-bottom: 14px; font-style: italic; }
+    .svc__desc { font-size: 14px; color: rgba(255,255,255,0.58); line-height: 1.68; margin-bottom: 18px; }
+    .svc__for { font-family: var(--font-d); font-size: 13px; color: rgba(255,255,255,0.4); font-style: italic; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.07); }
+
+    /* ==========================================
+       04 PROCESSO
+       ========================================== */
+    .processo { background: var(--creme); }
+    .steps {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: clamp(20px,3vw,40px); margin-top: 56px; position: relative;
+    }
+    .steps::before {
+      content: ''; position: absolute; top: 28px;
+      left: calc(16.66% + 20px); right: calc(16.66% + 20px);
+      height: 2px; background: var(--gradient); opacity: 0.35;
+    }
+    .step { text-align: center; }
+    .step__dot {
+      width: 56px; height: 56px; border-radius: 50%; background: var(--gradient);
+      margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;
+      position: relative; z-index: 2;
+    }
+    .step__dot svg { width: 22px; height: 22px; color: #fff; }
+    .step__num { font-family: var(--font-d); font-weight: 700; font-size: 48px; color: var(--roxo); opacity: 0.12; line-height: 1; margin-bottom: -12px; }
+    .step__dur { font-family: var(--font-d); font-size: 11px; color: var(--turquesa); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 10px; }
+    .step h3 { font-family: var(--font-d); font-weight: 600; font-size: var(--t-h3); color: var(--quase-preto); margin-bottom: 8px; }
+    .step p { font-size: 15px; color: var(--cinza-medio); line-height: 1.62; }
+    .processo__cta { text-align: center; margin-top: 52px; }
+    .processo__cta p { margin-top: 12px; font-size: 12px; color: var(--cinza-medio); }
+
+    /* ==========================================
+       05 DEPOIMENTOS
+       ========================================== */
+    .depo { background: var(--creme); position: relative; }
+    .depo::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--gradient); }
+    .depo__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: clamp(14px,2.5vw,22px); margin-top: 56px; }
+    .test {
+      background: #fff; border-radius: 16px;
+      padding: clamp(24px,3vw,34px); box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    }
+    .test__q { font-family: var(--font-d); font-weight: 700; font-size: 68px; color: var(--turquesa); line-height: 0.7; margin-bottom: 10px; opacity: 0.38; }
+    .test__text { font-style: italic; font-size: 15px; color: var(--cinza-escuro); line-height: 1.7; margin-bottom: 18px; }
+    .test__div { height: 1px; background: var(--cinza-quente); margin-bottom: 14px; }
+    .test__auth { display: flex; align-items: center; gap: 12px; }
+    .test__av {
+      width: 42px; height: 42px; border-radius: 50%; background: var(--gradient);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-d); font-weight: 700; font-size: 15px; color: #fff; flex-shrink: 0;
+    }
+    .test__name { font-family: var(--font-d); font-weight: 600; font-size: 13px; color: var(--quase-preto); margin-bottom: 2px; }
+    .test__role { font-size: 12px; color: var(--cinza-medio); }
+    .test__stars { color: var(--turquesa); font-size: 13px; margin-top: 3px; }
+    .stats { display: grid; grid-template-columns: repeat(4,1fr); gap: clamp(14px,2vw,28px); margin-top: 52px; padding-top: 44px; border-top: 1px solid var(--cinza-quente); }
+    .stat { text-align: center; }
+    .stat__val {
+      font-family: var(--font-d); font-weight: 700; font-size: clamp(28px,3.5vw,46px);
+      background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      line-height: 1; margin-bottom: 6px;
+    }
+    .stat__lbl { font-family: var(--font-d); font-size: 13px; color: var(--cinza-medio); line-height: 1.4; }
+
+    /* ==========================================
+       06 EQUIPE
+       ========================================== */
+    .equipe { background: var(--creme); }
+    .equipe__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: clamp(20px,3vw,38px); margin-top: 56px; }
+    .team { transition: transform 0.3s ease; }
+    .team:hover { transform: translateY(-4px); }
+    .team__photo {
+      width: 100%; aspect-ratio: 4/5; border-radius: 16px;
+      background: linear-gradient(135deg, rgba(93,191,176,0.14), rgba(128,112,160,0.18));
+      margin-bottom: 18px; display: flex; align-items: center; justify-content: center;
+      border: 1px solid var(--cinza-quente);
+    }
+    .team__ph { display: flex; flex-direction: column; align-items: center; gap: 10px; color: var(--roxo); opacity: 0.45; }
+    .team__ph svg { width: 56px; height: 56px; }
+    .team__ph span { font-family: var(--font-d); font-size: 11px; text-align: center; max-width: 130px; line-height: 1.4; }
+    .team__name { font-family: var(--font-d); font-weight: 600; font-size: var(--t-h3); color: var(--quase-preto); margin-bottom: 4px; transition: color 0.2s ease; }
+    .team:hover .team__name { color: var(--turquesa); }
+    .team__role { font-family: var(--font-d); font-size: 13px; color: var(--roxo); margin-bottom: 8px; }
+    .team__bio { font-size: 14px; color: var(--cinza-medio); line-height: 1.6; }
+    .equipe__closing {
+      text-align: center; margin-top: 52px; padding: 28px 36px;
+      background: linear-gradient(135deg, rgba(93,191,176,0.06), rgba(128,112,160,0.08));
+      border-radius: 14px; border: 1px solid rgba(93,191,176,0.18);
+    }
+    .equipe__closing p { font-family: var(--font-b); font-style: italic; font-size: 18px; color: var(--cinza-escuro); line-height: 1.6; }
+
+    /* ==========================================
+       07 FAQ
+       ========================================== */
+    .faq { background: var(--cinza-quente); }
+    .faq__list { max-width: 800px; margin: 56px auto 0; }
+    .faq__item { border-bottom: 1px solid rgba(44,42,40,0.12); }
+    .faq__q {
+      width: 100%; background: none; border: none;
+      padding: 22px 0; display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; cursor: pointer; text-align: left;
+    }
+    .faq__qt { font-family: var(--font-d); font-weight: 600; font-size: 17px; color: var(--quase-preto); transition: color 0.2s ease; }
+    .faq__item--open .faq__qt { color: var(--roxo); }
+    .faq__ico { font-size: 24px; color: var(--roxo); flex-shrink: 0; line-height: 1; transition: transform 0.2s ease; font-family: var(--font-d); font-weight: 300; }
+    .faq__item--open .faq__ico { transform: rotate(45deg); }
+    .faq__ans { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+    .faq__ans-in { padding-bottom: 22px; font-size: 17px; color: var(--cinza-escuro); line-height: 1.7; }
+
+    /* ==========================================
+       08 CTA FINAL
+       ========================================== */
+    .ctafinal { background: var(--gradient); text-align: center; position: relative; overflow: hidden; }
+    .ctafinal__sil {
+      position: absolute; left: -20px; top: 50%; transform: translateY(-50%);
+      width: clamp(160px,20vw,300px); opacity: 0.1; pointer-events: none;
+    }
+    .ctafinal__body { position: relative; z-index: 2; max-width: 620px; margin: 0 auto; }
+    .ctafinal__lbl { font-family: var(--font-d); font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 14px; display: block; }
+    .ctafinal h2 { font-family: var(--font-d); font-weight: 700; font-size: var(--t-h1); line-height: 1.1; letter-spacing: -0.02em; color: #fff; margin-bottom: 16px; }
+    .ctafinal__sub { font-family: var(--font-b); font-style: italic; font-size: 18px; color: rgba(255,255,255,0.8); line-height: 1.62; margin-bottom: 38px; }
+    .ctafinal__acts { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+    .ctafinal__wpp { display: flex; align-items: center; gap: 8px; font-family: var(--font-d); font-size: 14px; color: rgba(255,255,255,0.72); transition: color 0.2s ease; }
+    .ctafinal__wpp:hover { color: #fff; }
+    .ctafinal__wpp svg { width: 17px; height: 17px; }
+    .ctafinal__micro { font-size: 12px; color: rgba(255,255,255,0.55); }
+
+    /* ==========================================
+       FOOTER
+       ========================================== */
+    .footer { background: var(--quase-preto); padding: 64px 0 32px; }
+    .footer__g { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: clamp(28px,4vw,60px); margin-bottom: 44px; }
+    .footer__logo { height: 30px; width: auto; margin-bottom: 12px; }
+    .footer__tag { font-family: var(--font-d); font-size: 11px; letter-spacing: 0.08em; color: rgba(255,255,255,0.3); text-transform: uppercase; margin-bottom: 22px; }
+    .footer__soc { display: flex; gap: 14px; }
+    .footer__soc a { width: 34px; height: 34px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.14); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.45); transition: border-color 0.2s, color 0.2s; }
+    .footer__soc a:hover { border-color: var(--turquesa); color: var(--turquesa); }
+    .footer__ct { font-family: var(--font-d); font-weight: 600; font-size: 11px; color: rgba(255,255,255,0.88); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 16px; }
+    .footer__lks { display: flex; flex-direction: column; gap: 9px; }
+    .footer__lks a { font-size: 13px; color: rgba(255,255,255,0.48); transition: color 0.2s; }
+    .footer__lks a:hover { color: rgba(255,255,255,0.9); }
+    .footer__info { display: flex; flex-direction: column; gap: 11px; }
+    .footer__ii { display: flex; align-items: flex-start; gap: 9px; font-size: 13px; color: rgba(255,255,255,0.48); }
+    .footer__ii svg { width: 14px; height: 14px; flex-shrink: 0; margin-top: 2px; color: var(--turquesa); }
+    .footer__bot { padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+    .footer__cp { font-size: 11px; color: rgba(255,255,255,0.28); }
+
+    /* ==========================================
+       WPP FLOAT
+       ========================================== */
+    .wpp {
+      position: fixed; bottom: 24px; right: 20px; z-index: 90;
+      width: 56px; height: 56px; border-radius: 50%; background: #25D366;
+      box-shadow: 0 4px 16px rgba(37,211,102,0.45);
+      display: flex; align-items: center; justify-content: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .wpp:hover { transform: scale(1.08); box-shadow: 0 6px 24px rgba(37,211,102,0.55); }
+    .wpp svg { width: 26px; height: 26px; color: #fff; }
+
+    /* ==========================================
+       RESPONSIVE
+       ========================================== */
+    @media (max-width: 1024px) {
+      .servicos__grid { grid-template-columns: repeat(2,1fr); }
+      .equipe__grid { grid-template-columns: repeat(2,1fr); }
+      .stats { grid-template-columns: repeat(2,1fr); }
+    }
+    @media (max-width: 768px) {
+      .nav__links { display: none; }
+      .nav__ham { display: flex; }
+      .hero { padding: 100px 0 72px; }
+      .problema__grid { grid-template-columns: 1fr; }
+      .servicos__grid { grid-template-columns: 1fr; }
+      .steps { grid-template-columns: 1fr; }
+      .steps::before { display: none; }
+      .depo__grid { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: repeat(2,1fr); }
+      .equipe__grid { grid-template-columns: repeat(2,1fr); }
+      .footer__g { grid-template-columns: 1fr; }
+      .ctafinal__sil { display: none; }
+    }
+    @media (max-width: 480px) {
+      .equipe__grid { grid-template-columns: 1fr; }
+      .hero__trust { gap: 14px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Navegação principal">
+    <a href="#" class="nav__logo" aria-label="INNOVA MOVIMENTO — início">
+      <img id="navLogo" src="" alt="INNOVA MOVIMENTO" height="34">
+    </a>
+    <div class="nav__links">
+      <a href="#servicos">Serviços</a>
+      <a href="#processo">Como Funciona</a>
+      <a href="#equipe">Equipe</a>
+      <a href="#faq">Dúvidas</a>
+      <a href="https://wa.me/5531XXXXXXXX" class="nav__cta" target="_blank" rel="noopener">Agendar Avaliação</a>
+    </div>
+    <button class="nav__ham" id="hamBtn" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="nav__overlay" id="overlay"></div>
+  <nav class="nav__drawer" id="drawer" aria-label="Menu mobile">
+    <button class="nav__drawer-close" id="drawerClose" aria-label="Fechar menu">✕</button>
+    <a href="#servicos" class="dl">Serviços</a>
+    <a href="#processo" class="dl">Como Funciona</a>
+    <a href="#equipe" class="dl">Equipe</a>
+    <a href="#faq" class="dl">Dúvidas</a>
+    <a href="https://wa.me/5531XXXXXXXX" target="_blank" rel="noopener" style="color:#5DBFB0;font-weight:700;margin-top:8px;">→ Agendar Avaliação Gratuita</a>
+  </nav>
+
+  <!-- 01 HERO -->
+  <section class="hero" id="inicio" aria-label="Apresentação INNOVA MOVIMENTO">
+    <div class="hero__bg" aria-hidden="true"></div>
+
+    <!-- SVG Silhueta decorativa -->
+    <svg class="hero__silhouette" aria-hidden="true" viewBox="0 0 200 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="100" cy="42" r="30" stroke="#5DBFB0" stroke-width="1.2" fill="none"/>
+      <line x1="100" y1="72" x2="100" y2="210" stroke="#5DBFB0" stroke-width="1.2"/>
+      <line x1="100" y1="130" x2="52" y2="195" stroke="#5DBFB0" stroke-width="1.2"/>
+      <line x1="100" y1="130" x2="148" y2="195" stroke="#5DBFB0" stroke-width="1.2"/>
+      <line x1="52" y1="195" x2="38" y2="240" stroke="#5DBFB0" stroke-width="1.2"/>
+      <line x1="148" y1="195" x2="162" y2="240" stroke="#5DBFB0" stroke-width="1.2"/>
+      <line x1="100" y1="210" x2="68" y2="360" stroke="#5DBFB0" stroke-width="1.2"/>
+      <line x1="100" y1="210" x2="132" y2="360" stroke="#5DBFB0" stroke-width="1.2"/>
+      <line x1="68" y1="360" x2="58" y2="490" stroke="#5DBFB0" stroke-width="1.2"/>
+      <line x1="132" y1="360" x2="142" y2="490" stroke="#5DBFB0" stroke-width="1.2"/>
+      <circle cx="52" cy="195" r="3.5" fill="#5DBFB0" opacity="0.5"/>
+      <circle cx="148" cy="195" r="3.5" fill="#5DBFB0" opacity="0.5"/>
+      <circle cx="68" cy="360" r="3.5" fill="#5DBFB0" opacity="0.38"/>
+      <circle cx="132" cy="360" r="3.5" fill="#5DBFB0" opacity="0.38"/>
+    </svg>
+
+    <div class="container">
+      <div class="hero__content">
+        <div class="hero__tag reveal">FISIOTERAPIA PREMIUM PERSONALIZADA — BELO HORIZONTE</div>
+        <h1 class="reveal d1">Fisioterapia que <em>resolve.</em><br>Não que alivia<br>por uma semana.</h1>
+        <p class="hero__sub reveal d2">Tratamento personalizado para quem já passou por tudo — e não quer mais perder tempo com protocolo genérico. Em Belo Horizonte, Santo Agostinho.</p>
+        <div class="hero__ctas reveal d3">
+          <a href="https://wa.me/5531XXXXXXXX" class="btn btn--primary" target="_blank" rel="noopener" aria-label="Agendar avaliação gratuita via WhatsApp">
+            → Agendar Minha Avaliação Gratuita
+          </a>
+        </div>
+        <div class="hero__trust reveal d4">
+          <div class="hero__trust-item"><span class="ico">★</span><span><strong>60 avaliações</strong> 5.0 no Google</span></div>
+          <div class="hero__trust-item"><span class="ico">◆</span><span><strong>+10 anos</strong> de experiência clínica</span></div>
+          <div class="hero__trust-item"><span class="ico">◈</span><span><strong>+700</strong> pacientes atendidos</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="hero__scroll" aria-hidden="true"><div class="hero__arrow"></div></div>
+  </section>
+
+  <!-- 02 PROBLEMA -->
+  <section class="problema" id="problema" aria-labelledby="prob-h">
+    <div class="container">
+      <span class="label reveal">Por que a INNOVA existe</span>
+      <div class="problema__grid">
+        <div class="problema__texto">
+          <h2 id="prob-h" class="reveal">Você não está exagerando. A dor que volta é um problema real — e tem causa.</h2>
+          <p class="reveal d1">Duas semanas de melhora, depois tudo volta ao mesmo lugar. Você já conhece esse ciclo.</p>
+          <p class="reveal d1">Já fez fisioterapia antes. Talvez mais de uma vez. Aplicaram corrente, passaram o ultrassom, te mandaram pra casa com uma lista de exercícios que você fez por dez dias. A dor cedeu um pouco. E voltou.</p>
+          <p class="reveal d2">Não é falta de disciplina. É o que acontece quando o tratamento é construído para uma média de pacientes — não para você.</p>
+          <p class="reveal d3">A diferença entre quem resolve e quem convive com a dor por anos costuma ser simples: o nível de atenção que o tratamento recebe.</p>
+        </div>
+        <div class="problema__cards">
+          <div class="anti-card reveal d1"><p>Fisioterapia de convênio com 40 minutos e 5 pacientes ao mesmo tempo</p></div>
+          <div class="anti-card reveal d2"><p>Tratamento genérico que não resolve porque ignora o seu histórico</p></div>
+          <div class="anti-card reveal d3"><p>Alta antes de estar pronto, porque o plano acabou</p></div>
+          <div class="anti-card reveal d4"><p>Estagiário cuidando de você enquanto o especialista assina o prontuário</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 SERVIÇOS -->
+  <section class="servicos" id="servicos" aria-labelledby="svc-h">
+    <div class="container">
+      <div class="sec-head sec-head--dark reveal">
+        <span class="label label--light">O que oferecemos</span>
+        <h2 id="svc-h">Três caminhos. Um objetivo: você se movendo do jeito que merece.</h2>
+        <p>Na INNOVA, você é o protocolo.</p>
+      </div>
+      <div class="servicos__grid">
+
+        <!-- Fisioterapia Ortopédica -->
+        <div class="svc reveal d1">
+          <svg class="svc__icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M24 6c0 0-7 7-7 17 0 7 2.5 11 7 14 4.5-3 7-7 7-14 0-10-7-17-7-17z"/><path d="M24 37v7"/><path d="M18 41h12"/><circle cx="24" cy="19" r="3.5" fill="none"/>
+          </svg>
+          <h3>Fisioterapia Ortopédica Individual</h3>
+          <p class="svc__sub">Para quem quer resolver — não só suportar.</p>
+          <p class="svc__desc">Atendimento individual com avaliação clínica completa, diagnóstico funcional e plano de tratamento específico. Indicado para dores musculares, articulares, pós-operatório, lesões esportivas e condições crônicas como lombalgia, cervicalgia e tendinites.<br><br>Cada sessão tem começo, meio e fim com propósito. Sem pressa. Sem improviso.</p>
+          <p class="svc__for">Para pacientes com dor aguda ou crônica que precisam de resolução — não de gerenciamento.</p>
+        </div>
+
+        <!-- Pilates Clínico -->
+        <div class="svc reveal d2">
+          <svg class="svc__icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="24" cy="10" r="5"/><path d="M11 23c0 0 4-6 13-6s13 6 13 6"/><path d="M24 17v14"/><path d="M13 27l11 4 11-4"/><path d="M17 31l-2 13"/><path d="M31 31l2 13"/>
+          </svg>
+          <h3>Pilates Clínico em Pequenos Grupos</h3>
+          <p class="svc__sub">A atenção do individual. A dinâmica do grupo — sem a lotação.</p>
+          <p class="svc__desc">Turmas de no máximo 3 pessoas, conduzidas por fisioterapeuta especializado. Os exercícios são adaptados para o seu histórico, suas limitações e seus objetivos.<br><br>Indicado tanto para reabilitação quanto para manutenção e prevenção.</p>
+          <p class="svc__for">Para quem quer movimento com segurança e acompanhamento real — sem abrir mão da evolução contínua.</p>
+        </div>
+
+        <!-- Gyrotonic -->
+        <div class="svc svc--feat reveal d3">
+          <div class="svc__badge">✦ Exclusivo em BH — apenas 5 vagas</div>
+          <svg class="svc__icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+            <circle cx="24" cy="24" r="18"/><ellipse cx="24" cy="24" rx="8" ry="18"/><line x1="6" y1="24" x2="42" y2="24"/>
+          </svg>
+          <h3>Gyrotonic</h3>
+          <p class="svc__sub">Uma das poucas clínicas em BH a oferecer. Uma das menos conhecidas — e das mais eficazes.</p>
+          <p class="svc__desc">Método que trabalha o corpo em padrões circulares e tridimensionais, combinando princípios de natação, dança, ioga e ginástica olímpica. Melhora mobilidade, postura, equilíbrio e consciência corporal de forma integrada.<br><br>A INNOVA é uma das raras clínicas em BH credenciadas para oferecer o método.</p>
+          <p class="svc__for">Para quem busca ir além da reabilitação — performance, prevenção e qualidade de movimento.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 PROCESSO -->
+  <section class="processo" id="processo" aria-labelledby="proc-h">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="label">Como funciona</span>
+        <h2 id="proc-h">Três etapas. Sem burocracia. Com comprometimento real.</h2>
+      </div>
+      <div class="steps">
+        <div class="step reveal d1">
+          <div class="step__dot" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+          </div>
+          <div class="step__num" aria-hidden="true">01</div>
+          <div class="step__dur">até 50 minutos</div>
+          <h3>Avaliação Gratuita</h3>
+          <p>Uma conversa clínica completa, sem pressa e sem compromisso. A gente entende o que você está sentindo, o que já fez antes e o que não funcionou. E te explica com honestidade o que é possível fazer.</p>
+        </div>
+        <div class="step reveal d2">
+          <div class="step__dot" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h4"/></svg>
+          </div>
+          <div class="step__num" aria-hidden="true">02</div>
+          <div class="step__dur">exclusivo para o seu caso</div>
+          <h3>Plano Individual</h3>
+          <p>Com base na avaliação, montamos um plano de tratamento feito para o seu caso — com método definido, frequência adequada e metas reais. Nada de protocolo genérico.</p>
+        </div>
+        <div class="step reveal d3">
+          <div class="step__dot" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+          </div>
+          <div class="step__num" aria-hidden="true">03</div>
+          <div class="step__dur">do início ao fim, os mesmos profissionais</div>
+          <h3>Tratamento e Evolução</h3>
+          <p>Você começa acompanhado pelos mesmos profissionais do início ao fim. A gente ajusta o plano conforme você evolui — e te mantém informado sobre cada etapa do processo.</p>
+        </div>
+      </div>
+      <div class="processo__cta reveal">
+        <a href="https://wa.me/5531XXXXXXXX" class="btn btn--primary" target="_blank" rel="noopener">→ Quero Agendar Minha Avaliação Gratuita</a>
+        <p>Sem custo. Sem compromisso. Até 50 minutos de atenção completa.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 DEPOIMENTOS -->
+  <section class="depo" id="depoimentos" aria-labelledby="depo-h">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="label">Prova social</span>
+        <h2 id="depo-h">60 avaliações. Todas 5 estrelas. Nenhuma comprada.</h2>
+        <p>O melhor indicador de um tratamento é o que acontece depois que o paciente vai embora.</p>
+      </div>
+      <div class="depo__grid">
+        <div class="test reveal d1">
+          <div class="test__q" aria-hidden="true">"</div>
+          <p class="test__text">Passei dois anos com dor lombar e já tinha desistido de resolver. Vim por indicação de um amigo e foi diferente desde a primeira avaliação. Pela primeira vez alguém realmente entendeu o que estava causando o problema — não só onde doía. Em três meses, voltei a treinar.</p>
+          <div class="test__div"></div>
+          <div class="test__auth">
+            <div class="test__av" aria-hidden="true">R</div>
+            <div>
+              <div class="test__name">Ricardo M.</div>
+              <div class="test__role">44 anos, empresário</div>
+              <div class="test__stars" aria-label="5 estrelas">★★★★★</div>
+            </div>
+          </div>
+        </div>
+        <div class="test reveal d2">
+          <div class="test__q" aria-hidden="true">"</div>
+          <p class="test__text">Trouxe minha mãe aqui com muito medo. Ela tinha caído duas vezes e estava perdendo a confiança para andar. A equipe foi cuidadosa, paciente e explicou cada passo do tratamento para ela e para mim. Hoje ela está bem mais segura e independente. Não tem preço.</p>
+          <div class="test__div"></div>
+          <div class="test__auth">
+            <div class="test__av" aria-hidden="true">F</div>
+            <div>
+              <div class="test__name">Fernanda R.</div>
+              <div class="test__role">40 anos — sobre sua mãe de 70 anos</div>
+              <div class="test__stars" aria-label="5 estrelas">★★★★★</div>
+            </div>
+          </div>
+        </div>
+        <div class="test reveal d3">
+          <div class="test__q" aria-hidden="true">"</div>
+          <p class="test__text">Não tinha nenhuma dor específica — queria melhorar minha postura e minha performance no trabalho e nos treinos. Descobri o Gyrotonic aqui e foi uma virada. Nunca tinha sentido meu corpo se mover com tanta fluidez. É outro nível.</p>
+          <div class="test__div"></div>
+          <div class="test__auth">
+            <div class="test__av" aria-hidden="true">C</div>
+            <div>
+              <div class="test__name">Camila A.</div>
+              <div class="test__role">36 anos, arquiteta</div>
+              <div class="test__stars" aria-label="5 estrelas">★★★★★</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="stats">
+        <div class="stat reveal d1"><div class="stat__val">+8.000</div><div class="stat__lbl">atendimentos por ano</div></div>
+        <div class="stat reveal d2"><div class="stat__val">+700</div><div class="stat__lbl">pacientes atendidos</div></div>
+        <div class="stat reveal d3"><div class="stat__val">+10 anos</div><div class="stat__lbl">de experiência clínica</div></div>
+        <div class="stat reveal d4"><div class="stat__val">5.0★</div><div class="stat__lbl">60 avaliações no Google</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 EQUIPE -->
+  <section class="equipe" id="equipe" aria-labelledby="eq-h">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="label">Quem cuida de você</span>
+        <h2 id="eq-h">Três fisioterapeutas. Uma clínica. Zero estagiários cuidando de você.</h2>
+        <p>Na INNOVA, os sócios atendem. Sempre.</p>
+      </div>
+      <div class="equipe__grid">
+        <div class="team reveal d1">
+          <div class="team__photo" role="img" aria-label="Foto do sócio 1 — a confirmar com a INNOVA">
+            <div class="team__ph">
+              <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="32" cy="20" r="12"/><path d="M8 56c0-13.255 10.745-24 24-24s24 10.745 24 24"/></svg>
+              <span>Foto a confirmar com a INNOVA</span>
+            </div>
+          </div>
+          <div class="team__name">[Nome do Sócio 1]</div>
+          <div class="team__role">Fisioterapeuta | Pós-graduado em [especialidade]</div>
+          <p class="team__bio">Palestrante nacional em [tema]. CRFa: XXXXX. Breve bio a confirmar com a clínica.</p>
+        </div>
+        <div class="team reveal d2">
+          <div class="team__photo" role="img" aria-label="Foto da sócia 2 — a confirmar com a INNOVA">
+            <div class="team__ph">
+              <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="32" cy="20" r="12"/><path d="M8 56c0-13.255 10.745-24 24-24s24 10.745 24 24"/></svg>
+              <span>Foto a confirmar com a INNOVA</span>
+            </div>
+          </div>
+          <div class="team__name">[Nome da Sócia 2]</div>
+          <div class="team__role">Fisioterapeuta | Instrutora certificada de Gyrotonic</div>
+          <p class="team__bio">Uma das poucas profissionais certificadas em Gyrotonic em BH. CRFa: XXXXX. Breve bio a confirmar com a clínica.</p>
+        </div>
+        <div class="team reveal d3">
+          <div class="team__photo" role="img" aria-label="Foto do sócio 3 — a confirmar com a INNOVA">
+            <div class="team__ph">
+              <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="32" cy="20" r="12"/><path d="M8 56c0-13.255 10.745-24 24-24s24 10.745 24 24"/></svg>
+              <span>Foto a confirmar com a INNOVA</span>
+            </div>
+          </div>
+          <div class="team__name">[Nome do Sócio 3]</div>
+          <div class="team__role">Fisioterapeuta | Palestrante e docente em [área]</div>
+          <p class="team__bio">Combina experiência clínica com atuação acadêmica. CRFa: XXXXX. Breve bio a confirmar com a clínica.</p>
+        </div>
+      </div>
+      <div class="equipe__closing reveal">
+        <p>A clínica foi construída por quem trata. Por isso ela funciona do jeito que deveria.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 FAQ -->
+  <section class="faq" id="faq" aria-labelledby="faq-h">
+    <div class="container">
+      <div class="sec-head reveal" style="margin-bottom:0">
+        <span class="label">Dúvidas frequentes</span>
+        <h2 id="faq-h">Perguntas diretas. Respostas honestas.</h2>
+      </div>
+      <div class="faq__list">
+        <div class="faq__item reveal">
+          <button class="faq__q" aria-expanded="false" aria-controls="fa1"><span class="faq__qt">A avaliação é realmente gratuita? O que está incluído?</span><span class="faq__ico" aria-hidden="true">+</span></button>
+          <div class="faq__ans" id="fa1"><div class="faq__ans-in">Sim, sem custo e sem pegadinha. A avaliação dura até 50 minutos e inclui anamnese completa, avaliação postural e funcional, e explicação clara do que identificamos. Não existe venda de pacote durante a avaliação — você sai com informação real, independente de qualquer decisão.</div></div>
+        </div>
+        <div class="faq__item reveal d1">
+          <button class="faq__q" aria-expanded="false" aria-controls="fa2"><span class="faq__qt">Vocês atendem por convênio?</span><span class="faq__ico" aria-hidden="true">+</span></button>
+          <div class="faq__ans" id="fa2"><div class="faq__ans-in">Não. A INNOVA é uma clínica particular. Essa escolha foi intencional: atendimento por convênio limita o tempo de sessão, restringe recursos e impõe protocolos que muitas vezes não são os mais indicados para cada caso. Para entregar o nível de atenção que oferecemos, precisamos da liberdade de montar o tratamento ideal — sem restrições externas.</div></div>
+        </div>
+        <div class="faq__item reveal d1">
+          <button class="faq__q" aria-expanded="false" aria-controls="fa3"><span class="faq__qt">O preço é alto? Por que vale a pena?</span><span class="faq__ico" aria-hidden="true">+</span></button>
+          <div class="faq__ans" id="fa3"><div class="faq__ans-in">O investimento é compatível com o nível do atendimento. Quando você compara com o custo acumulado de tratamentos que não resolvem — em tempo, dinheiro e qualidade de vida perdida — a diferença fica clara. Mais de 700 pacientes e 60 avaliações 5.0★ no Google são o melhor argumento que temos.</div></div>
+        </div>
+        <div class="faq__item reveal d2">
+          <button class="faq__q" aria-expanded="false" aria-controls="fa4"><span class="faq__qt">Onde fica a clínica? Tem estacionamento?</span><span class="faq__ico" aria-hidden="true">+</span></button>
+          <div class="faq__ans" id="fa4"><div class="faq__ans-in">A INNOVA fica no bairro Santo Agostinho, em Belo Horizonte — região central da Zona Sul, de fácil acesso. [Endereço completo a confirmar]. Há opções de estacionamento próximas à clínica, e nossa equipe pode te passar as indicações no momento do agendamento.</div></div>
+        </div>
+        <div class="faq__item reveal d2">
+          <button class="faq__q" aria-expanded="false" aria-controls="fa5"><span class="faq__qt">Vocês atendem idosos ou casos mais delicados?</span><span class="faq__ico" aria-hidden="true">+</span></button>
+          <div class="faq__ans" id="fa5"><div class="faq__ans-in">Sim, e com muita atenção. Trabalhamos com pacientes de todas as idades, incluindo pessoas com histórico de quedas, perda de mobilidade, pós-operatório ou condições crônicas. Se você está pensando em levar um familiar, a avaliação gratuita é o melhor primeiro passo — venha junto, se quiser.</div></div>
+        </div>
+        <div class="faq__item reveal d3">
+          <button class="faq__q" aria-expanded="false" aria-controls="fa6"><span class="faq__qt">Quanto tempo leva para ter resultado?</span><span class="faq__ico" aria-hidden="true">+</span></button>
+          <div class="faq__ans" id="fa6"><div class="faq__ans-in">Depende do caso — e qualquer clínica que te dê um prazo fixo sem te avaliar primeiro está chutando. O que podemos dizer com honestidade: pacientes que seguem o plano de tratamento e mantêm a frequência indicada evoluem de forma consistente. Na avaliação, a gente te dá uma estimativa real baseada no seu quadro.</div></div>
+        </div>
+        <div class="faq__item reveal d3">
+          <button class="faq__q" aria-expanded="false" aria-controls="fa7"><span class="faq__qt">Preciso de encaminhamento médico para agendar?</span><span class="faq__ico" aria-hidden="true">+</span></button>
+          <div class="faq__ans" id="fa7"><div class="faq__ans-in">Não. Você pode agendar a avaliação diretamente, sem encaminhamento ou laudo prévio. Se você já tem exames ou laudos, traga — ajudam bastante na avaliação. Mas não são obrigatórios para começar.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 CTA FINAL -->
+  <section class="ctafinal" id="agendar" aria-labelledby="cta-h">
+    <svg class="ctafinal__sil" aria-hidden="true" viewBox="0 0 200 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="100" cy="42" r="30" stroke="white" stroke-width="0.8" fill="none"/>
+      <line x1="100" y1="72" x2="100" y2="210" stroke="white" stroke-width="0.8"/>
+      <line x1="100" y1="130" x2="52" y2="195" stroke="white" stroke-width="0.8"/>
+      <line x1="100" y1="130" x2="148" y2="195" stroke="white" stroke-width="0.8"/>
+      <line x1="100" y1="210" x2="68" y2="360" stroke="white" stroke-width="0.8"/>
+      <line x1="100" y1="210" x2="132" y2="360" stroke="white" stroke-width="0.8"/>
+      <line x1="68" y1="360" x2="58" y2="490" stroke="white" stroke-width="0.8"/>
+      <line x1="132" y1="360" x2="142" y2="490" stroke="white" stroke-width="0.8"/>
+    </svg>
+    <div class="container">
+      <div class="ctafinal__body">
+        <span class="ctafinal__lbl">O próximo passo é seu</span>
+        <h2 class="reveal" id="cta-h">Você já esperou tempo suficiente.</h2>
+        <p class="ctafinal__sub reveal d1">Se você leu até aqui, provavelmente está cansado de conviver com uma dor que não passa. A INNOVA existe para mudar isso. Não prometemos milagre — prometemos atenção real, diagnóstico honesto e tratamento feito para você.</p>
+        <div class="ctafinal__acts reveal d2">
+          <a href="https://wa.me/5531XXXXXXXX" class="btn btn--white" target="_blank" rel="noopener">→ Agendar Minha Avaliação Gratuita</a>
+          <a href="https://wa.me/5531XXXXXXXX" class="ctafinal__wpp" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Ou fale no WhatsApp
+          </a>
+          <p class="ctafinal__micro">Sem custo. Sem compromisso. Até 50 minutos de atenção completa.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__g">
+        <div>
+          <img id="footLogo" src="" alt="INNOVA MOVIMENTO" class="footer__logo" height="30">
+          <p class="footer__tag">Precisão que liberta</p>
+          <div class="footer__soc">
+            <a href="#" aria-label="Instagram INNOVA MOVIMENTO" target="_blank" rel="noopener">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="https://wa.me/5531XXXXXXXX" aria-label="WhatsApp INNOVA MOVIMENTO" target="_blank" rel="noopener">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <p class="footer__ct">Navegação</p>
+          <nav class="footer__lks" aria-label="Links do rodapé">
+            <a href="#servicos">Serviços</a>
+            <a href="#processo">Como Funciona</a>
+            <a href="#equipe">Equipe</a>
+            <a href="#depoimentos">Depoimentos</a>
+            <a href="#faq">Dúvidas</a>
+            <a href="https://wa.me/5531XXXXXXXX" target="_blank" rel="noopener">Agendar Avaliação</a>
+          </nav>
+        </div>
+        <div>
+          <p class="footer__ct">Contato</p>
+          <div class="footer__info">
+            <div class="footer__ii">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Santo Agostinho, Belo Horizonte – MG<br>[Endereço a confirmar]</span>
+            </div>
+            <div class="footer__ii">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.22 1.2 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.16 6.16l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              <a href="https://wa.me/5531XXXXXXXX" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.48)">(31) XXXXX-XXXX</a>
+            </div>
+            <div class="footer__ii">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span>Seg–Sex: 7h às 20h · Sáb: 8h às 13h</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bot">
+        <p class="footer__cp">© 2026 INNOVA MOVIMENTO. Todos os direitos reservados.</p>
+        <p class="footer__cp">Santo Agostinho · Belo Horizonte · MG</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WPP Float -->
+  <a href="https://wa.me/5531XXXXXXXX" class="wpp" target="_blank" rel="noopener" aria-label="Falar no WhatsApp" title="Falar no WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script>
+    // ==========================================
+    // LOGO BASE64 (injected by build script)
+    // ==========================================
+    const LOGO_B64 = '__LOGO_B64__';
+    if (LOGO_B64 && !LOGO_B64.startsWith('__')) {
+      const src = 'data:image/png;base64,' + LOGO_B64;
+      document.getElementById('navLogo').src = src;
+      document.getElementById('footLogo').src = src;
+    }
+
+    // ==========================================
+    // NAVBAR SCROLL
+    // ==========================================
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    // ==========================================
+    // MOBILE MENU
+    // ==========================================
+    const hamBtn = document.getElementById('hamBtn');
+    const drawer = document.getElementById('drawer');
+    const overlay = document.getElementById('overlay');
+    const drawerClose = document.getElementById('drawerClose');
+
+    function openMenu() {
+      drawer.classList.add('open'); overlay.classList.add('open');
+      hamBtn.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden';
+    }
+    function closeMenu() {
+      drawer.classList.remove('open'); overlay.classList.remove('open');
+      hamBtn.setAttribute('aria-expanded','false'); document.body.style.overflow='';
+    }
+
+    hamBtn.addEventListener('click', openMenu);
+    drawerClose.addEventListener('click', closeMenu);
+    overlay.addEventListener('click', closeMenu);
+    document.querySelectorAll('.dl').forEach(l => l.addEventListener('click', closeMenu));
+
+    // ==========================================
+    // REVEAL — Intersection Observer
+    // ==========================================
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -28px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // ==========================================
+    // FAQ ACCORDION
+    // ==========================================
+    document.querySelectorAll('.faq__item').forEach(item => {
+      const btn = item.querySelector('.faq__q');
+      const ans = item.querySelector('.faq__ans');
+      const inner = item.querySelector('.faq__ans-in');
+
+      btn.addEventListener('click', () => {
+        const isOpen = item.classList.contains('faq__item--open');
+        document.querySelectorAll('.faq__item').forEach(i => {
+          i.classList.remove('faq__item--open');
+          i.querySelector('.faq__ans').style.maxHeight = '0';
+          i.querySelector('.faq__q').setAttribute('aria-expanded','false');
+        });
+        if (!isOpen) {
+          item.classList.add('faq__item--open');
+          ans.style.maxHeight = inner.scrollHeight + 'px';
+          btn.setAttribute('aria-expanded','true');
+        }
+      });
+    });
+
+    // ==========================================
+    // SMOOTH SCROLL
+    // ==========================================
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', function(e) {
+        const h = this.getAttribute('href');
+        if (h === '#') return;
+        e.preventDefault();
+        const t = document.querySelector(h);
+        if (t) window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>
