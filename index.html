@@ -484,7 +484,9 @@
       .dor-grid, .solucao-grid { grid-template-columns: 1fr; gap: 48px; }
       .servicos-grid { grid-template-columns: 1fr; }
       .depoimentos-grid { grid-template-columns: 1fr; }
+      .enc-grid { grid-template-columns: 1fr; }
       .equipe-grid { grid-template-columns: 1fr 1fr; }
+      .equipe-grid-2 { grid-template-columns: 1fr 1fr; }
       .etapas { grid-template-columns: 1fr; }
       .etapa { text-align: left; display: flex; gap: 20px; align-items: flex-start; padding: 24px; }
       .etapa-num { margin: 0; min-width: 60px; }
@@ -535,7 +537,7 @@
         Fisioterapia que <em>resolve.</em><br>Não que alivia<br>por uma semana.
       </h1>
       <p class="hero-sub reveal reveal-delay-2">
-        Tratamento personalizado para quem já passou por tudo — e não quer mais perder tempo com protocolo genérico.
+        A cada dia você se sente mais travado. Seja dor no joelho, no ombro, na lombar ou na cervical — o problema não é onde dói. É tratar certo desde o início.
       </p>
       <a href="https://wa.me/5531XXXXXXXX?text=Olá!%20Gostaria%20de%20agendar%20uma%20avaliação%20gratuita." class="btn-primary reveal reveal-delay-3" target="_blank">
         Agendar Avaliação Gratuita
@@ -543,7 +545,7 @@
       <div class="hero-trust reveal reveal-delay-4">
         <div class="trust-item"><span class="trust-dot"></span> <strong>60 avaliações 5.0</strong>&nbsp;no Google</div>
         <div class="trust-item"><span class="trust-dot"></span> <strong>+10 anos</strong>&nbsp;de experiência clínica</div>
-        <div class="trust-item"><span class="trust-dot"></span> <strong>+700 pacientes</strong>&nbsp;atendidos</div>
+        <div class="trust-item"><span class="trust-dot"></span> <strong>+1.000 clientes</strong>&nbsp;atendidos</div>
       </div>
     </div>
     <div class="hero-right">
@@ -555,8 +557,8 @@
   <div class="section-numeros">
     <div class="container">
       <div class="numeros-grid">
-        <div class="numero-item reveal"><div class="n">+8.000</div><div class="nl">atendimentos por ano</div></div>
-        <div class="numero-item reveal reveal-delay-1"><div class="n">+700</div><div class="nl">pacientes atendidos</div></div>
+        <div class="numero-item reveal"><div class="n">+9.000</div><div class="nl">atendimentos por ano</div></div>
+        <div class="numero-item reveal reveal-delay-1"><div class="n">+1.000</div><div class="nl">clientes atendidos</div></div>
         <div class="numero-item reveal reveal-delay-2"><div class="n">+10 anos</div><div class="nl">de experiência clínica</div></div>
         <div class="numero-item reveal reveal-delay-3"><div class="n">5.0 ★</div><div class="nl">60 avaliações Google</div></div>
       </div>
@@ -660,6 +662,47 @@
     </div>
   </section>
 
+  <!-- ENCAMINHADORES -->
+  <section class="section-encaminhadores">
+    <div class="container">
+      <div class="section-label reveal">Quem indica a Innova</div>
+      <h2 class="section-title reveal">A Innova é destino de encaminhamento<br>para especialistas que levam resultado a sério.</h2>
+      <p class="section-sub reveal">Profissionais de saúde e esporte de BH confiam na Innova para continuar o que iniciaram com seus pacientes.</p>
+      <div class="enc-grid">
+        <div class="enc-card reveal">
+          <div class="enc-icon">🦴</div>
+          <h3>Médicos</h3>
+          <p>Especialistas que precisam de fisioterapia como extensão clínica — não como encaminhamento genérico. A Innova fecha o círculo do tratamento.</p>
+          <div class="enc-tags">
+            <span>Ortopedista</span>
+            <span>Reumatologista</span>
+            <span>Médico do Esporte</span>
+          </div>
+        </div>
+        <div class="enc-card reveal reveal-delay-1">
+          <div class="enc-icon">🏋️</div>
+          <h3>Personal Trainers e Treinadores</h3>
+          <p>Para alunos com dor, limitação de movimento ou histórico de lesão que precisam de avaliação clínica antes de evoluir o treino.</p>
+          <div class="enc-tags">
+            <span>Dor durante treino</span>
+            <span>Histórico de lesão</span>
+            <span>Limitação de movimento</span>
+          </div>
+        </div>
+        <div class="enc-card reveal reveal-delay-2">
+          <div class="enc-icon">🦷</div>
+          <h3>Dentistas</h3>
+          <p>Pacientes com bruxismo e disfunção de ATM que já fazem tratamento odontológico e precisam de abordagem complementar em fisioterapia.</p>
+          <div class="enc-tags">
+            <span>Bruxismo</span>
+            <span>Disfunção de ATM</span>
+            <span>Tensão mandibular</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- GALERIA -->
   <section class="section-galeria">
     <div class="container">
@@ -689,7 +732,7 @@
   <section class="section-prova">
     <div class="container">
       <div class="section-label reveal">O que dizem os pacientes</div>
-      <h2 class="section-title reveal">60 avaliações. Todas 5 estrelas.<br>Nenhuma comprada.</h2>
+      <h2 class="section-title reveal">Quem passou pela Innova<br>voltou. E indicou.</h2>
       <div class="reviews-bar reveal">
         <div class="stars">★★★★★</div>
         <div class="reviews-text"><strong>5.0</strong> — 60 avaliações verificadas no Google Meu Negócio</div>
@@ -697,21 +740,39 @@
       <div class="depoimentos-grid">
         <div class="dep-card reveal">
           <div class="dep-stars">★★★★★</div>
-          <p class="dep-text">"Passei dois anos com dor lombar e já tinha desistido de resolver. Vim por indicação e foi diferente desde a primeira avaliação. Pela primeira vez alguém entendeu o que estava causando o problema — não só onde doía. Em três meses, voltei a treinar."</p>
-          <div class="dep-author">Ricardo M., 44 anos</div>
-          <div class="dep-role">Empresário · Fisioterapia Ortopédica</div>
+          <p class="dep-text">"Tive hérnia cervical com indicação cirúrgica. Depois de trabalhar com a equipe da Innova, evitei a cirurgia e voltei a nadar. O tratamento foi personalizado do início ao fim — não teve nada genérico."</p>
+          <div class="dep-author">André Teixeira</div>
+          <div class="dep-role">Ex-atleta olímpico de Natação</div>
         </div>
         <div class="dep-card reveal reveal-delay-1">
           <div class="dep-stars">★★★★★</div>
-          <p class="dep-text">"Trouxe minha mãe com muito medo — ela tinha caído duas vezes e estava perdendo a confiança para andar. A equipe foi cuidadosa, paciente, explicou cada passo. Hoje ela está muito mais segura e independente. Não tem preço."</p>
-          <div class="dep-author">Fernanda R., 40 anos</div>
-          <div class="dep-role">Sobre sua mãe de 70 anos · Reabilitação</div>
+          <p class="dep-text">"Melhor Pilates de BH. Sem dúvida. Profissionais que veem cada aluno de verdade, adaptam cada exercício e não deixam ninguém passar em branco. Não é academia. É clínica."</p>
+          <div class="dep-author">Adriana Araújo</div>
+          <div class="dep-role">Funcionária Pública · Pilates Clínico</div>
         </div>
         <div class="dep-card reveal reveal-delay-2">
           <div class="dep-stars">★★★★★</div>
-          <p class="dep-text">"Não tinha nenhuma dor específica — queria melhorar minha postura e minha performance. Descobri o Gyrotonic aqui e foi uma virada. Nunca tinha sentido meu corpo se mover com tanta fluidez. É outro nível."</p>
-          <div class="dep-author">Camila A., 36 anos</div>
-          <div class="dep-role">Arquiteta · Gyrotonic</div>
+          <p class="dep-text">"Trago minha mãe de 85 anos para se tratar aqui. A paciência, o cuidado e a atenção da equipe com ela são excepcionais. Sinto que ela está em boas mãos toda vez que deixo ela aqui."</p>
+          <div class="dep-author">Luiz Carlos Castro</div>
+          <div class="dep-role">Sobre sua mãe de 85 anos · Reabilitação</div>
+        </div>
+        <div class="dep-card reveal">
+          <div class="dep-stars">★★★★★</div>
+          <p class="dep-text">"Como chef de cozinha, dependo 100% do meu corpo. Quando tive uma lesão no ombro, precisava de resolução de verdade — não de alguém para aliviar por duas semanas. A Innova me deu isso."</p>
+          <div class="dep-author">Diego Bucco</div>
+          <div class="dep-role">Chef de Cozinha · Fisioterapia Ortopédica</div>
+        </div>
+        <div class="dep-card reveal reveal-delay-1">
+          <div class="dep-stars">★★★★★</div>
+          <p class="dep-text">"Jogava vôlei amador e sempre vivia com alguma dor. Vim sem esperar muito. Saí com plano, com explicação e com resultado. Hoje treinamento e clínica andam juntos — sem conflito."</p>
+          <div class="dep-author">Carolina Chave</div>
+          <div class="dep-role">Atleta amadora de Vôlei · Fisioterapia + Pilates</div>
+        </div>
+        <div class="dep-card reveal reveal-delay-2">
+          <div class="dep-stars">★★★★★</div>
+          <p class="dep-text">"Eu não acredito em fisioterapia genérica. Vim para a Innova porque ouvi de outros empresários que era diferente. É. Desde a avaliação você percebe que o profissional está realmente prestando atenção."</p>
+          <div class="dep-author">Mauro Moura</div>
+          <div class="dep-role">Empresário · Fisioterapia Ortopédica</div>
         </div>
       </div>
     </div>
@@ -721,35 +782,57 @@
   <section class="section-equipe">
     <div class="container">
       <div class="section-label reveal">A equipe</div>
-      <h2 class="section-title reveal">Três fisioterapeutas. Uma clínica.<br>Zero estagiários cuidando de você.</h2>
-      <p class="section-sub reveal">Na INNOVA, os sócios atendem. Sempre.</p>
-      <div class="equipe-grid">
+      <h2 class="section-title reveal">Formados nos melhores espaços do esporte.<br>Agora focados 100% em você.</h2>
+      <p class="section-sub reveal">Os 4 sócios vieram do Minas Tênis Clube — referência nacional em fisioterapia esportiva. Essa bagagem é o padrão de cada atendimento na INNOVA.</p>
+
+      <!-- Quem atende -->
+      <div class="equipe-sub-titulo reveal">✦ Quem atende na clínica</div>
+      <div class="equipe-grid equipe-grid-2">
         <div class="equipe-card reveal">
           <div class="equipe-foto"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#C4B8D8" stroke-width="1.2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
           <div class="equipe-info">
-            <h3>[Nome do Sócio 1]</h3>
-            <div class="equipe-esp">Fisioterapeuta · Pós-graduado em [especialidade]</div>
-            <p>Palestrante nacional em [tema]. Anos de experiência clínica especializada.</p>
+            <div class="equipe-badge atende">Atende na clínica</div>
+            <h3>Gustavo Amaral</h3>
+            <div class="equipe-esp">Fisioterapeuta · Especialista em Fisioterapia Esportiva</div>
+            <p>Formado pelo Minas Tênis Clube, professor de formação em Pilates e referência em reabilitação de alta performance. Especialista e mestre.</p>
           </div>
         </div>
         <div class="equipe-card reveal reveal-delay-1">
           <div class="equipe-foto"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#C4B8D8" stroke-width="1.2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
           <div class="equipe-info">
-            <h3>[Nome do Sócio 2]</h3>
-            <div class="equipe-esp">Fisioterapeuta · Instrutora Gyrotonic certificada</div>
-            <p>Uma das poucos profissionais certificadas em Gyrotonic em BH. Formação em fisioterapia e movimento.</p>
-          </div>
-        </div>
-        <div class="equipe-card reveal reveal-delay-2">
-          <div class="equipe-foto"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#C4B8D8" stroke-width="1.2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
-          <div class="equipe-info">
-            <h3>[Nome do Sócio 3]</h3>
-            <div class="equipe-esp">Fisioterapeuta · Docente e palestrante</div>
-            <p>Combina experiência clínica com atuação acadêmica. Pesquisa e traz atualizações constantes para os protocolos.</p>
+            <div class="equipe-badge atende">Atende na clínica</div>
+            <h3>Luciana Signorini</h3>
+            <div class="equipe-esp">Fisioterapeuta · Especialista e Mestre</div>
+            <p>Formada pelo Minas Tênis Clube, professora de formação em Pilates e referência de fisioterapia em clubes esportivos. Experiência com pacientes clínicos, atletas e casos complexos.</p>
           </div>
         </div>
       </div>
-      <p class="equipe-nota reveal">A clínica foi construída por quem trata. Por isso funciona do jeito que deveria.<br><strong>Os sócios atendem.</strong></p>
+
+      <!-- Expertise que capacita a equipe -->
+      <div class="equipe-sub-titulo sec reveal">✦ A expertise que capacita toda a equipe</div>
+      <p class="equipe-sub-desc reveal">Cristiane e Mariana não atendem diretamente na clínica — mas é a experiência delas que eleva o nível de todos os atendimentos. Por meio de treinamentos e capacitação contínua, o conhecimento que acumularam nos maiores espaços do esporte brasileiro está presente em cada sessão da INNOVA.</p>
+      <div class="equipe-grid equipe-grid-2">
+        <div class="equipe-card equipe-card-ref reveal">
+          <div class="equipe-foto"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#C4B8D8" stroke-width="1.2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+          <div class="equipe-info">
+            <div class="equipe-badge ref">Referência técnica</div>
+            <h3>Cristiane Vasconcelos</h3>
+            <div class="equipe-esp">Gerente Técnica · Minas Tênis Clube</div>
+            <p>Especialista e mestre. Professora de formação em Pilates e referência de fisioterapia em clubes esportivos de elite. Sua atuação técnica fundamenta os protocolos da INNOVA.</p>
+          </div>
+        </div>
+        <div class="equipe-card equipe-card-ref reveal reveal-delay-1">
+          <div class="equipe-foto"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#C4B8D8" stroke-width="1.2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+          <div class="equipe-info">
+            <div class="equipe-badge ref">Referência técnica</div>
+            <h3>Mariana Weschenfelder</h3>
+            <div class="equipe-esp">Fisioterapeuta · Bahia FC — Série A</div>
+            <p>Especialista e mestre. Atualmente fisioterapeuta da equipe masculina do Bahia FC (Série A). Formada pelo Minas Tênis Clube, professora de Pilates e referência em fisioterapia de alto rendimento.</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="equipe-nota reveal">Quatro sócios. Um padrão. A base técnica que veio do Minas Tênis Clube está em cada atendimento.<br><strong>Na INNOVA, você não é recebido por estagiário.</strong></p>
     </div>
   </section>
 
@@ -764,7 +847,7 @@
           <div>
             <h3>Avaliação Gratuita</h3>
             <p>Uma conversa clínica completa — sem pressa e sem compromisso. Entendemos o que você sente, o que já fez, o que funcionou e o que não funcionou. Explicamos com honestidade o que é possível.</p>
-            <div class="etapa-detalhe">Duração: até 50 minutos</div>
+            <div class="etapa-detalhe">Avaliação completa — sem compromisso</div>
           </div>
         </div>
         <div class="etapa reveal reveal-delay-1">
@@ -798,15 +881,15 @@
       <div class="faq-grid">
         <div class="faq-item reveal">
           <div class="faq-q" onclick="toggleFaq(this)">A avaliação é realmente gratuita?<div class="faq-icon">+</div></div>
-          <div class="faq-a"><div class="faq-a-inner">Sim, sem custo e sem pegadinha. A avaliação dura até 50 minutos e inclui anamnese completa, avaliação postural e funcional. Não existe venda de pacote durante a avaliação — você sai com informação real, independente de qualquer decisão.</div></div>
+          <div class="faq-a"><div class="faq-a-inner">Sim, sem custo e sem pegadinha. A avaliação inclui anamnese completa, avaliação postural e funcional — e pode durar mais de uma hora, dependendo do caso. Não existe venda de pacote durante a avaliação. Você sai com informação real, independente de qualquer decisão.</div></div>
         </div>
         <div class="faq-item reveal reveal-delay-1">
           <div class="faq-q" onclick="toggleFaq(this)">Vocês atendem por convênio?<div class="faq-icon">+</div></div>
-          <div class="faq-a"><div class="faq-a-inner">Não. A INNOVA é particular. Essa escolha foi intencional: atendimento por convênio limita o tempo de sessão e impõe protocolos que muitas vezes não são os mais indicados. Para entregar o nível de atenção que oferecemos, precisamos da liberdade de montar o tratamento ideal para cada paciente.</div></div>
+          <div class="faq-a"><div class="faq-a-inner">Não. A INNOVA é particular. Essa escolha foi intencional. O plano de saúde padrão exige de 4 a 5 sessões por semana com tempo limitado por sessão — é volume, não resultado. Na INNOVA, o tratamento segue a frequência certa para o seu caso, com toda a atenção necessária. Para entregar esse nível, precisamos dessa liberdade.</div></div>
         </div>
         <div class="faq-item reveal">
           <div class="faq-q" onclick="toggleFaq(this)">Por que vale a pena o investimento?<div class="faq-icon">+</div></div>
-          <div class="faq-a"><div class="faq-a-inner">Quando você compara com o custo acumulado de tratamentos que não resolvem — em tempo, dinheiro e qualidade de vida perdida — a diferença fica clara. Mais de 700 pacientes e 60 avaliações 5.0★ no Google são o melhor argumento. Para entender os valores, agende a avaliação gratuita.</div></div>
+          <div class="faq-a"><div class="faq-a-inner">Quando você compara com o custo acumulado de tratamentos que não resolvem — em tempo, dinheiro e qualidade de vida perdida — a diferença fica clara. Mais de 1.000 clientes e 60 avaliações 5.0★ no Google são o melhor argumento. Para entender os valores, agende a avaliação gratuita.</div></div>
         </div>
         <div class="faq-item reveal reveal-delay-1">
           <div class="faq-q" onclick="toggleFaq(this)">Onde fica? Tem estacionamento?<div class="faq-icon">+</div></div>
@@ -838,7 +921,7 @@
           Conhecer o Gyrotonic
         </a>
       </div>
-      <p class="cta-note reveal">Sem custo. Sem compromisso. Até 50 minutos de atenção completa.</p>
+      <p class="cta-note reveal">Sem custo. Sem compromisso. Avaliação completa e gratuita.</p>
     </div>
   </section>
 
