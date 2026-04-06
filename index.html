@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>INNOVA MOVIMENTO | Fisioterapia Premium em BH — Avaliação Gratuita</title>
+  <title>INNOVA MOVIMENTO | Fisioterapia Premium em BH. Avaliação Gratuita</title>
   <meta name="description" content="Fisioterapia personalizada em Belo Horizonte, Santo Agostinho. Gyrotonic exclusivo, Pilates Clínico e atendimento individual. 60 avaliações 5.0★ no Google. Agende sua avaliação gratuita.">
   <meta property="og:title" content="INNOVA MOVIMENTO | Fisioterapia Premium em BH">
   <meta property="og:description" content="Tratamento personalizado para quem não aceita protocolo genérico. Avaliação gratuita.">
@@ -61,18 +61,18 @@
     /* NAV */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      padding: 16px 0; transition: var(--transition);
-      background: rgba(247,245,242,0.9); backdrop-filter: blur(12px);
-      box-shadow: 0 1px 0 var(--cinza-quente);
+      padding: 14px 0; transition: var(--transition);
+      background: rgba(255,255,255,0.96); backdrop-filter: blur(16px);
+      box-shadow: 0 1px 0 var(--cinza-quente), 0 4px 20px rgba(0,0,0,0.06);
     }
     nav.scrolled {
-      background: rgba(255,255,255,0.97);
-      padding: 12px 0;
-      box-shadow: 0 1px 0 var(--cinza-quente);
+      background: rgba(255,255,255,0.99);
+      padding: 10px 0;
+      box-shadow: 0 1px 0 var(--cinza-quente), 0 4px 24px rgba(0,0,0,0.08);
     }
     nav .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
     .nav-logo { text-decoration: none; display: flex; align-items: center; }
-    .nav-logo img { height: 36px; width: auto; display: block; }
+    .nav-logo img { height: 52px; width: auto; display: block; }
     .nav-logo span { background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     .nav-cta {
       background: var(--grad); color: var(--branco);
@@ -235,10 +235,22 @@
     }
     .diff-check svg { width: 11px; height: 11px; }
     .solucao-foto {
-      border-radius: 20px; overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+      display: flex; flex-direction: column; gap: 12px;
     }
-    .solucao-foto img { width: 100%; height: 520px; object-fit: cover; display: block; }
+    .solucao-foto-main {
+      border-radius: 16px; overflow: hidden;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+    }
+    .solucao-foto-main img { width: 100%; height: 300px; object-fit: cover; object-position: center; display: block; }
+    .solucao-foto-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+    }
+    .solucao-foto-grid-item {
+      border-radius: 12px; overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    }
+    .solucao-foto-grid-item img { width: 100%; height: 160px; object-fit: cover; object-position: center; display: block; transition: transform 0.4s ease; }
+    .solucao-foto-grid-item:hover img { transform: scale(1.04); }
 
     /* SERVIÇOS */
     .section-servicos { background: var(--branco); }
@@ -300,18 +312,43 @@
       text-decoration: none; transition: var(--transition);
     }
     .reviews-bar:hover { box-shadow: 0 4px 20px rgba(93,191,176,0.2); }
-    .stars { font-size: 20px; letter-spacing: 2px; }
+    .stars { font-size: 20px; letter-spacing: 2px; color: #F5A623; }
     .reviews-text { font-family: var(--font-display); font-size: 15px; color: var(--cinza-escuro); }
     .reviews-text strong { color: var(--quase-preto); font-size: 18px; }
     .reviews-text .reviews-cta { font-size: 13px; color: var(--turquesa); font-weight: 600; margin-left: 8px; }
-    .depoimentos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .dep-card {
-      border-radius: 16px; overflow: hidden;
-      border: 1px solid var(--cinza-quente); transition: var(--transition);
-      cursor: pointer;
+
+    /* CAROUSEL INFINITO */
+    .reviews-carousel-wrap { overflow: hidden; margin: 0 -28px; position: relative; }
+    .reviews-carousel-wrap::before,
+    .reviews-carousel-wrap::after {
+      content: ''; position: absolute; top: 0; bottom: 0; width: 80px; z-index: 2; pointer-events: none;
     }
-    .dep-card:hover { border-color: var(--roxo-soft); box-shadow: 0 8px 32px rgba(128,112,160,0.12); transform: translateY(-3px); }
-    .dep-card img { width: 100%; height: auto; display: block; }
+    .reviews-carousel-wrap::before { left: 0; background: linear-gradient(to right, var(--branco), transparent); }
+    .reviews-carousel-wrap::after { right: 0; background: linear-gradient(to left, var(--branco), transparent); }
+    .reviews-carousel {
+      display: flex; gap: 20px; width: max-content; padding: 12px 28px;
+      animation: scroll-reviews 48s linear infinite;
+    }
+    .reviews-carousel:hover { animation-play-state: paused; }
+    @keyframes scroll-reviews {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .rev-card {
+      background: var(--branco); border-radius: 16px; padding: 24px 28px;
+      border: 1px solid var(--cinza-quente); width: 320px; flex-shrink: 0;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+      transition: var(--transition);
+    }
+    .rev-card:hover { border-color: var(--roxo-soft); box-shadow: 0 8px 28px rgba(128,112,160,0.1); transform: translateY(-2px); }
+    .rev-stars { font-size: 17px; color: #F5A623; margin-bottom: 10px; letter-spacing: 2px; }
+    .rev-text { font-size: 14px; color: var(--cinza-escuro); line-height: 1.72; margin-bottom: 16px; font-style: italic; }
+    .rev-footer { display: flex; justify-content: space-between; align-items: center; }
+    .rev-name { font-family: var(--font-display); font-size: 14px; font-weight: 700; color: var(--quase-preto); }
+    .rev-time { font-family: var(--font-display); font-size: 12px; color: var(--cinza-medio); }
+    .reviews-link { text-align: center; margin-top: 36px; }
+    .reviews-link a { font-family: var(--font-display); font-size: 14px; font-weight: 600; color: var(--turquesa); text-decoration: none; border-bottom: 1px solid var(--turquesa-light); padding-bottom: 2px; transition: var(--transition); }
+    .reviews-link a:hover { color: var(--roxo); border-color: var(--roxo-soft); }
 
     /* EQUIPE */
     .section-equipe { background: var(--roxo-pale); }
@@ -327,7 +364,7 @@
       width: 100%; height: 260px; overflow: hidden; position: relative;
       background: linear-gradient(135deg, var(--turquesa-pale), var(--roxo-pale));
     }
-    .equipe-foto img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
+    .equipe-foto img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
     .equipe-badge {
       display: inline-flex; align-items: center; gap: 6px;
       font-family: var(--font-display); font-size: 10px; font-weight: 600;
@@ -454,7 +491,7 @@
     footer { background: var(--creme); padding: 36px 0; border-top: 1px solid var(--cinza-quente); }
     .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
     .footer-logo { display: flex; align-items: center; gap: 10px; }
-    .footer-logo img { height: 36px; width: auto; }
+    .footer-logo img { height: 44px; width: auto; }
     .footer-brand { font-family: var(--font-display); font-size: 16px; font-weight: 700; color: var(--quase-preto); }
     .footer-brand span { background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     .footer-info { font-family: var(--font-display); font-size: 13px; color: var(--cinza-medio); text-align: center; }
@@ -560,7 +597,7 @@
       body { overflow-x: hidden; max-width: 100vw; }
       .section-cta-final { padding: 80px 24px; }
       .cta-final-content { padding: 0; }
-      .depoimentos-grid { grid-template-columns: 1fr; }
+      /* reviews carousel mobile handled by overflow */
       footer { overflow: hidden; }
       .footer-inner { padding: 0 8px; }
     }
@@ -607,7 +644,7 @@
     @media (max-width: 900px) {
       .dor-grid, .solucao-grid { grid-template-columns: 1fr; gap: 48px; }
       .servicos-grid { grid-template-columns: 1fr; }
-      .depoimentos-grid { grid-template-columns: repeat(2, 1fr); }
+      /* reviews carousel responsive */
       .enc-grid { grid-template-columns: 1fr; }
       .equipe-grid { grid-template-columns: 1fr 1fr; }
       .equipe-grid-2 { grid-template-columns: 1fr 1fr; }
@@ -660,7 +697,7 @@
         Fisioterapia que <em>resolve.</em><br>Não que alivia<br>por uma semana.
       </h1>
       <p class="hero-sub reveal reveal-delay-2">
-        A cada dia você se sente mais travado. Seja dor no joelho, no ombro, na lombar ou na cervical — o problema não é onde dói. É tratar certo desde o início. A Innova oferece a solução.
+        A cada dia você se sente mais travado. Seja dor no joelho, no ombro, na lombar ou na cervical: o problema não é onde dói. É tratar certo desde o início. A Innova oferece a solução.
       </p>
       <a href="https://wa.me/5531XXXXXXXX?text=Olá!%20Gostaria%20de%20agendar%20uma%20avaliação%20gratuita." class="btn-primary reveal reveal-delay-3" target="_blank">
         Agendar Avaliação Gratuita
@@ -672,7 +709,7 @@
       </div>
     </div>
     <div class="hero-right">
-      <img src="images/sala3.jpg" alt="INNOVA MOVIMENTO — Espaço premium" fetchpriority="high">
+      <img src="images/sala3.jpg" alt="INNOVA MOVIMENTO, Espaço premium" fetchpriority="high">
     </div>
   </section>
 
@@ -706,7 +743,7 @@
             <p>Duas semanas de melhora, depois tudo volta ao mesmo lugar. Você já conhece esse ciclo.</p>
             <p>Já fez fisioterapia antes. Talvez mais de uma vez. Aplicaram corrente, passaram ultrassom, te mandaram com lista de exercícios. A dor cedeu. E voltou.</p>
             <div class="highlight-box">
-              Não é falta de disciplina. É o que acontece quando o tratamento é construído para uma média de pacientes — não para você.
+              Não é falta de disciplina. É o que acontece quando o tratamento é construído para uma média de pacientes, não para você.
             </div>
             <p>A diferença entre quem resolve e quem convive com a dor por anos costuma ser simples: o nível de atenção que o tratamento recebe.</p>
           </div>
@@ -722,7 +759,7 @@
         <div>
           <div class="section-label reveal">A diferença</div>
           <h2 class="section-title reveal">Na INNOVA, você é o protocolo.</h2>
-          <p class="section-sub reveal">A maioria das clínicas atende dezenas de pacientes com o mesmo roteiro. A INNOVA foi construída para funcionar diferente — desde o início.</p>
+          <p class="section-sub reveal">A maioria das clínicas atende dezenas de pacientes com o mesmo roteiro. A INNOVA foi construída para funcionar diferente, desde o início.</p>
           <ul class="diff-list">
             <li class="diff-item reveal">
               <div class="diff-check"><svg viewBox="0 0 11 11" fill="none" stroke="white" stroke-width="2.2"><polyline points="1.5,5.5 4.5,8.5 9.5,2.5"/></svg></div>
@@ -734,7 +771,7 @@
             </li>
             <li class="diff-item reveal reveal-delay-2">
               <div class="diff-check"><svg viewBox="0 0 11 11" fill="none" stroke="white" stroke-width="2.2"><polyline points="1.5,5.5 4.5,8.5 9.5,2.5"/></svg></div>
-              Acompanhamento pelos mesmos profissionais — sem rotatividade
+              Acompanhamento pelos mesmos profissionais, sem rotatividade
             </li>
             <li class="diff-item reveal reveal-delay-3">
               <div class="diff-check"><svg viewBox="0 0 11 11" fill="none" stroke="white" stroke-width="2.2"><polyline points="1.5,5.5 4.5,8.5 9.5,2.5"/></svg></div>
@@ -742,12 +779,20 @@
             </li>
             <li class="diff-item reveal reveal-delay-4">
               <div class="diff-check"><svg viewBox="0 0 11 11" fill="none" stroke="white" stroke-width="2.2"><polyline points="1.5,5.5 4.5,8.5 9.5,2.5"/></svg></div>
-              Gyrotonic exclusivo — uma das poucas clínicas em BH
+              Gyrotonic exclusivo. Uma das poucas clínicas em BH
             </li>
           </ul>
         </div>
         <div class="solucao-foto reveal">
-          <img src="images/sala3.jpg" alt="Espaço INNOVA MOVIMENTO" loading="lazy">
+          <div class="solucao-foto-main">
+            <img src="images/atend1.jpg" alt="Atendimento INNOVA MOVIMENTO" loading="lazy">
+          </div>
+          <div class="solucao-foto-grid">
+            <div class="solucao-foto-grid-item"><img src="images/sala1.jpg" alt="Espaço INNOVA" loading="lazy"></div>
+            <div class="solucao-foto-grid-item"><img src="images/atend3.jpg" alt="Sessão INNOVA" loading="lazy"></div>
+            <div class="solucao-foto-grid-item"><img src="images/sala2.jpg" alt="Sala INNOVA" loading="lazy"></div>
+            <div class="solucao-foto-grid-item"><img src="images/atend4.jpg" alt="Tratamento INNOVA" loading="lazy"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -762,15 +807,15 @@
         <div class="servico-card reveal">
           <div class="servico-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 2a3 3 0 100 6 3 3 0 000-6z"/><path d="M15 16a3 3 0 100 6 3 3 0 000-6z"/><path d="M9 8l6 8"/></svg></div>
           <h3>Fisioterapia Ortopédica</h3>
-          <div class="servico-subtitle">Para quem quer resolver — não só suportar.</div>
+          <div class="servico-subtitle">Para quem quer resolver, não só suportar.</div>
           <p>Atendimento individual com avaliação clínica completa, diagnóstico funcional e plano específico. Indicado para dores musculares, articulares, pós-operatório, lesões esportivas e condições crônicas.</p>
           <div class="servico-para">Ideal para: dor lombar, cervical, ombro, joelho, hérnia de disco, pós-cirurgia</div>
         </div>
         <div class="servico-card reveal reveal-delay-1">
           <div class="servico-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="5" r="2"/><path d="M12 7v6M9 10l-3 4M15 10l3 4M9 20l3-4 3 4"/></svg></div>
           <h3>Pilates Clínico Trio</h3>
-          <div class="servico-subtitle">A atenção do individual. A dinâmica do grupo — sem a lotação.</div>
-          <p>Turmas de no máximo 3 pessoas conduzidas por fisioterapeuta. Cada exercício adaptado ao seu histórico, suas limitações e seus objetivos — não é Pilates convencional.</p>
+          <div class="servico-subtitle">A atenção do individual. A dinâmica do grupo, sem a lotação.</div>
+          <p>Turmas de no máximo 3 pessoas conduzidas por fisioterapeuta. Cada exercício adaptado ao seu histórico, suas limitações e seus objetivos. Não é Pilates convencional.</p>
           <div class="servico-para">Ideal para: reabilitação, prevenção, postura, mobilidade contínua</div>
         </div>
         <div class="servico-card destaque reveal reveal-delay-2">
@@ -795,7 +840,7 @@
         <div class="enc-card reveal">
           <div class="enc-icon">🦴</div>
           <h3>Médicos</h3>
-          <p>Especialistas que precisam de fisioterapia como extensão clínica — não como encaminhamento genérico. A Innova fecha o círculo do tratamento.</p>
+          <p>Especialistas que precisam de fisioterapia como extensão clínica, não como encaminhamento genérico. A Innova fecha o círculo do tratamento.</p>
           <div class="enc-tags">
             <span>Ortopedista</span>
             <span>Reumatologista</span>
@@ -858,16 +903,88 @@
       <h2 class="section-title reveal">Quem passou pela Innova<br>voltou. E indicou.</h2>
       <a href="https://g.page/r/CVSnev81Vm1UEBM/review" target="_blank" class="reviews-bar reveal">
         <div class="stars">★★★★★</div>
-        <div class="reviews-text"><strong>5.0</strong> no Google &mdash; avaliações verificadas<span class="reviews-cta">Deixar avaliação ↗</span></div>
+        <div class="reviews-text"><strong>5.0</strong> no Google, avaliações verificadas<span class="reviews-cta">Deixar avaliação ↗</span></div>
       </a>
-      <div class="depoimentos-grid">
-        <a href="https://g.page/r/CVSnev81Vm1UEBM/review" target="_blank" class="dep-card reveal"><img src="images/review-01.jpg" alt="Avaliação Rita Leal" loading="lazy"></a>
-        <a href="https://g.page/r/CVSnev81Vm1UEBM/review" target="_blank" class="dep-card reveal reveal-delay-1"><img src="images/review-02.jpg" alt="Avaliação Ana Moregula" loading="lazy"></a>
-        <a href="https://g.page/r/CVSnev81Vm1UEBM/review" target="_blank" class="dep-card reveal reveal-delay-2"><img src="images/review-03.jpg" alt="Avaliação Eliane Hermont Paes" loading="lazy"></a>
-        <a href="https://g.page/r/CVSnev81Vm1UEBM/review" target="_blank" class="dep-card reveal"><img src="images/review-04.jpg" alt="Avaliação Luiz Carlos Castro" loading="lazy"></a>
-        <a href="https://g.page/r/CVSnev81Vm1UEBM/review" target="_blank" class="dep-card reveal reveal-delay-1"><img src="images/review-05.jpg" alt="Avaliação André Teixeira" loading="lazy"></a>
-        <a href="https://g.page/r/CVSnev81Vm1UEBM/review" target="_blank" class="dep-card reveal reveal-delay-2"><img src="images/review-06.jpg" alt="Avaliação Ligia Horacio" loading="lazy"></a>
-        <a href="https://g.page/r/CVSnev81Vm1UEBM/review" target="_blank" class="dep-card reveal" style="grid-column: 1 / -1; max-width: 400px; margin: 0 auto;"><img src="images/review-07.jpg" alt="Avaliação Dario Pena" loading="lazy"></a>
+
+      <div class="reviews-carousel-wrap reveal">
+        <div class="reviews-carousel">
+          <!-- Set 1 -->
+          <div class="rev-card">
+            <div class="rev-stars">★★★★★</div>
+            <p class="rev-text">"Excelentes profissionais, todos muito cuidadosos. Ambiente muito agradável."</p>
+            <div class="rev-footer"><span class="rev-name">Rita Leal</span><span class="rev-time">8 meses atrás</span></div>
+          </div>
+          <div class="rev-card">
+            <div class="rev-stars">★★★★★</div>
+            <p class="rev-text">"Uma clínica muito especial, desde os fisioterapeutas até a secretária, passando pelos aparelhos e o mobiliário, realmente tudo é espetacular! A capacidade técnica de todos os profissionais está bem acima dos que já conheci. Carinho, dedicação e competência não faltam! Super indico!!"</p>
+            <div class="rev-footer"><span class="rev-name">Ana Moregula</span><span class="rev-time">9 meses atrás</span></div>
+          </div>
+          <div class="rev-card">
+            <div class="rev-stars">★★★★★</div>
+            <p class="rev-text">"Sou praticante de Pilates no Innova há três anos e, durante todo esse período, sempre encontrei uma equipe altamente qualificada, atenciosa e comprometida com a promoção da saúde e do bem-estar. Confio no trabalho realizado e recomendo!"</p>
+            <div class="rev-footer"><span class="rev-name">Eliane Hermont Paes</span><span class="rev-time">9 meses atrás</span></div>
+          </div>
+          <div class="rev-card">
+            <div class="rev-stars">★★★★★</div>
+            <p class="rev-text">"Acompanho minha mãe de 85 anos e ela está adorando e sente melhoras a cada sessão."</p>
+            <div class="rev-footer"><span class="rev-name">Luiz Carlos Castro</span><span class="rev-time">10 meses atrás</span></div>
+          </div>
+          <div class="rev-card">
+            <div class="rev-stars">★★★★★</div>
+            <p class="rev-text">"Eu me curei de uma hérnia cervical com indicação cirúrgica de dois médicos na Innova. Se você deseja Innovar sua saúde e bem estar, não existe lugar para estar, a não ser lar!"</p>
+            <div class="rev-footer"><span class="rev-name">André Teixeira</span><span class="rev-time">10 meses atrás</span></div>
+          </div>
+          <div class="rev-card">
+            <div class="rev-stars">★★★★★</div>
+            <p class="rev-text">"Há alguns anos estou na Innova e tenho conseguido excelentes resultados. Me livrei de uma cirurgia no joelho devido a artrose e que poderia me limitar muito. Muita gratidão a toda equipe pelo cuidado, atenção e carinho que recebemos."</p>
+            <div class="rev-footer"><span class="rev-name">Ligia Horacio</span><span class="rev-time">9 meses atrás</span></div>
+          </div>
+          <div class="rev-card">
+            <div class="rev-stars">★★★★★</div>
+            <p class="rev-text">"Boa localização, estrutura bem montada e profissionais competentes. Sentimos a melhora a cada sessão da fisioterapia, e a cada passo sentimos mais segurança no tratamento. Parabéns a Innova!"</p>
+            <div class="rev-footer"><span class="rev-name">Dario Pena</span><span class="rev-time">9 meses atrás</span></div>
+          </div>
+          <!-- Set 2 (duplicate for infinite loop) -->
+          <div class="rev-card">
+            <div class="rev-stars">★★★★★</div>
+            <p class="rev-text">"Excelentes profissionais, todos muito cuidadosos. Ambiente muito agradável."</p>
+            <div class="rev-footer"><span class="rev-name">Rita Leal</span><span class="rev-time">8 meses atrás</span></div>
+          </div>
+          <div class="rev-card">
+            <div class="rev-stars">★★★★★</div>
+            <p class="rev-text">"Uma clínica muito especial, desde os fisioterapeutas até a secretária, passando pelos aparelhos e o mobiliário, realmente tudo é espetacular! A capacidade técnica de todos os profissionais está bem acima dos que já conheci. Carinho, dedicação e competência não faltam! Super indico!!"</p>
+            <div class="rev-footer"><span class="rev-name">Ana Moregula</span><span class="rev-time">9 meses atrás</span></div>
+          </div>
+          <div class="rev-card">
+            <div class="rev-stars">★★★★★</div>
+            <p class="rev-text">"Sou praticante de Pilates no Innova há três anos e, durante todo esse período, sempre encontrei uma equipe altamente qualificada, atenciosa e comprometida com a promoção da saúde e do bem-estar. Confio no trabalho realizado e recomendo!"</p>
+            <div class="rev-footer"><span class="rev-name">Eliane Hermont Paes</span><span class="rev-time">9 meses atrás</span></div>
+          </div>
+          <div class="rev-card">
+            <div class="rev-stars">★★★★★</div>
+            <p class="rev-text">"Acompanho minha mãe de 85 anos e ela está adorando e sente melhoras a cada sessão."</p>
+            <div class="rev-footer"><span class="rev-name">Luiz Carlos Castro</span><span class="rev-time">10 meses atrás</span></div>
+          </div>
+          <div class="rev-card">
+            <div class="rev-stars">★★★★★</div>
+            <p class="rev-text">"Eu me curei de uma hérnia cervical com indicação cirúrgica de dois médicos na Innova. Se você deseja Innovar sua saúde e bem estar, não existe lugar para estar, a não ser lar!"</p>
+            <div class="rev-footer"><span class="rev-name">André Teixeira</span><span class="rev-time">10 meses atrás</span></div>
+          </div>
+          <div class="rev-card">
+            <div class="rev-stars">★★★★★</div>
+            <p class="rev-text">"Há alguns anos estou na Innova e tenho conseguido excelentes resultados. Me livrei de uma cirurgia no joelho devido a artrose e que poderia me limitar muito. Muita gratidão a toda equipe pelo cuidado, atenção e carinho que recebemos."</p>
+            <div class="rev-footer"><span class="rev-name">Ligia Horacio</span><span class="rev-time">9 meses atrás</span></div>
+          </div>
+          <div class="rev-card">
+            <div class="rev-stars">★★★★★</div>
+            <p class="rev-text">"Boa localização, estrutura bem montada e profissionais competentes. Sentimos a melhora a cada sessão da fisioterapia, e a cada passo sentimos mais segurança no tratamento. Parabéns a Innova!"</p>
+            <div class="rev-footer"><span class="rev-name">Dario Pena</span><span class="rev-time">9 meses atrás</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reviews-link reveal">
+        <a href="https://g.page/r/CVSnev81Vm1UEBM/review" target="_blank">Ver todas as avaliações no Google ↗</a>
       </div>
     </div>
   </section>
@@ -877,13 +994,13 @@
     <div class="container">
       <div class="section-label reveal">A equipe</div>
       <h2 class="section-title reveal">Formados nos melhores espaços do esporte.<br>Agora focados 100% em você.</h2>
-      <p class="section-sub reveal">Os 4 sócios vieram do Minas Tênis Clube — referência nacional em fisioterapia esportiva. Essa bagagem é o padrão de cada atendimento na INNOVA.</p>
+      <p class="section-sub reveal">Os 4 sócios vieram do Minas Tênis Clube, referência nacional em fisioterapia esportiva. Essa bagagem é o padrão de cada atendimento na INNOVA.</p>
 
       <!-- Quem atende -->
       <div class="equipe-sub-titulo reveal">✦ Quem atende na clínica</div>
       <div class="equipe-grid equipe-grid-2">
         <div class="equipe-card reveal">
-          <div class="equipe-foto"><img src="images/luciana-signorini.jpg" alt="Luciana Signorini" loading="lazy"></div>
+          <div class="equipe-foto"><img src="images/luciana-signorini-oficial.jpg" alt="Luciana Signorini" loading="lazy"></div>
           <div class="equipe-info">
             <div class="equipe-badge atende">Atende na clínica</div>
             <h3>Luciana Signorini</h3>
@@ -904,10 +1021,10 @@
 
       <!-- Expertise que capacita a equipe -->
       <div class="equipe-sub-titulo sec reveal">✦ A expertise que capacita toda a equipe</div>
-      <p class="equipe-sub-desc reveal">Cristiane e Mariana não atendem diretamente na clínica — mas é a experiência delas que eleva o nível de todos os atendimentos. Por meio de treinamentos e capacitação contínua, o conhecimento que acumularam nos maiores espaços do esporte brasileiro está presente em cada sessão da INNOVA.</p>
+      <p class="equipe-sub-desc reveal">Cristiane e Mariana não atendem diretamente na clínica, mas é a experiência delas que eleva o nível de todos os atendimentos. Por meio de treinamentos e capacitação contínua, o conhecimento que acumularam nos maiores espaços do esporte brasileiro está presente em cada sessão da INNOVA.</p>
       <div class="equipe-grid equipe-grid-2">
         <div class="equipe-card equipe-card-ref reveal">
-          <div class="equipe-foto"><img src="images/cristiane-vasconcelos.jpg" alt="Cristiane Vasconcelos" loading="lazy"></div>
+          <div class="equipe-foto"><img src="images/cristiane-vasconcelos-oficial.jpg" alt="Cristiane Vasconcelos" loading="lazy"></div>
           <div class="equipe-info">
             <div class="equipe-badge ref">Referência técnica</div>
             <h3>Cristiane Vasconcelos</h3>
@@ -916,12 +1033,12 @@
           </div>
         </div>
         <div class="equipe-card equipe-card-ref reveal reveal-delay-1">
-          <div class="equipe-foto"><img src="images/mariana-weschenfelder.jpg" alt="Mariana Weschenfelder" loading="lazy"></div>
+          <div class="equipe-foto"><img src="images/mariana-weschenfelder-oficial.jpg" alt="Mariana Weschenfelder" loading="lazy">
           <div class="equipe-info">
             <div class="equipe-badge ref">Referência técnica</div>
             <h3>Mariana Weschenfelder</h3>
             <div class="equipe-esp">Mestre em Reabilitação · Especialista SONAFE · Bahia FC Série A</div>
-            <p>Mais de 15 anos no esporte de alto rendimento — Seleção Brasileira de Ginástica Artística e Minas Tênis Clube. Atualmente fisioterapeuta da equipe profissional masculina do Bahia FC.</p>
+            <p>Mais de 15 anos no esporte de alto rendimento: Seleção Brasileira de Ginástica Artística e Minas Tênis Clube. Atualmente fisioterapeuta da equipe profissional masculina do Bahia FC.</p>
           </div>
         </div>
       </div>
@@ -939,19 +1056,19 @@
         <div class="etapa reveal">
           <span class="etapa-num-big">01</span>
           <h3>Avaliação Completa</h3>
-          <p>Uma conversa clínica completa — sem pressa e sem compromisso. Entendemos o que você sente, o que já fez, o que funcionou e o que não funcionou. Explicamos com honestidade o que é possível.</p>
+          <p>Uma conversa clínica completa, sem pressa e sem compromisso. Entendemos o que você sente, o que já fez, o que funcionou e o que não funcionou. Explicamos com honestidade o que é possível.</p>
           <div class="etapa-detalhe">Gratuita e sem compromisso</div>
         </div>
         <div class="etapa reveal reveal-delay-1">
           <span class="etapa-num-big">02</span>
           <h3>Plano Individual</h3>
-          <p>Com base na avaliação, montamos um plano de tratamento feito para o seu caso — método definido, frequência adequada e metas reais. Nada de protocolo genérico.</p>
+          <p>Com base na avaliação, montamos um plano de tratamento feito para o seu caso: método definido, frequência adequada e metas reais. Nada de protocolo genérico.</p>
           <div class="etapa-detalhe">Feito para você</div>
         </div>
         <div class="etapa reveal reveal-delay-2">
           <span class="etapa-num-big">03</span>
           <h3>Tratamento e Evolução</h3>
-          <p>Você começa acompanhado pelos mesmos profissionais do início ao fim. Ajustamos o plano conforme você evolui — e te mantemos informado a cada etapa.</p>
+          <p>Você começa acompanhado pelos mesmos profissionais do início ao fim. Ajustamos o plano conforme você evolui. Te mantemos informado a cada etapa.</p>
           <div class="etapa-detalhe">Acompanhamento real</div>
         </div>
       </div>
@@ -971,27 +1088,27 @@
       <div class="faq-grid">
         <div class="faq-item reveal">
           <div class="faq-q" onclick="toggleFaq(this)">A avaliação é realmente gratuita?<div class="faq-icon">+</div></div>
-          <div class="faq-a"><div class="faq-a-inner">Sim, sem custo e sem pegadinha. A avaliação inclui anamnese completa, avaliação postural e funcional — e pode durar mais de uma hora, dependendo do caso. Não existe venda de pacote durante a avaliação. Você sai com informação real, independente de qualquer decisão.</div></div>
+          <div class="faq-a"><div class="faq-a-inner">Sim, sem custo e sem pegadinha. A avaliação inclui anamnese completa, avaliação postural e funcional, e pode durar mais de uma hora, dependendo do caso. Não existe venda de pacote durante a avaliação. Você sai com informação real, independente de qualquer decisão.</div></div>
         </div>
         <div class="faq-item reveal reveal-delay-1">
           <div class="faq-q" onclick="toggleFaq(this)">Vocês atendem por convênio?<div class="faq-icon">+</div></div>
-          <div class="faq-a"><div class="faq-a-inner">Não. A INNOVA é particular. Essa escolha foi intencional. O plano de saúde padrão exige de 4 a 5 sessões por semana com tempo limitado por sessão — é volume, não resultado. Na INNOVA, o tratamento segue a frequência certa para o seu caso, com toda a atenção necessária. Para entregar esse nível, precisamos dessa liberdade. Mas atendemos alguns convênios específicos — consulte a seção de Convênios e Parcerias.</div></div>
+          <div class="faq-a"><div class="faq-a-inner">Não. A INNOVA é particular. Essa escolha foi intencional. O plano de saúde padrão exige de 4 a 5 sessões por semana com tempo limitado por sessão. É volume, não resultado. Na INNOVA, o tratamento segue a frequência certa para o seu caso, com toda a atenção necessária. Para entregar esse nível, precisamos dessa liberdade. Mas atendemos alguns convênios específicos. Consulte a seção de Convênios e Parcerias.</div></div>
         </div>
         <div class="faq-item reveal">
           <div class="faq-q" onclick="toggleFaq(this)">Por que vale a pena o investimento?<div class="faq-icon">+</div></div>
-          <div class="faq-a"><div class="faq-a-inner">Quando você compara com o custo acumulado de tratamentos que não resolvem — em tempo, dinheiro e qualidade de vida perdida — a diferença fica clara. Mais de 1.000 clientes e 60 avaliações 5.0★ no Google são o melhor argumento. Para entender os valores, agende a avaliação gratuita.</div></div>
+          <div class="faq-a"><div class="faq-a-inner">Quando você compara com o custo acumulado de tratamentos que não resolvem, em tempo, dinheiro e qualidade de vida perdida , a diferença fica clara. Mais de 1.000 clientes e 60 avaliações 5.0★ no Google são o melhor argumento. Para entender os valores, agende a avaliação gratuita.</div></div>
         </div>
         <div class="faq-item reveal reveal-delay-1">
           <div class="faq-q" onclick="toggleFaq(this)">Onde fica? Tem estacionamento?<div class="faq-icon">+</div></div>
-          <div class="faq-a"><div class="faq-a-inner">Rua Araguari, 1750 — Sala 800, Santo Agostinho, Belo Horizonte. Vizinho à Justiça Federal — região central da Zona Sul, fácil acesso pela Av. do Contorno. Há estacionamentos próximos; nossa equipe indica no agendamento.</div></div>
+          <div class="faq-a"><div class="faq-a-inner">Rua Araguari, 1750, Sala 800, Santo Agostinho, Belo Horizonte. Vizinho à Justiça Federal, região central da Zona Sul, fácil acesso pela Av. do Contorno. Há estacionamentos próximos; nossa equipe indica no agendamento.</div></div>
         </div>
         <div class="faq-item reveal">
           <div class="faq-q" onclick="toggleFaq(this)">Atendem idosos ou casos delicados?<div class="faq-icon">+</div></div>
-          <div class="faq-a"><div class="faq-a-inner">Sim, com muita atenção. Trabalhamos com pacientes de todas as idades — quedas, perda de mobilidade, pós-operatório, condições crônicas. O plano é sempre adaptado para a realidade de cada paciente. Se quiser trazer um familiar, venha junto na avaliação.</div></div>
+          <div class="faq-a"><div class="faq-a-inner">Sim, com muita atenção. Trabalhamos com pacientes de todas as idades: quedas, perda de mobilidade, pós-operatório, condições crônicas. O plano é sempre adaptado para a realidade de cada paciente. Se quiser trazer um familiar, venha junto na avaliação.</div></div>
         </div>
         <div class="faq-item reveal reveal-delay-1">
           <div class="faq-q" onclick="toggleFaq(this)">Preciso de encaminhamento médico?<div class="faq-icon">+</div></div>
-          <div class="faq-a"><div class="faq-a-inner">Não. Você agenda diretamente, sem encaminhamento ou laudo prévio. Se tiver exames ou laudos, traga — ajudam muito. Mas não são obrigatórios para começar.</div></div>
+          <div class="faq-a"><div class="faq-a-inner">Não. Você agenda diretamente, sem encaminhamento ou laudo prévio. Se tiver exames ou laudos, traga. Ajudam muito. Mas não são obrigatórios para começar.</div></div>
         </div>
       </div>
     </div>
@@ -1002,7 +1119,7 @@
     <div class="container">
       <div class="section-label reveal">Convenios e Parcerias</div>
       <h2 class="section-title reveal">Atendemos alguns convenios<br>e temos parcerias especiais.</h2>
-      <p class="section-sub reveal">Consulte as condicoes especificas de cada modalidade — alguns exigem pedido medico, outros nao.</p>
+      <p class="section-sub reveal">Consulte as condicoes especificas de cada modalidade , alguns exigem pedido médico, outros não.</p>
       <div class="conv-grid">
         <div class="conv-card reveal">
           <div class="conv-card-header">
@@ -1047,7 +1164,7 @@
         <div class="conv-card reveal reveal-delay-2" style="justify-content:center;align-items:center;text-align:center;background:var(--grad);border:none;">
           <div style="font-size:36px;margin-bottom:12px;">&#128222;</div>
           <h3 style="color:var(--branco);font-size:17px;">Tem duvida sobre seu plano?</h3>
-          <p style="color:rgba(255,255,255,0.8);font-size:14px;margin-top:8px;">Fale pelo WhatsApp antes de vir — confirmamos se seu beneficio se aplica.</p>
+          <p style="color:rgba(255,255,255,0.8);font-size:14px;margin-top:8px;">Fale pelo WhatsApp antes de vir. Confirmamos se seu benefício se aplica.</p>
           <a href="https://wa.me/5531XXXXXXXX?text=Ol%C3%A1!%20Gostaria%20de%20saber%20se%20meu%20plano%20%C3%A9%20aceito%20na%20Innova." target="_blank" style="margin-top:16px;display:inline-block;background:var(--branco);color:var(--roxo-deep);font-family:var(--font-display);font-weight:700;font-size:13px;padding:10px 20px;border-radius:50px;text-decoration:none;">Verificar meu plano</a>
         </div>
       </div>
@@ -1073,7 +1190,7 @@
             <div class="loc-item-text">
               <div class="loc-item-label">Endereco</div>
               <div class="loc-item-value">
-                Rua Araguari, 1750 &mdash; Sala 800<br>
+                Rua Araguari, 1750, Sala 800<br>
                 Santo Agostinho &middot; Belo Horizonte &middot; MG
               </div>
             </div>
@@ -1091,11 +1208,11 @@
             <div class="loc-item-icon">&#128663;</div>
             <div class="loc-item-text">
               <div class="loc-item-label">Estacionamento</div>
-              <div class="loc-item-value">Opcoes de estacionamento proximas &mdash; nossa equipe indica no agendamento.</div>
+              <div class="loc-item-value">Opções de estacionamento próximas. Nossa equipe indica no agendamento.</div>
             </div>
           </div>
           <div class="loc-ref reveal reveal-delay-3">
-            <p>&#128204; <strong>Ponto de referencia:</strong> o edificio fica vizinho a Justica Federal de Belo Horizonte, no bairro Santo Agostinho &mdash; facil acesso pela Avenida do Contorno e regiao central da Zona Sul.</p>
+            <p>&#128204; <strong>Ponto de referencia:</strong> o edificio fica vizinho a Justica Federal de Belo Horizonte, no bairro Santo Agostinho. Fácil acesso pela Avenida do Contorno e regiao central da Zona Sul.</p>
           </div>
         </div>
       </div>
@@ -1107,7 +1224,7 @@
     <div class="cta-final-content">
       <div class="section-label reveal" style="justify-content:center; color:rgba(255,255,255,0.7); margin-bottom:20px;">Próximo passo</div>
       <h2 class="reveal">Você já esperou tempo suficiente.</h2>
-      <p class="reveal">Se você leu até aqui, provavelmente está cansado de conviver com uma dor que não passa. A INNOVA existe para mudar isso. Não prometemos milagre — prometemos atenção real, diagnóstico honesto e tratamento feito para você.</p>
+      <p class="reveal">Se você leu até aqui, provavelmente está cansado de conviver com uma dor que não passa. A INNOVA existe para mudar isso. Não prometemos milagre. Prometemos atenção real, diagnóstico honesto e tratamento feito para você.</p>
       <div class="cta-group reveal">
         <a href="https://wa.me/5531XXXXXXXX?text=Olá!%20Gostaria%20de%20agendar%20minha%20avaliação%20gratuita." class="btn-white" target="_blank">
           Agendar Avaliação Gratuita
@@ -1128,8 +1245,8 @@
           <img src="images/logo.png" alt="INNOVA MOVIMENTO">
         </div>
         <div class="footer-info">
-          Rua Araguari, 1750 — Sl 800 · Santo Agostinho · BH<br>
-          © 2026 INNOVA MOVIMENTO — Todos os direitos reservados
+          Rua Araguari, 1750, Sl 800 · Santo Agostinho · BH<br>
+          © 2026 INNOVA MOVIMENTO. Todos os direitos reservados
         </div>
         <div class="footer-contact">
           Fisioterapia Premium em BH<br>
