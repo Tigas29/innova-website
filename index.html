@@ -441,6 +441,84 @@
     .footer-contact { font-family: var(--font-display); font-size: 13px; color: var(--cinza-medio); text-align: right; }
     .footer-contact a { color: var(--turquesa); text-decoration: none; }
 
+
+    /* CONVÊNIOS E PARCERIAS */
+    .section-convenios { background: var(--branco); }
+    .conv-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
+    .conv-card {
+      background: var(--creme); border-radius: 16px; padding: 26px 24px;
+      border: 1px solid var(--cinza-quente); transition: var(--transition);
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .conv-card:hover { border-color: var(--turquesa-light); box-shadow: 0 8px 24px rgba(93,191,176,0.1); }
+    .conv-card-header { display: flex; align-items: center; gap: 12px; }
+    .conv-icon {
+      width: 42px; height: 42px; border-radius: 10px; min-width: 42px;
+      background: var(--grad); display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+    }
+    .conv-card h3 {
+      font-family: var(--font-display); font-size: 16px; font-weight: 700;
+      color: var(--quase-preto); line-height: 1.2;
+    }
+    .conv-card p { font-size: 14px; color: var(--cinza-medio); line-height: 1.65; }
+    .conv-tag {
+      display: inline-block; width: fit-content;
+      font-family: var(--font-display); font-size: 11px; font-weight: 600;
+      padding: 4px 10px; border-radius: 50px;
+    }
+    .conv-tag.verde { background: #E8F8EC; color: #2E7D47; border: 1px solid #A8D9B5; }
+    .conv-tag.roxo { background: var(--roxo-pale); color: var(--roxo); border: 1px solid var(--roxo-soft); }
+    .conv-tag.turquesa { background: var(--turquesa-pale); color: #2E897A; border: 1px solid var(--turquesa-light); }
+
+    /* LOCALIZAÇÃO */
+    .section-localizacao { background: var(--roxo-pale); }
+    .loc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; margin-top: 48px; }
+    .loc-mapa {
+      border-radius: 20px; overflow: hidden;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.12); border: 1px solid var(--roxo-soft);
+    }
+    .loc-mapa iframe { display: block; width: 100%; height: 360px; border: none; }
+    .loc-infos { display: flex; flex-direction: column; gap: 20px; }
+    .loc-item {
+      display: flex; gap: 16px; align-items: flex-start;
+      background: var(--branco); border-radius: 14px; padding: 18px 20px;
+      border: 1px solid var(--roxo-soft);
+    }
+    .loc-item-icon {
+      width: 40px; height: 40px; min-width: 40px; border-radius: 10px;
+      background: var(--grad); display: flex; align-items: center;
+      justify-content: center; font-size: 18px;
+    }
+    .loc-item-text { display: flex; flex-direction: column; gap: 3px; }
+    .loc-item-label {
+      font-family: var(--font-display); font-size: 11px; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase; color: var(--cinza-medio);
+    }
+    .loc-item-value {
+      font-family: var(--font-display); font-size: 15px; font-weight: 600;
+      color: var(--quase-preto); line-height: 1.4;
+    }
+    .loc-item-value a { color: var(--turquesa); text-decoration: none; }
+    .loc-item-value a:hover { text-decoration: underline; }
+    .loc-ref {
+      background: linear-gradient(135deg, var(--turquesa-pale), var(--roxo-pale));
+      border: 1px solid var(--turquesa-light); border-radius: 14px; padding: 18px 20px;
+    }
+    .loc-ref p { font-size: 14px; color: var(--cinza-escuro); line-height: 1.65; }
+    .loc-ref p strong { color: var(--quase-preto); }
+
+    /* BUG FIX mobile */
+    @media (max-width: 900px) {
+      .conv-grid { grid-template-columns: 1fr; }
+      .loc-grid { grid-template-columns: 1fr; gap: 32px; }
+    }
+    @media (max-width: 600px) {
+      body { overflow-x: hidden; }
+      .section-cta-final { padding: 80px 24px; }
+      .cta-final-content { padding: 0; }
+    }
+
     /* WHATSAPP FLOAT */
     .wa-float {
       position: fixed; bottom: 28px; right: 28px; z-index: 200;
@@ -893,7 +971,7 @@
         </div>
         <div class="faq-item reveal reveal-delay-1">
           <div class="faq-q" onclick="toggleFaq(this)">Onde fica? Tem estacionamento?<div class="faq-icon">+</div></div>
-          <div class="faq-a"><div class="faq-a-inner">A INNOVA fica no bairro Santo Agostinho, em Belo Horizonte — região central da Zona Sul, fácil acesso. Há opções de estacionamento próximas, e nossa equipe passa as indicações no momento do agendamento.</div></div>
+          <div class="faq-a"><div class="faq-a-inner">Rua Araguari, 1750 — Sala 800, Santo Agostinho, Belo Horizonte. Vizinho à Justiça Federal — região central da Zona Sul, fácil acesso pela Av. do Contorno. Há estacionamentos próximos; nossa equipe indica no agendamento.</div></div>
         </div>
         <div class="faq-item reveal">
           <div class="faq-q" onclick="toggleFaq(this)">Atendem idosos ou casos delicados?<div class="faq-icon">+</div></div>
@@ -902,6 +980,111 @@
         <div class="faq-item reveal reveal-delay-1">
           <div class="faq-q" onclick="toggleFaq(this)">Preciso de encaminhamento médico?<div class="faq-icon">+</div></div>
           <div class="faq-a"><div class="faq-a-inner">Não. Você agenda diretamente, sem encaminhamento ou laudo prévio. Se tiver exames ou laudos, traga — ajudam muito. Mas não são obrigatórios para começar.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONVENIOS E PARCERIAS -->
+  <section class="section-convenios">
+    <div class="container">
+      <div class="section-label reveal">Convenios e Parcerias</div>
+      <h2 class="section-title reveal">Atendemos alguns convenios<br>e temos parcerias especiais.</h2>
+      <p class="section-sub reveal">Consulte as condicoes especificas de cada modalidade — alguns exigem pedido medico, outros nao.</p>
+      <div class="conv-grid">
+        <div class="conv-card reveal">
+          <div class="conv-card-header">
+            <div class="conv-icon">&#128170;</div>
+            <h3>Wellhub (Gympass)</h3>
+          </div>
+          <span class="conv-tag verde">Sem pedido medico</span>
+          <p>Aceito para Pilates em grupo no plano Diamond Plus. Confirme se seu beneficio cobre essa modalidade antes de agendar.</p>
+        </div>
+        <div class="conv-card reveal reveal-delay-1">
+          <div class="conv-card-header">
+            <div class="conv-icon">&#9878;&#65039;</div>
+            <h3>Pro-Social / Justica Federal</h3>
+          </div>
+          <span class="conv-tag roxo">Exige pedido medico</span>
+          <p>Atendemos servidores da Justica Federal e beneficiarios do Pro-Social. Necessario apresentar pedido medico para iniciar o atendimento.</p>
+        </div>
+        <div class="conv-card reveal reveal-delay-2">
+          <div class="conv-card-header">
+            <div class="conv-icon">&#127963;&#65039;</div>
+            <h3>TRT Saude</h3>
+          </div>
+          <span class="conv-tag verde">Sem pedido medico</span>
+          <p>Atendemos beneficiarios do TRT Saude sem necessidade de encaminhamento medico previo. Agende diretamente.</p>
+        </div>
+        <div class="conv-card reveal">
+          <div class="conv-card-header">
+            <div class="conv-icon">&#129309;</div>
+            <h3>ASLEMG</h3>
+          </div>
+          <span class="conv-tag turquesa">Desconto + reembolso</span>
+          <p>Associados da ASLEMG tem desconto no atendimento e podem solicitar reembolso parcial pelo plano. Traga sua carteira de associado.</p>
+        </div>
+        <div class="conv-card reveal reveal-delay-1">
+          <div class="conv-card-header">
+            <div class="conv-icon">&#127885;</div>
+            <h3>Parcerias Esportivas</h3>
+          </div>
+          <span class="conv-tag roxo">10% de desconto</span>
+          <p>Parceiros esportivos da Innova tem 10% de desconto no atendimento via indicacao direta. Fale com seu treinador ou clube para confirmar a parceria.</p>
+        </div>
+        <div class="conv-card reveal reveal-delay-2" style="justify-content:center;align-items:center;text-align:center;background:var(--grad);border:none;">
+          <div style="font-size:36px;margin-bottom:12px;">&#128222;</div>
+          <h3 style="color:var(--branco);font-size:17px;">Tem duvida sobre seu plano?</h3>
+          <p style="color:rgba(255,255,255,0.8);font-size:14px;margin-top:8px;">Fale pelo WhatsApp antes de vir — confirmamos se seu beneficio se aplica.</p>
+          <a href="https://wa.me/5531XXXXXXXX?text=Ol%C3%A1!%20Gostaria%20de%20saber%20se%20meu%20plano%20%C3%A9%20aceito%20na%20Innova." target="_blank" style="margin-top:16px;display:inline-block;background:var(--branco);color:var(--roxo-deep);font-family:var(--font-display);font-weight:700;font-size:13px;padding:10px 20px;border-radius:50px;text-decoration:none;">Verificar meu plano</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCALIZACAO -->
+  <section class="section-localizacao">
+    <div class="container">
+      <div class="section-label reveal">Como chegar</div>
+      <h2 class="section-title reveal">Santo Agostinho, coracao<br>da Zona Sul de BH.</h2>
+      <div class="loc-grid">
+        <div class="loc-mapa reveal">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d937.1487099937083!2d-43.93535629999999!3d-19.938543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa696f2b68bd399%3A0xa0c1cedc6614bbf8!2sR.%20Araguari%2C%201750%20-%20Santo%20Agostinho%2C%20Belo%20Horizonte%20-%20MG%2C%2030190-110!5e0!3m2!1spt-BR!2sbr!4v1712436000000!5m2!1spt-BR!2sbr"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            title="Localizacao INNOVA MOVIMENTO">
+          </iframe>
+        </div>
+        <div class="loc-infos">
+          <div class="loc-item reveal">
+            <div class="loc-item-icon">&#128205;</div>
+            <div class="loc-item-text">
+              <div class="loc-item-label">Endereco</div>
+              <div class="loc-item-value">
+                Rua Araguari, 1750 &mdash; Sala 800<br>
+                Santo Agostinho &middot; Belo Horizonte &middot; MG
+              </div>
+            </div>
+          </div>
+          <div class="loc-item reveal reveal-delay-1">
+            <div class="loc-item-icon">&#128506;&#65039;</div>
+            <div class="loc-item-text">
+              <div class="loc-item-label">Como chegar</div>
+              <div class="loc-item-value">
+                <a href="https://maps.google.com/?q=Rua+Araguari,+1750,+Santo+Agostinho,+Belo+Horizonte" target="_blank">Abrir no Google Maps &#8599;</a>
+              </div>
+            </div>
+          </div>
+          <div class="loc-item reveal reveal-delay-2">
+            <div class="loc-item-icon">&#128663;</div>
+            <div class="loc-item-text">
+              <div class="loc-item-label">Estacionamento</div>
+              <div class="loc-item-value">Opcoes de estacionamento proximas &mdash; nossa equipe indica no agendamento.</div>
+            </div>
+          </div>
+          <div class="loc-ref reveal reveal-delay-3">
+            <p>&#128204; <strong>Ponto de referencia:</strong> o edificio fica vizinho a Justica Federal de Belo Horizonte, no bairro Santo Agostinho &mdash; facil acesso pela Avenida do Contorno e regiao central da Zona Sul.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -933,7 +1116,7 @@
           <img src="images/logo.png" alt="INNOVA MOVIMENTO">
         </div>
         <div class="footer-info">
-          Santo Agostinho · Belo Horizonte · MG<br>
+          Rua Araguari, 1750 — Sl 800 · Santo Agostinho · BH<br>
           © 2026 INNOVA MOVIMENTO — Todos os direitos reservados
         </div>
         <div class="footer-contact">
