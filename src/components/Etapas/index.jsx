@@ -134,7 +134,7 @@ export default function Etapas() {
             <EtapaNum>01</EtapaNum>
             <EtapaH3>Avaliação Completa</EtapaH3>
             <EtapaP>Uma conversa clínica completa, sem pressa e sem compromisso. Entendemos o que você sente, o que já fez, o que funcionou e o que não funcionou. Explicamos com honestidade o que é possível.</EtapaP>
-            <EtapaDetalhe>Gratuita e sem compromisso</EtapaDetalhe>
+            <EtapaDetalhe>Sem compromisso</EtapaDetalhe>
           </Etapa>
           <Etapa className="reveal reveal-delay-1">
             <EtapaNum>02</EtapaNum>
@@ -151,10 +151,10 @@ export default function Etapas() {
         </EtapasGrid>
         <CtaWrap className="reveal">
           <BtnPrimary
-            href="https://wa.me/5531XXXXXXXX?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20minha%20avalia%C3%A7%C3%A3o%20gratuita."
+            href="https://wa.me/5531XXXXXXXX?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20minha%20avalia%C3%A7%C3%A3o."
             target="_blank"
           >
-            Agendar Avaliação Gratuita
+            Agendar Avaliação
           </BtnPrimary>
         </CtaWrap>
       </Container>

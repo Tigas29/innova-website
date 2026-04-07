@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import styled from 'styled-components';
-import { Container, SectionLabel, SectionTitle } from '../../styles/shared';
+import { useState } from "react";
+import styled from "styled-components";
+import { Container, SectionLabel, SectionTitle } from "../../styles/shared";
 
 const Section = styled.section`
   background: var(--creme);
@@ -83,28 +83,28 @@ const AnswerInner = styled.div`
 
 const faqs = [
   {
-    q: 'A avaliação é realmente gratuita?',
-    a: 'Sim, sem custo e sem pegadinha. A avaliação inclui anamnese completa, avaliação postural e funcional, e pode durar mais de uma hora, dependendo do caso. Não existe venda de pacote durante a avaliação. Você sai com informação real, independente de qualquer decisão.',
+    q: "Em quanto tempo vou sentir resultado?",
+    a: "A maioria dos pacientes relata melhora entre a terceira e a quarta sessão. Resultados consistentes, como redução significativa da dor e ganho de mobilidade, costumam aparecer entre o primeiro e o terceiro mês, dependendo da condição.",
   },
   {
-    q: 'Vocês atendem por convênio?',
-    a: 'Não. A INNOVA é particular. Essa escolha foi intencional. O plano de saúde padrão exige de 4 a 5 sessões por semana com tempo limitado por sessão. É volume, não resultado. Na INNOVA, o tratamento segue a frequência certa para o seu caso, com toda a atenção necessária. Para entregar esse nível, precisamos dessa liberdade. Mas atendemos alguns convênios específicos. Consulte a seção de Convênios e Parcerias.',
+    q: "Como funciona a avaliação?",
+    a: "Você agenda pelo WhatsApp ou formulário. Um fisioterapeuta avalia sua postura, mobilidade, histórico e objetivos em aproximadamente 40 minutos. O valor da avaliação pode variar conforme o serviço, entre em contato para saber as condições do seu caso. No final, você recebe uma recomendação personalizada, sem compromisso de continuidade.",
   },
   {
-    q: 'Por que vale a pena o investimento?',
-    a: 'Quando você compara com o custo acumulado de tratamentos que não resolvem, em tempo, dinheiro e qualidade de vida perdida , a diferença fica clara. Mais de 1.000 clientes e 60 avaliações 5.0★ no Google são o melhor argumento. Para entender os valores, agende a avaliação gratuita.',
+    q: "Vocês atendem por convênio ou Wellhub?",
+    a: "Sim. Aceitamos alguns convênios e também somos parceiros do Wellhub (antigo Gympass). Para a maioria dos serviços, o atendimento é particular, o que garante sessões mais longas, sem limite de quantidade e com atenção individualizada. Entre em contato para verificar se o seu convênio é aceito.",
   },
   {
-    q: 'Onde fica? Tem estacionamento?',
-    a: 'Rua Araguari, 1750, Sala 800, Santo Agostinho, Belo Horizonte. Vizinho à Justiça Federal, região central da Zona Sul, fácil acesso pela Av. do Contorno. Há estacionamentos próximos; nossa equipe indica no agendamento.',
+    q: "Preciso de encaminhamento médico?",
+    a: "Depende do procedimento. Para alguns serviços, como fisioterapia convencional, o encaminhamento médico é necessário. Para Pilates Clínico e outros serviços, você agenda diretamente. Se tiver exames ou laudos, traga, eles ajudam no planejamento. Na dúvida, nossa equipe orienta você no momento do agendamento.",
   },
   {
-    q: 'Atendem idosos ou casos delicados?',
-    a: 'Sim, com muita atenção. Trabalhamos com pacientes de todas as idades: quedas, perda de mobilidade, pós-operatório, condições crônicas. O plano é sempre adaptado para a realidade de cada paciente. Se quiser trazer um familiar, venha junto na avaliação.',
+    q: "Qual a diferença para um estúdio de pilates convencional?",
+    a: "Aqui, quem conduz as sessões são fisioterapeutas, não instrutores. O plano é baseado em avaliação clínica, não em sequência padrão. É atendimento individual ou em trio, nunca grupo grande. E os sócios são professores de pós-graduação na área.",
   },
   {
-    q: 'Preciso de encaminhamento médico?',
-    a: 'Não. Você agenda diretamente, sem encaminhamento ou laudo prévio. Se tiver exames ou laudos, traga. Ajudam muito. Mas não são obrigatórios para começar.',
+    q: "Quais serviços vocês oferecem além do Pilates?",
+    a: "Além do Pilates Clínico, trabalhamos com Fisioterapia especializada, Gyrotonic, RPG e reabilitação pós-operatória. Cada serviço é conduzido por fisioterapeutas especializados, com plano personalizado para a sua necessidade.",
   },
 ];
 
@@ -120,13 +120,15 @@ export default function FAQ() {
       <Container>
         <SectionLabel className="reveal">Dúvidas comuns</SectionLabel>
         <SectionTitle className="reveal">
-          Perguntas diretas.<br />Respostas honestas.
+          Perguntas diretas.
+          <br />
+          Respostas honestas.
         </SectionTitle>
         <Grid>
           {faqs.map((faq, i) => (
             <Item
               key={i}
-              className={`${openIndex === i ? 'open' : ''} reveal${i % 2 !== 0 ? ' reveal-delay-1' : ''}`}
+              className={`${openIndex === i ? "open" : ""} reveal${i % 2 !== 0 ? " reveal-delay-1" : ""}`}
             >
               <Question onClick={() => toggle(i)}>
                 {faq.q}

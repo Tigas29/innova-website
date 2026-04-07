@@ -149,10 +149,10 @@ export default function CTAFinal() {
         </P>
         <CtaGroup className="reveal">
           <BtnWhite
-            href="https://wa.me/5531XXXXXXXX?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20minha%20avalia%C3%A7%C3%A3o%20gratuita."
+            href="https://wa.me/5531XXXXXXXX?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20minha%20avalia%C3%A7%C3%A3o."
             target="_blank"
           >
-            Agendar Avaliação Gratuita
+            Agendar Avaliação
           </BtnWhite>
           <BtnOutline
             href="https://wa.me/5531XXXXXXXX?text=Tenho%20interesse%20no%20Gyrotonic.%20Podem%20me%20passar%20mais%20informa%C3%A7%C3%B5es?"
@@ -161,7 +161,7 @@ export default function CTAFinal() {
             Conhecer o Gyrotonic
           </BtnOutline>
         </CtaGroup>
-        <Note className="reveal">Sem custo. Sem compromisso. Avaliação completa e gratuita.</Note>
+        <Note className="reveal">Sem compromisso. Avaliação completa e personalizada.</Note>
       </Content>
     </Section>
   );
