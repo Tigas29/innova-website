@@ -37,7 +37,7 @@ const NavLogo = styled.a`
   align-items: center;
 
   img {
-    height: 36px;
+    height: 44px;
     width: auto;
     display: block;
   }
