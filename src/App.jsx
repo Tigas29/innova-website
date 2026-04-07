@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import { GlobalStyles } from './styles/GlobalStyles';
 
 import Header from './components/Header';
@@ -17,8 +18,10 @@ import Convenios from './components/Convenios';
 import Localizacao from './components/Localizacao';
 import CTAFinal from './components/CTAFinal';
 import Footer from './components/Footer';
+import PilatesSEO from './pages/PilatesSEO';
+import PilatesAds from './pages/PilatesAds';
 
-function App() {
+function HomePage() {
   useEffect(() => {
     const obs = new IntersectionObserver(
       (entries) => {
@@ -32,15 +35,12 @@ function App() {
       { threshold: 0.1 }
     );
 
-    // Observe all .reveal elements (except Hero which handles itself)
     document.querySelectorAll('.reveal').forEach((r) => obs.observe(r));
-
     return () => obs.disconnect();
   }, []);
 
   return (
     <>
-      <GlobalStyles />
       <Header />
       <Hero />
       <Numeros />
@@ -57,6 +57,19 @@ function App() {
       <Localizacao />
       <CTAFinal />
       <Footer />
+    </>
+  );
+}
+
+function App() {
+  return (
+    <>
+      <GlobalStyles />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/pilates" element={<PilatesSEO />} />
+        <Route path="/pilates-google" element={<PilatesAds />} />
+      </Routes>
     </>
   );
 }
