@@ -90,6 +90,7 @@ const TrustBar = styled.div`
   background: var(--quase-preto); padding: 9px 20px;
   display: flex; justify-content: center; align-items: center;
   gap: 28px; flex-wrap: wrap;
+  @media (max-width: 768px) { display: none; }
 `;
 const TBI = styled.span`
   font-family: var(--font-display); font-size: 12px; font-weight: 500;
@@ -107,6 +108,7 @@ const Nav = styled.nav`
   border-bottom: 1px solid var(--cinza-quente);
   padding: 0 28px; margin-top: 36px;
   position: sticky; top: 36px; z-index: 100;
+  @media (max-width: 768px) { margin-top: 0; top: 0; }
 `;
 const NavInner = styled.div`
   max-width: 1100px; margin: 0 auto; height: 64px;
@@ -125,12 +127,23 @@ const NavCta = styled.button`
 /* ─── HERO ─── */
 const HeroSection = styled.section`
   background: var(--creme); padding: 60px 28px 72px;
+  @media (max-width: 768px) {
+    position: relative; min-height: 100svh;
+    padding: 0; overflow: hidden;
+  }
 `;
 const HeroGrid = styled.div`
   max-width: 1100px; margin: 0 auto;
   display: grid; grid-template-columns: 1fr 1fr;
   gap: 56px; align-items: center;
   @media (max-width: 900px) { grid-template-columns: 1fr; gap: 36px; }
+  @media (max-width: 768px) {
+    position: relative; z-index: 2;
+    min-height: 100svh; max-width: 100%;
+    padding: 80px 24px 56px;
+    display: flex; flex-direction: column;
+    justify-content: flex-end; gap: 0;
+  }
 `;
 const HeroBadge = styled.div`
   display: inline-flex; align-items: center; gap: 8px;
@@ -140,6 +153,7 @@ const HeroBadge = styled.div`
   letter-spacing: 0.14em; text-transform: uppercase;
   color: var(--turquesa); margin-bottom: 20px; width: fit-content;
   span { width: 5px; height: 5px; border-radius: 50%; background: var(--turquesa); }
+  @media (max-width: 768px) { border-color: rgba(255,255,255,0.25); color: rgba(255,255,255,0.7); }
 `;
 const UrgencyPill = styled.div`
   display: inline-flex; align-items: center; gap: 8px;
@@ -159,14 +173,20 @@ const H1 = styled.h1`
   line-height: 1.1; letter-spacing: -0.03em; color: var(--quase-preto);
   margin-bottom: 18px;
   em { font-style: normal; color: var(--roxo); }
+  @media (max-width: 768px) {
+    color: #fff; font-size: clamp(30px, 8vw, 44px);
+    em { color: var(--turquesa); }
+  }
 `;
 const HeroSub = styled.p`
   font-size: clamp(15px, 1.3vw, 17px); color: var(--cinza-medio);
   line-height: 1.75; margin-bottom: 28px; max-width: 480px;
+  @media (max-width: 768px) { display: none; }
 `;
 const BulletList = styled.ul`
   list-style: none; display: flex; flex-direction: column;
   gap: 10px; margin-bottom: 30px;
+  @media (max-width: 768px) { display: none; }
 `;
 const Bullet = styled.li`
   display: flex; align-items: flex-start; gap: 10px;
@@ -181,6 +201,7 @@ const BulletIcon = styled.span`
 `;
 const CtaGroup = styled.div`
   display: flex; gap: 12px; align-items: center; flex-wrap: wrap;
+  @media (max-width: 768px) { flex-direction: column; gap: 14px; }
 `;
 const BtnMain = styled.button`
   background: var(--grad); color: var(--branco);
@@ -188,14 +209,17 @@ const BtnMain = styled.button`
   padding: 15px 30px; border-radius: 50px; border: none; cursor: pointer;
   box-shadow: 0 4px 24px rgba(93,191,176,0.4);
   &:hover { opacity: 0.92; transform: translateY(-1px); }
+  @media (max-width: 768px) { width: 100%; font-size: 17px; padding: 17px 30px; }
 `;
 const BtnWaLink = styled.a`
   font-family: var(--font-display); font-size: 14px; font-weight: 600;
   color: var(--turquesa); text-decoration: none;
   &:hover { text-decoration: underline; }
+  @media (max-width: 768px) { color: rgba(255,255,255,0.7); text-align: center; width: 100%; display: block; }
 `;
 const SocialRow = styled.div`
   display: flex; gap: 10px; flex-wrap: wrap; margin-top: 24px;
+  @media (max-width: 768px) { display: none; }
 `;
 const SocialPill = styled.div`
   font-family: var(--font-display); font-size: 12px; font-weight: 600;
@@ -206,6 +230,15 @@ const HeroImg = styled.div`
   border-radius: 20px; overflow: hidden; aspect-ratio: 4/5; position: relative;
   @media (max-width: 900px) { aspect-ratio: 16/9; order: -1; }
   img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  @media (max-width: 768px) {
+    position: absolute; inset: 0; border-radius: 0;
+    aspect-ratio: auto; order: 0; z-index: 0;
+    &::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(10,9,8,0.88) 0%, rgba(10,9,8,0.5) 55%, rgba(10,9,8,0.2) 100%);
+    }
+    img { height: 100%; object-position: center top; }
+  }
 `;
 const HeroImgBadge = styled.div`
   position: absolute; bottom: 20px; left: 20px;
@@ -218,6 +251,7 @@ const HeroImgBadge = styled.div`
     display: block; font-family: var(--font-display); font-size: 11px; font-weight: 500;
     color: rgba(255,255,255,0.6); letter-spacing: 0.08em; text-transform: uppercase;
   }
+  @media (max-width: 768px) { display: none; }
 `;
 
 /* ─── CONVÊNIOS STRIP ─── */
