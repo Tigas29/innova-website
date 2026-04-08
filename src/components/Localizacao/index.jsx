@@ -151,13 +151,24 @@ export default function Localizacao() {
               </ItemText>
             </LocItem>
             <LocItem className="reveal reveal-delay-2">
+              <ItemIcon>⭐</ItemIcon>
+              <ItemText>
+                <ItemLabel>Google Meu Negócio</ItemLabel>
+                <ItemValue>
+                  <a href="https://share.google/U8IqU5GUJTeHUyCzA" target="_blank" rel="noopener noreferrer">
+                    ★ 5.0 · Ver avaliações no Google ↗
+                  </a>
+                </ItemValue>
+              </ItemText>
+            </LocItem>
+            <LocItem className="reveal reveal-delay-3">
               <ItemIcon>🚗</ItemIcon>
               <ItemText>
                 <ItemLabel>Estacionamento</ItemLabel>
                 <ItemValue>Opções de estacionamento próximas. Nossa equipe indica no agendamento.</ItemValue>
               </ItemText>
             </LocItem>
-            <LocRef className="reveal reveal-delay-3">
+            <LocRef className="reveal reveal-delay-4">
               <p>📌 <strong>Ponto de referencia:</strong> o edificio fica vizinho a Justica Federal de Belo Horizonte, no bairro Santo Agostinho. Fácil acesso pela Avenida do Contorno e regiao central da Zona Sul.</p>
             </LocRef>
           </Infos>

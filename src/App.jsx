@@ -21,6 +21,7 @@ import CTAFinal from './components/CTAFinal';
 import Footer from './components/Footer';
 import PilatesSEO from './pages/PilatesSEO';
 import PilatesAds from './pages/PilatesAds';
+import PilatesAdsB from './pages/PilatesAdsB';
 
 function HomePage() {
   useEffect(() => {
@@ -78,6 +79,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/pilates" element={<PilatesSEO />} />
         <Route path="/pilates-google" element={<PilatesAds />} />
+        <Route path="/pilates-google-b" element={<PilatesAdsB />} />
       </Routes>
     </>
   );

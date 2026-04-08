@@ -1138,7 +1138,7 @@ function handlePhone(e, setForm) {
   setForm((f) => ({ ...f, whatsapp: v }));
 }
 
-export default function PilatesAds() {
+export default function PilatesAdsB() {
   const [modal, setModal] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [openFaq, setOpenFaq] = useState(null);
@@ -1341,13 +1341,13 @@ export default function PilatesAds() {
           </div>
           <HeroImg>
             <img
-              src={heroPilates}
-              alt="Pilates Clínico com fisioterapeuta na INNOVA MOVIMENTO"
+              src={equipeImg}
+              alt="4 sócios fisioterapeutas da INNOVA MOVIMENTO"
               fetchPriority="high"
             />
             <HeroImgBadge>
-              <span>+1.000</span>
-              <span>pacientes atendidos</span>
+              <span>4 sócios</span>
+              <span>Professores de Pós-Grad</span>
             </HeroImgBadge>
           </HeroImg>
         </HeroGrid>
