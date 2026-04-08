@@ -263,7 +263,7 @@ export default function Hero() {
         </HeroSub>
         <BtnPrimary
           ref={btnRef}
-          href="https://wa.me/5531XXXXXXXX?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o."
+          href="https://wa.me/5531983444371?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o."
           target="_blank"
         >
           Agendar Avaliação

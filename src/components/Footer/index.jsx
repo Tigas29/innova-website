@@ -107,13 +107,13 @@ export default function Footer() {
           </Info>
           <Contact>
             Fisioterapia Premium em BH<br />
-            <a href="https://wa.me/5531XXXXXXXX">Fale pelo WhatsApp</a>
+            <a href="https://wa.me/5531983444371">Fale pelo WhatsApp</a>
           </Contact>
         </Inner>
       </FooterEl>
 
       <WaFloat
-        href="https://wa.me/5531XXXXXXXX?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20a%20INNOVA%20MOVIMENTO."
+        href="https://wa.me/5531983444371?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20a%20INNOVA%20MOVIMENTO."
         target="_blank"
         aria-label="WhatsApp"
       >

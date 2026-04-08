@@ -9,7 +9,7 @@ import gustavo from '../../assets/gustavo-amaral-final.jpg';
 import cristiane from '../../assets/cristiane-vasconcelos-final.jpg';
 import mariana from '../../assets/mariana-weschenfelder-final.jpg';
 
-const WA = 'https://wa.me/5531XXXXXXXX?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20minha%20avalia%C3%A7%C3%A3o%20de%20Pilates%20Cl%C3%ADnico.';
+const WA = 'https://wa.me/5531983444371?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20minha%20avalia%C3%A7%C3%A3o%20de%20Pilates%20Cl%C3%ADnico.';
 
 /* ─── NAVBAR ─── */
 const Nav = styled.nav`
@@ -689,7 +689,7 @@ export default function PilatesSEO() {
   function handleSubmit(e) {
     e.preventDefault();
     const msg = encodeURIComponent(`Olá! Me chamo ${form.nome}. Gostaria de agendar minha avaliação de Pilates Clínico. Objetivo: ${form.objetivo}.`);
-    window.open(`https://wa.me/5531XXXXXXXX?text=${msg}`, '_blank');
+    window.open(`https://wa.me/5531983444371?text=${msg}`, '_blank');
   }
 
   return (
@@ -934,7 +934,7 @@ export default function PilatesSEO() {
       {/* FOOTER */}
       <FooterMin>
         INNOVA MOVIMENTO · Santo Agostinho, Belo Horizonte, MG ·
-        <a href="https://wa.me/5531XXXXXXXX" target="_blank">WhatsApp</a> ·
+        <a href="https://wa.me/5531983444371" target="_blank">WhatsApp</a> ·
         <a href="https://instagram.com/innova.movimento" target="_blank">Instagram</a> ·
         © 2026
       </FooterMin>

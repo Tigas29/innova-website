@@ -200,7 +200,7 @@ export default function Convenios() {
             <DestaqueH3>Tem duvida sobre seu plano?</DestaqueH3>
             <DestaqueP>Fale pelo WhatsApp antes de vir. Confirmamos se seu benefício se aplica.</DestaqueP>
             <BtnWhite
-              href="https://wa.me/5531XXXXXXXX?text=Ol%C3%A1!%20Gostaria%20de%20saber%20se%20meu%20plano%20%C3%A9%20aceito%20na%20Innova."
+              href="https://wa.me/5531983444371?text=Ol%C3%A1!%20Gostaria%20de%20saber%20se%20meu%20plano%20%C3%A9%20aceito%20na%20Innova."
               target="_blank"
             >
               Verificar meu plano

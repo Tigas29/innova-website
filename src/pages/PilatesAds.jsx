@@ -1291,8 +1291,7 @@ export default function PilatesAds() {
         <HeroGrid>
           <div>
             <UrgencyPill>
-              <UrgencyDot /> Vagasdasdas limitadas · turmas de no máximo 3
-              alunos
+              <UrgencyDot /> Vagas limitadas · turmas de no máximo 3 alunos
             </UrgencyPill>
             <HeroBadge>
               <span />
