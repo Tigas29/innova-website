@@ -182,8 +182,8 @@ export default function Convenios() {
               <ConvIcon>🤝</ConvIcon>
               <H3>ASLEMG</H3>
             </CardHeader>
-            <Tag className="turquesa">Desconto + reembolso</Tag>
-            <P>Associados da ASLEMG tem desconto no atendimento e podem solicitar reembolso parcial pelo plano. Traga sua carteira de associado.</P>
+            <Tag className="turquesa">Desconto especial</Tag>
+            <P>Associados da ASLEMG têm desconto no atendimento. Traga sua carteira de associado.</P>
           </Card>
 
           <Card className="reveal reveal-delay-1">

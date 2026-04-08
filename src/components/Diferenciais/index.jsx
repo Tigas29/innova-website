@@ -49,6 +49,19 @@ const DiffItem = styled.li`
   }
 `;
 
+const DiffItemBody = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+`;
+
+const DiffDesc = styled.p`
+  font-size: 14px;
+  color: var(--cinza-medio);
+  line-height: 1.7;
+  margin: 0;
+`;
+
 const DiffCheck = styled.div`
   width: 22px;
   height: 22px;
@@ -112,11 +125,14 @@ const FotoGridItem = styled.div`
 `;
 
 const diferenciais = [
-  'Avaliação completa antes de qualquer decisão clínica',
-  'Plano de tratamento montado exclusivamente para o seu caso',
-  'Acompanhamento pelos mesmos profissionais, sem rotatividade',
-  'Turmas de no máximo 3 pessoas no Pilates Clínico',
-  'Gyrotonic exclusivo. Uma das poucas clínicas em BH',
+  {
+    title: 'Avaliação completa antes de qualquer decisão clínica',
+    desc: 'Uma conversa clínica completa, sem pressa. Entendemos o que você sente, o que já fez, o que funcionou e o que não funcionou. Avaliação funcional, com testes padronizados que conseguimos mensurar algumas capacidades físicas. É assim que identificamos a causa do problema. Explicamos com honestidade o que é possível.',
+  },
+  { title: 'Plano de tratamento montado exclusivamente para o seu caso' },
+  { title: 'Acompanhamento pelos mesmos profissionais, sem rotatividade' },
+  { title: 'Turmas de no máximo 3 pessoas no Pilates Clínico' },
+  { title: 'Gyrotonic exclusivo. Uma das poucas clínicas em BH' },
 ];
 
 export default function Diferenciais() {
@@ -138,7 +154,12 @@ export default function Diferenciais() {
                       <polyline points="1.5,5.5 4.5,8.5 9.5,2.5" />
                     </svg>
                   </DiffCheck>
-                  {item}
+                  {item.desc ? (
+                    <DiffItemBody>
+                      <span>{item.title}</span>
+                      <DiffDesc>{item.desc}</DiffDesc>
+                    </DiffItemBody>
+                  ) : item.title}
                 </DiffItem>
               ))}
             </DiffList>
