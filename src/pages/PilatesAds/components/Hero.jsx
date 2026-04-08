@@ -4,6 +4,13 @@ import atend1 from '../../../assets/atend1.jpg';
 const HeroSection = styled.section`
   background: var(--creme);
   padding: 60px 28px 72px;
+
+  @media (max-width: 900px) {
+    min-height: 90vh;
+    padding: 48px 24px 56px;
+    display: flex;
+    align-items: center;
+  }
 `;
 
 const Grid = styled.div`
@@ -11,13 +18,13 @@ const Grid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 56px; align-items: center;
-  @media (max-width: 900px) { grid-template-columns: 1fr; gap: 36px; }
+  @media (max-width: 900px) { grid-template-columns: 1fr; gap: 32px; width: 100%; }
 `;
 
 const HeroImg = styled.div`
   border-radius: 20px; overflow: hidden;
   aspect-ratio: 4/5; position: relative;
-  @media (max-width: 900px) { aspect-ratio: 16/9; order: -1; }
+  @media (max-width: 900px) { aspect-ratio: 16/9; }
   img { width: 100%; height: 100%; object-fit: cover; display: block; }
 `;
 

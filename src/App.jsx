@@ -8,6 +8,7 @@ import Numeros from './components/Numeros';
 import Dor from './components/Dor';
 import Diferenciais from './components/Diferenciais';
 import Servicos from './components/Servicos';
+import Especialidades from './components/Especialidades';
 import Encaminhadores from './components/Encaminhadores';
 import Galeria from './components/Galeria';
 import Depoimentos from './components/Depoimentos';
@@ -47,6 +48,7 @@ function HomePage() {
       <Dor />
       <Diferenciais />
       <Servicos />
+      <Especialidades />
       <Encaminhadores />
       <Galeria />
       <Depoimentos />
