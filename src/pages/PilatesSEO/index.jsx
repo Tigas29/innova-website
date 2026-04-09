@@ -934,6 +934,7 @@ export default function PilatesSEO() {
       {/* FOOTER */}
       <FooterMin>
         INNOVA MOVIMENTO · Santo Agostinho, Belo Horizonte, MG ·
+        CREFITO/MG: RE 007640 ·
         <a href="https://wa.me/5531983444371" target="_blank">WhatsApp</a> ·
         <a href="https://instagram.com/innova.movimento" target="_blank">Instagram</a> ·
         © 2026

@@ -89,7 +89,7 @@ export default function CTAFinal({ onCtaClick, waUrl }) {
       </CtaSection>
 
       <FooterMin>
-        INNOVA MOVIMENTO · Rua Araguari, 1750, Sl 800 · Santo Agostinho · BH · © 2026
+        INNOVA MOVIMENTO · Rua Araguari, 1750, Sl 800 · Santo Agostinho · BH · CREFITO/MG: RE 007640 · © 2026
       </FooterMin>
 
       <WaFloat href={waUrl} target="_blank" aria-label="WhatsApp">

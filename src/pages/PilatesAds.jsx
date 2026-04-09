@@ -1613,7 +1613,7 @@ export default function PilatesAds() {
 
       <FooterMin>
         INNOVA MOVIMENTO · Rua Araguari, 1750, Sl 800 · Santo Agostinho · BH ·
-        <a href="tel:+5531999476615">(31) 99947-6615</a> · © 2026
+        <a href="tel:+5531983444371">(31) 98344-4371</a> · CREFITO/MG: RE 007640 · © 2026
       </FooterMin>
 
       <WaFloat

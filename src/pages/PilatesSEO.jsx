@@ -950,13 +950,13 @@ export default function PilatesSEO() {
             </div>
             <div>
               <FooterTitle>Contato</FooterTitle>
-              <FooterLink href="https://wa.me/5531999476615" target="_blank" rel="noopener">WhatsApp: (31) 99947-6615</FooterLink>
+              <FooterLink href="https://wa.me/5531983444371" target="_blank" rel="noopener">WhatsApp: (31) 98344-4371</FooterLink>
               <FooterLink href="https://www.instagram.com/innova.movimento" target="_blank" rel="noopener">@INNOVA.MOVIMENTO</FooterLink>
               <FooterLink href="https://maps.google.com/?q=Rua+Araguari+1750+Santo+Agostinho+BH" target="_blank" rel="noopener">Ver no Google Maps</FooterLink>
             </div>
           </FooterGrid>
           <FooterBottom>
-            <p>© 2025 INNOVA MOVIMENTO · Todos os direitos reservados · Santo Agostinho, Belo Horizonte - MG</p>
+            <p>© 2026 INNOVA MOVIMENTO · Todos os direitos reservados · CREFITO/MG: RE 007640 · Santo Agostinho, Belo Horizonte - MG</p>
           </FooterBottom>
         </Container>
       </FooterEl>

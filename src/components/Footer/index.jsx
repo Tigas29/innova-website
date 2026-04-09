@@ -103,6 +103,7 @@ export default function Footer() {
           </LogoWrap>
           <Info>
             Rua Araguari, 1750, Sl 800 · Santo Agostinho · BH<br />
+            CREFITO/MG: RE 007640<br />
             © 2026 INNOVA MOVIMENTO. Todos os direitos reservados
           </Info>
           <Contact>
