@@ -21,7 +21,7 @@ export const reviews = [
 export const faqs = [
   { q: 'Em quanto tempo vou sentir resultado?', a: 'A maioria relata melhora entre a 3ª e a 4ª sessão. Resultados consistentes aparecem entre o 1º e o 3º mês.' },
   { q: 'Como funciona a avaliação?', a: '40 minutos com um fisioterapeuta. Avalia postura, mobilidade, histórico e objetivos. Você sai com uma recomendação clara, sem compromisso.' },
-  { q: 'Qual a diferença para um estúdio de pilates convencional?', a: 'Aqui quem conduz são fisioterapeutas, não instrutores. O plano é baseado em avaliação clínica. Atendimento individual ou em trio. Sócios são professores de pós-graduação.' },
+  { q: 'Qual a diferença para um estúdio de pilates convencional?', a: 'Aqui quem conduz são fisioterapeutas, não instrutores. O plano é baseado em avaliação clínica. Atendimento individual ou em trio. Os 4 sócios são especialistas que atuam na formação de outros profissionais da área — o que garante que toda a equipe se mantenha atualizada e em alto nível.' },
   { q: 'Vocês atendem por convênio ou Wellhub?', a: 'Sim, aceitamos alguns convênios e somos parceiros do Wellhub. Entre em contato para verificar.' },
   { q: 'Preciso de encaminhamento médico?', a: 'Para Pilates Clínico, não. Você agenda diretamente. Se tiver exames ou laudos, traga, eles ajudam no planejamento.' },
 ];

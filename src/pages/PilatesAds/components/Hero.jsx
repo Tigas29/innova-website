@@ -124,13 +124,13 @@ export default function Hero({ onCtaClick, waUrl }) {
           <Badge><span />Pilates Clínico · Santo Agostinho · BH</Badge>
           <H1>A dor que não passa tem um motivo. E tem solução.</H1>
           <Sub>
-            Pilates Clínico conduzido por fisioterapeutas que são professores de pós-graduação.
-            Cada sessão parte da sua avaliação clínica, não de uma sequência genérica.
+            Pilates Clínico conduzido por fisioterapeutas especialistas, referência em grandes
+            clubes esportivos de BH. Cada sessão parte da sua avaliação clínica, não de uma sequência genérica.
           </Sub>
           <BulletList>
             <Bullet><span className="check">✓</span> Sessões individuais ou em trio, nunca turma grande</Bullet>
             <Bullet><span className="check">✓</span> Plano montado a partir de avaliação clínica</Bullet>
-            <Bullet><span className="check">✓</span> 13 fisioterapeutas, 3 são professores de pós-graduação</Bullet>
+            <Bullet><span className="check">✓</span> 4 sócios especialistas que formam outros profissionais da área</Bullet>
           </BulletList>
           <CtaGroup>
             <BtnMain onClick={onCtaClick}>Agendar Avaliação →</BtnMain>

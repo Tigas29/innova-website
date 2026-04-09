@@ -1,13 +1,24 @@
 import styled from 'styled-components';
 import logo from '../../../assets/logo.png';
 
+const CrefBar = styled.div`
+  background: var(--quase-preto);
+  color: rgba(255,255,255,0.7);
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-align: center;
+  padding: 5px 16px;
+  position: sticky; top: 0; z-index: 101;
+`;
+
 const NavWrap = styled.nav`
   background: rgba(247,245,242,0.97);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--cinza-quente);
   padding: 0 28px;
-  margin-top: 36px;
-  position: sticky; top: 36px; z-index: 100;
+  position: sticky; top: 28px; z-index: 100;
 `;
 
 const NavInner = styled.div`
@@ -29,11 +40,14 @@ const NavCta = styled.button`
 
 export default function Nav({ onCtaClick }) {
   return (
-    <NavWrap>
-      <NavInner>
-        <img src={logo} alt="INNOVA MOVIMENTO" />
-        <NavCta onClick={onCtaClick}>Agendar Avaliação</NavCta>
-      </NavInner>
-    </NavWrap>
+    <>
+      <CrefBar>CREFITO/MG: RE 007640</CrefBar>
+      <NavWrap>
+        <NavInner>
+          <img src={logo} alt="INNOVA MOVIMENTO" />
+          <NavCta onClick={onCtaClick}>Agendar Avaliação</NavCta>
+        </NavInner>
+      </NavWrap>
+    </>
   );
 }

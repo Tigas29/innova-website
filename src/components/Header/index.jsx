@@ -2,9 +2,25 @@ import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import logo from '../../assets/logo.png';
 
-const Nav = styled.nav`
+const TopBar = styled.div`
   position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+  z-index: 101;
+  background: var(--quase-preto);
+  color: rgba(255,255,255,0.7);
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-align: center;
+  padding: 5px 16px;
+`;
+
+const Nav = styled.nav`
+  position: fixed;
+  top: 28px;
   left: 0;
   right: 0;
   z-index: 100;
@@ -72,7 +88,9 @@ export default function Header() {
   }, []);
 
   return (
-    <Nav className={scrolled ? 'scrolled' : ''}>
+    <>
+      <TopBar>CREFITO/MG: RE 007640</TopBar>
+      <Nav className={scrolled ? 'scrolled' : ''}>
       <NavInner>
         <NavLogo href="#">
           <img src={logo} alt="INNOVA MOVIMENTO" />
@@ -85,5 +103,6 @@ export default function Header() {
         </NavCta>
       </NavInner>
     </Nav>
+    </>
   );
 }

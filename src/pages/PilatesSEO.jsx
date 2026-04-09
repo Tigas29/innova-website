@@ -640,7 +640,7 @@ export default function PilatesSEO() {
             com fisioterapeutas que entendem <em>o seu corpo</em>
           </H1>
           <HeroSub>
-            Cada sessão é montada a partir da sua avaliação clínica. Individual ou em trio, com fisioterapeutas que também são professores de pós-graduação. Santo Agostinho, BH.
+            Cada sessão é montada a partir da sua avaliação clínica. Individual ou em trio, com fisioterapeutas especialistas e referência em grandes clubes esportivos de BH. Santo Agostinho, BH.
           </HeroSub>
           <HeroCtaRow>
             <BtnPrimary href={wa('Olá! Gostaria de agendar minha avaliação de Pilates Clínico.')} target="_blank" rel="noopener">
@@ -708,7 +708,7 @@ export default function PilatesSEO() {
           <DifGrid>
             {[
               { num: '01', title: 'Turmas Trio · máx. 3 alunos', desc: 'Cada turma tem no máximo 3 pessoas. Isso é raro em BH. Você recebe atenção real: o fisioterapeuta vê e corrige o seu movimento, não só demonstra o exercício.' },
-              { num: '02', title: 'Fisioterapeutas especializados', desc: 'Quem conduz seu Pilates tem formação em fisioterapia e pós-graduação. Sabe ler seu histórico, identificar compensações e adaptar o exercício quando necessário.' },
+              { num: '02', title: 'Fisioterapeutas especializados', desc: 'Quem conduz seu Pilates tem formação em fisioterapia e especialização em Pilates Clínico. Sabe ler seu histórico, identificar compensações e adaptar o exercício quando necessário.' },
               { num: '03', title: 'Avaliação individualizada antes de começar', desc: 'Você não entra numa aula sem avaliação. Entendemos sua queixa, seu histórico e seus objetivos. A partir daí, prescrevemos, não improvisamos.' },
               { num: '04', title: '+1.000 clientes. 5.0★ no Google.', desc: 'Mais de mil pessoas já passaram pela INNOVA. avaliações no Google com nota máxima. Resultado não se compra, se constrói sessão a sessão.' },
             ].map((item, i) => (
@@ -810,16 +810,16 @@ export default function PilatesSEO() {
       <Section $alt id="equipe" aria-labelledby="equipe-title">
         <Container>
           <SectionLabel>A equipe</SectionLabel>
-          <SectionTitle id="equipe-title">Quem conduz as suas sessões ensina quem forma os próximos fisioterapeutas</SectionTitle>
-          <SectionText>São 3 sócios-fundadores que são professores de pós-graduação em fisioterapia. Não é um título no currículo, é literalmente quem forma os próximos profissionais do mercado.</SectionText>
+          <SectionTitle id="equipe-title">4 sócios que formam quem te atende</SectionTitle>
+          <SectionText>Os sócios são fisioterapeutas, mestres e especialistas em Pilates e referência em fisioterapia em grandes clubes esportivos de BH. Além da prática clínica, atuam na formação de outros profissionais, sendo responsáveis pelo treinamento contínuo da equipe INNOVA — para que você receba um atendimento seguro, atualizado e de alto nível.</SectionText>
           <TeamGroupPhoto>
             <img src={equipeImg} alt="Equipe completa da INNOVA MOVIMENTO" loading="lazy" />
           </TeamGroupPhoto>
           <TeamGrid>
             {[
-              { photo: luciana, name: 'Luciana Signorini', role: 'Fisioterapeuta · Professora de Pós-graduação' },
+              { photo: luciana, name: 'Luciana Signorini', role: 'Fisioterapeuta · Especialista em Pilates Clínico' },
               { photo: gustavo, name: 'Gustavo Amaral', role: 'Fisioterapeuta · Palestrante Nacional' },
-              { photo: cristiane, name: 'Cristiane Vasconcelos', role: 'Fisioterapeuta · Professora de Pós-graduação' },
+              { photo: cristiane, name: 'Cristiane Vasconcelos', role: 'Fisioterapeuta · Especialista em Pilates Clínico' },
               { photo: mariana, name: 'Mariana Weschenfelder', role: 'Fisioterapeuta · Especialista Clínica' },
             ].map((t, i) => (
               <TeamCard key={i}>
@@ -830,7 +830,7 @@ export default function PilatesSEO() {
           </TeamGrid>
           <TeamBadges>
             <TeamBadge>13 fisioterapeutas</TeamBadge>
-            <TeamBadge>3 professores de pós-graduação</TeamBadge>
+            <TeamBadge>Formadores de profissionais da área</TeamBadge>
             <TeamBadge>Palestrantes nacionais</TeamBadge>
             <TeamBadge>Formação contínua em evidência científica</TeamBadge>
           </TeamBadges>

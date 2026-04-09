@@ -17,15 +17,16 @@ export default function Equipe() {
     <Section $alt>
       <Inner>
         <Label>A equipe</Label>
-        <Title>Quem cuida de você ensina quem cuida dos outros</Title>
+        <Title>4 sócios que formam quem te atende</Title>
         <Text>
-          São 3 sócios-fundadores que são professores de pós-graduação em fisioterapia. Essa equipe
-          de 13 fisioterapeutas trata pacientes de manhã e dá aula na universidade à noite. Quando
-          você agenda aqui, o profissional que te atende está na fronteira da pesquisa.
+          Os sócios são fisioterapeutas, mestres e especialistas em Pilates e referência em
+          fisioterapia em grandes clubes esportivos. Além da prática clínica, atuam na formação de
+          outros profissionais, sendo responsáveis pelo treinamento contínuo da equipe INNOVA —
+          para que você receba um atendimento seguro, atualizado e de alto nível.
         </Text>
         <Badges>
           <Badge>13 fisioterapeutas</Badge>
-          <Badge>3 professores de pós-graduação</Badge>
+          <Badge>Referência em grandes clubes esportivos</Badge>
           <Badge>Palestrantes nacionais</Badge>
           <Badge>Formação contínua em evidência científica</Badge>
         </Badges>

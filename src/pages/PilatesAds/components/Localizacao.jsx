@@ -61,14 +61,14 @@ export default function Localizacao() {
               <LocIcon>🗺</LocIcon>
               <LocText>
                 <h4>Como chegar</h4>
-                <p>Vizinho à Justiça Federal. Fácil acesso pela Av. do Contorno e Av. Afonso Pena.</p>
+                <p>Perto da Assembleia Legislativa de MG. Fácil acesso pela Av. do Contorno.</p>
               </LocText>
             </LocItem>
             <LocItem>
               <LocIcon>🕐</LocIcon>
               <LocText>
                 <h4>Horário</h4>
-                <p>Segunda a sexta: 7h às 20h<br />Sábado: 8h às 13h</p>
+                <p>Segunda a sexta: 7h às 20h</p>
               </LocText>
             </LocItem>
           </LocInfo>

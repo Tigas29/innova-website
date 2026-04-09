@@ -169,7 +169,7 @@ export default function Localizacao() {
               </ItemText>
             </LocItem>
             <LocRef className="reveal reveal-delay-4">
-              <p>📌 <strong>Ponto de referencia:</strong> o edificio fica vizinho a Justica Federal de Belo Horizonte, no bairro Santo Agostinho. Fácil acesso pela Avenida do Contorno e regiao central da Zona Sul.</p>
+              <p>📌 <strong>Ponto de referencia:</strong> o edificio fica perto da Assembleia Legislativa de MG, no bairro Santo Agostinho. Fácil acesso pela Avenida do Contorno.</p>
             </LocRef>
           </Infos>
         </Grid>

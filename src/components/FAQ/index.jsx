@@ -100,7 +100,7 @@ const faqs = [
   },
   {
     q: "Qual a diferença para um estúdio de pilates convencional?",
-    a: "Aqui, quem conduz as sessões são fisioterapeutas, não instrutores. O plano é baseado em avaliação clínica, não em sequência padrão. É atendimento individual ou em trio, nunca grupo grande. E os sócios são professores de pós-graduação na área.",
+    a: "Aqui, quem conduz as sessões são fisioterapeutas, não instrutores. O plano é baseado em avaliação clínica, não em sequência padrão. É atendimento individual ou em trio, nunca grupo grande. Os 4 sócios são especialistas e mestres com referência em grandes clubes esportivos de BH, e atuam na formação de outros profissionais da área — o que garante que toda a equipe se mantenha em alto nível.",
   },
   {
     q: "Quais serviços vocês oferecem além do Pilates?",

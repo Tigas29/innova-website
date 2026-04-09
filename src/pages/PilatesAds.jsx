@@ -4,7 +4,7 @@ import logo from "../assets/logo.png";
 import heroPilates from "../assets/hero pilates.jpg";
 import equipeImg from "../assets/imagens todos os profissionais juntos.jpeg";
 
-const WA_BASE = "https://wa.me/5531999476615?text=";
+const WA_BASE = "https://wa.me/5531983444371?text=";
 const waLink = (msg) => `${WA_BASE}${encodeURIComponent(msg)}`;
 
 /* ─── MODAL ─── */
@@ -1105,7 +1105,7 @@ const FAQS = [
   },
   {
     q: "Qual a diferença para um estúdio de pilates convencional?",
-    a: "Duas coisas principais: os 4 sócios são professores de pós-graduação em fisioterapia — e têm formação específica em Pilates. Isso significa que quem conduz suas aulas entende o corpo de forma clínica e aplica o Pilates como ferramenta terapêutica, não como exercício genérico.",
+    a: "Duas coisas principais: aqui quem conduz são fisioterapeutas, não instrutores — e os 4 sócios atuam na formação de outros profissionais da área, o que garante que toda a equipe se mantenha atualizada. Isso significa que quem conduz suas aulas entende o corpo de forma clínica e aplica o Pilates como ferramenta terapêutica, não como exercício genérico.",
   },
   {
     q: "Vocês atendem por convênio ou Wellhub?",
@@ -1178,7 +1178,7 @@ export default function PilatesAds() {
     e.preventDefault();
     if (!form.nome.trim() || !form.whatsapp.trim()) return;
     setSubmitted(true);
-    const msg = `Olá Luciana! Me cadastrei pelo site para o Pilates Clínico.\n\nNome: ${form.nome}\nWhatsApp: ${form.whatsapp}\nHorário preferido: ${form.horario || "Qualquer horário"}`;
+    const msg = `Olá, INNOVA MOVIMENTO! Me cadastrei pelo site para o Pilates Clínico.\n\nNome: ${form.nome}\nWhatsApp: ${form.whatsapp}\nHorário preferido: ${form.horario || "Qualquer horário"}`;
     setTimeout(() => window.open(waLink(msg), "_blank"), 1200);
   }
 
@@ -1200,7 +1200,7 @@ export default function PilatesAds() {
             <>
               <ModalTitle>Garanta sua vaga</ModalTitle>
               <ModalSub>
-                A Luciana entra em contato no mesmo dia pelo WhatsApp
+                A INNOVA entra em contato no mesmo dia pelo WhatsApp
               </ModalSub>
               <form onSubmit={handleSubmit}>
                 <FormGroup>
@@ -1253,12 +1253,12 @@ export default function PilatesAds() {
               <div className="icon">✅</div>
               <h3>Recebemos seus dados!</h3>
               <p>
-                A Luciana vai te chamar no WhatsApp em breve para confirmar sua
+                A INNOVA vai entrar em contato pelo WhatsApp em breve para confirmar sua
                 vaga e horário.
               </p>
               <BtnWASuccess
                 href={waLink(
-                  `Olá Luciana! Acabei de preencher o formulário. Nome: ${form.nome}. Quero confirmar minha vaga no Pilates Clínico.`,
+                  `Olá, INNOVA MOVIMENTO! Acabei de preencher o formulário. Nome: ${form.nome}. Quero confirmar minha vaga no Pilates Clínico.`,
                 )}
                 target="_blank"
               >
@@ -1295,7 +1295,7 @@ export default function PilatesAds() {
             </UrgencyPill>
             <HeroBadge>
               <span />
-              Pilates Clínico · 4 Sócios Fisioterapeutas Professores
+              Pilates Clínico · Santo Agostinho · BH
             </HeroBadge>
             <H1>
               No Pilates Clínico você entende por que a dor volta.
@@ -1303,19 +1303,18 @@ export default function PilatesAds() {
               <em>E como parar.</em>
             </H1>
             <HeroSub>
-              Os 4 sócios são fisioterapeutas, professores de pós-graduação com
-              formação em Pilates e referência em fisioterapia em clubes
-              esportivos de BH. A maioria dos pacientes sente diferença nas
-              primeiras sessões.
+              Os 4 sócios são fisioterapeutas especialistas com referência em grandes
+              clubes esportivos de BH e atuam na formação de outros profissionais da área.
+              A maioria dos pacientes sente diferença nas primeiras sessões.
             </HeroSub>
             <BulletList>
               <Bullet>
-                <BulletIcon>✓</BulletIcon>4 sócios professores presentes e
+                <BulletIcon>✓</BulletIcon>4 sócios especialistas presentes e
                 envolvidos no seu tratamento
               </Bullet>
               <Bullet>
-                <BulletIcon>✓</BulletIcon>Professores de pós-graduação com
-                formação específica em Pilates
+                <BulletIcon>✓</BulletIcon>Fisioterapeutas com especialização
+                em Pilates Clínico
               </Bullet>
               <Bullet>
                 <BulletIcon>✓</BulletIcon>Referência em fisioterapia nos
@@ -1326,7 +1325,7 @@ export default function PilatesAds() {
               <BtnMain onClick={openModal}>Garantir minha vaga</BtnMain>
               <BtnWaLink
                 href={waLink(
-                  "Olá Luciana! Quero garantir minha vaga no Pilates Clínico.",
+                  "Olá, INNOVA MOVIMENTO! Quero garantir minha vaga no Pilates Clínico.",
                 )}
                 target="_blank"
               >
@@ -1404,7 +1403,7 @@ export default function PilatesAds() {
               <h3>Fisioterapeutas, não instrutores</h3>
               <p>
                 Quem conduz suas sessões tem formação em fisioterapia e
-                pós-graduação especializada. Eles enxergam o que está errado no
+                especialização em Pilates Clínico. Eles enxergam o que está errado no
                 seu movimento e sabem corrigir.
               </p>
             </MotivoCard>
@@ -1440,11 +1439,11 @@ export default function PilatesAds() {
             4 sócios que formam quem te atende
           </SectionTitle>
           <SectionText>
-            Os 4 sócios são fisioterapeutas, professores de pós-graduação com
-            formação em Pilates e referência em fisioterapia nos principais
-            clubes esportivos de BH. Eles treinam a equipe da INNOVA —
-            investindo no conhecimento e no crescimento dos profissionais que
-            cuidam de você.
+            Os sócios são fisioterapeutas, mestres e especialistas em Pilates e referência
+            em fisioterapia em grandes clubes esportivos de BH. Além da prática clínica,
+            atuam na formação de outros profissionais, sendo responsáveis pelo treinamento
+            contínuo da equipe INNOVA — para que você receba um atendimento seguro,
+            atualizado e de alto nível.
           </SectionText>
           <EquipeGroupPhoto>
             <img
@@ -1455,7 +1454,7 @@ export default function PilatesAds() {
           </EquipeGroupPhoto>
           <EquipeBadges>
             <EquipeBadge>4 sócios fisioterapeutas</EquipeBadge>
-            <EquipeBadge>Professores de pós-graduação</EquipeBadge>
+            <EquipeBadge>Formadores de profissionais da área</EquipeBadge>
             <EquipeBadge>Formação em Pilates</EquipeBadge>
             <EquipeBadge>Referência em clubes esportivos</EquipeBadge>
             <EquipeBadge>Formam e treinam a equipe</EquipeBadge>
@@ -1535,7 +1534,7 @@ export default function PilatesAds() {
                 <LocText>
                   <h4>Contato direto</h4>
                   <p>
-                    <a href="tel:+5531999476615">(31) 99947-6615</a> · Luciana
+                    <a href="tel:+5531983444371">(31) 98344-4371</a>
                   </p>
                 </LocText>
               </LocItem>
@@ -1543,11 +1542,7 @@ export default function PilatesAds() {
                 <LocIcon>🕐</LocIcon>
                 <LocText>
                   <h4>Horário</h4>
-                  <p>
-                    Segunda a sexta: 7h às 20h
-                    <br />
-                    Sábado: 8h às 13h
-                  </p>
+                  <p>Segunda a sexta: 7h às 20h</p>
                 </LocText>
               </LocItem>
             </LocInfo>
@@ -1588,7 +1583,7 @@ export default function PilatesAds() {
             <BtnWhite onClick={openModal}>Garantir minha vaga</BtnWhite>
             <BtnWaOutline
               href={waLink(
-                "Olá Luciana! Vi o anúncio do Pilates Clínico e quero garantir minha vaga esta semana.",
+                "Olá, INNOVA MOVIMENTO! Vi o anúncio do Pilates Clínico e quero garantir minha vaga esta semana.",
               )}
               target="_blank"
             >

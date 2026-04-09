@@ -656,7 +656,7 @@ const faqs = [
   { q: 'Como funciona a avaliação?', a: 'Você agenda pelo WhatsApp ou formulário. Um fisioterapeuta avalia sua postura, mobilidade, histórico e objetivos em aproximadamente 40 minutos. No final, você recebe uma recomendação personalizada, sem compromisso de continuidade.' },
   { q: 'Vocês atendem por convênio ou Wellhub?', a: 'Sim. Aceitamos alguns convênios e também somos parceiros do Wellhub (antigo Gympass). Para a maioria dos serviços, o atendimento é particular, o que garante sessões mais longas, sem limite de quantidade e com atenção individualizada. Entre em contato para verificar se o seu convênio é aceito.' },
   { q: 'Preciso de encaminhamento médico?', a: 'Depende do procedimento. Para fisioterapia convencional, o encaminhamento médico é necessário. Para Pilates Clínico, você agenda diretamente. Se tiver exames ou laudos, traga, eles ajudam no planejamento.' },
-  { q: 'Qual a diferença para um estúdio de pilates convencional?', a: 'Aqui, quem conduz as sessões são fisioterapeutas, não instrutores. O plano é baseado em avaliação clínica, não em sequência padrão. É atendimento individual ou em trio, nunca grupo grande. E os sócios são professores de pós-graduação na área.' },
+  { q: 'Qual a diferença para um estúdio de pilates convencional?', a: 'Aqui, quem conduz as sessões são fisioterapeutas, não instrutores. O plano é baseado em avaliação clínica, não em sequência padrão. É atendimento individual ou em trio, nunca grupo grande. Os 4 sócios são especialistas que atuam na formação de outros profissionais da área — o que garante que toda a equipe se mantenha atualizada e em alto nível.' },
   { q: 'Quais serviços vocês oferecem além do Pilates?', a: 'Além do Pilates Clínico, trabalhamos com Fisioterapia, Gyrotonic, RPG e reabilitação pós-operatória. Cada serviço é conduzido por fisioterapeutas com plano montado para a sua necessidade.' },
   { q: 'Onde fica a INNOVA MOVIMENTO?', a: 'Rua Araguari, 1750, sala 800, bairro Santo Agostinho, Belo Horizonte, MG. Região central, com fácil acesso e estacionamento próximo.' },
   { q: 'Pilates Clínico serve para quem nunca fez pilates?', a: 'Sim. Justamente por ser conduzido por fisioterapeutas com avaliação clínica, o Pilates Clínico é seguro e indicado para iniciantes, inclusive para quem tem dor ou limitações. O plano começa do seu nível real.' },
@@ -712,11 +712,11 @@ export default function PilatesSEO() {
         <HeroLeft>
           <Badge><Dot />Pilates Clínico · Santo Agostinho · BH</Badge>
           <H1>Pilates Clínico em Belo Horizonte com fisioterapeutas</H1>
-          <HeroSub>Cada sessão é montada a partir da sua avaliação clínica. Individual ou em trio, com fisioterapeutas que também são professores de pós-graduação. Santo Agostinho, BH.</HeroSub>
+          <HeroSub>Cada sessão é montada a partir da sua avaliação clínica. Individual ou em trio, com fisioterapeutas especialistas e referência em grandes clubes esportivos de BH. Santo Agostinho, BH.</HeroSub>
           <Badges3>
             <SocialBadge>★ 5.0 no Google</SocialBadge>
             <SocialBadge>13 fisioterapeutas</SocialBadge>
-            <SocialBadge>Professores de pós-graduação</SocialBadge>
+            <SocialBadge>Formadores de profissionais da área</SocialBadge>
           </Badges3>
           <CtaRow>
             <BtnPrimary href={WA} target="_blank">Agendar Avaliação</BtnPrimary>
@@ -801,13 +801,13 @@ export default function PilatesSEO() {
       <Section id="equipe">
         <Container>
           <SectionLabel>A equipe</SectionLabel>
-          <SectionTitle>Quem conduz as suas sessões ensina quem forma os próximos fisioterapeutas</SectionTitle>
-          <SectionText>São 3 sócios-fundadores que são professores de pós-graduação em fisioterapia. Não é um título no currículo, é literalmente quem forma os próximos profissionais do mercado. Essa equipe de 13 fisioterapeutas trata pacientes de manhã e dá aula na universidade à noite.</SectionText>
+          <SectionTitle>4 sócios que formam quem te atende</SectionTitle>
+          <SectionText>Os sócios são fisioterapeutas, mestres e especialistas em Pilates e referência em fisioterapia em grandes clubes esportivos de BH. Além da prática clínica, atuam na formação de outros profissionais, sendo responsáveis pelo treinamento contínuo da equipe INNOVA — para que você receba um atendimento seguro, atualizado e de alto nível.</SectionText>
           <TeamGrid>
             {[
-              { photo: luciana, name: 'Luciana Signorini', role: 'Fisioterapeuta · Professora de Pós-graduação' },
+              { photo: luciana, name: 'Luciana Signorini', role: 'Fisioterapeuta · Especialista em Pilates Clínico' },
               { photo: gustavo, name: 'Gustavo Amaral', role: 'Fisioterapeuta · Palestrante Nacional' },
-              { photo: cristiane, name: 'Cristiane Vasconcelos', role: 'Fisioterapeuta · Professora de Pós-graduação' },
+              { photo: cristiane, name: 'Cristiane Vasconcelos', role: 'Fisioterapeuta · Especialista em Pilates Clínico' },
               { photo: mariana, name: 'Mariana Weschenfelder', role: 'Fisioterapeuta · Especialista Clínica' },
             ].map((t, i) => (
               <TeamCard key={i}>
@@ -818,7 +818,7 @@ export default function PilatesSEO() {
           </TeamGrid>
           <TeamBadges style={{ marginTop: 24 }}>
             <TeamBadge>13 fisioterapeutas</TeamBadge>
-            <TeamBadge>3 professores de pós-graduação</TeamBadge>
+            <TeamBadge>Formadores de profissionais da área</TeamBadge>
             <TeamBadge>Palestrantes nacionais</TeamBadge>
             <TeamBadge>Formação contínua em evidência científica</TeamBadge>
           </TeamBadges>
