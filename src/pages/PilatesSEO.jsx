@@ -8,7 +8,7 @@ import gustavo from '../assets/gustavo-amaral-final.jpg';
 import cristiane from '../assets/cristiane-vasconcelos-final.jpg';
 import mariana from '../assets/mariana-weschenfelder-final.jpg';
 
-const WA_BASE = 'https://wa.me/5531999476615?text=';
+const WA_BASE = 'https://wa.me/5531983444371?text=';
 const wa = (msg) => `${WA_BASE}${encodeURIComponent(msg)}`;
 
 /* ─── DATA ─── */
@@ -568,7 +568,7 @@ export default function PilatesSEO() {
           "@id": "https://innovamovimento.com.br",
           "name": "INNOVA MOVIMENTO",
           "url": "https://innovamovimento.com.br",
-          "telephone": "+5531999476615",
+          "telephone": "+5531983444371",
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "Rua Araguari, 1750, Sl 800",
@@ -607,7 +607,7 @@ export default function PilatesSEO() {
   function handleSubmit(e) {
     e.preventDefault();
     const msg = encodeURIComponent(`Olá! Me chamo ${form.nome}. Gostaria de agendar minha avaliação de Pilates Clínico. Objetivo: ${form.objetivo}.`);
-    window.open(`https://wa.me/5531999476615?text=${msg}`, '_blank');
+    window.open(`https://wa.me/5531983444371?text=${msg}`, '_blank');
   }
 
   return (
