@@ -8,6 +8,7 @@ async function sendLead(data) {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ ...data, pagina: '/pilates' }),
+      keepalive: true,
     });
   } catch (_) { /* silently fail */ }
 }
@@ -699,8 +700,8 @@ export default function PilatesSEO() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    // Salva no Notion (fire-and-forget, não bloqueia o WA)
-    sendLead(form);
+    // Aguarda salvar no Notion ANTES de abrir o WA
+    await sendLead(form);
     const msg = encodeURIComponent(`Olá! Me chamo ${form.nome}. Gostaria de agendar minha avaliação de Pilates Clínico. Objetivo: ${form.objetivo}.`);
     window.open(`https://wa.me/5531983444371?text=${msg}`, '_blank');
   }

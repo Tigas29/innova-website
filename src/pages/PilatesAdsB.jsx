@@ -14,6 +14,7 @@ async function sendLead(data) {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ ...data, pagina: "/pilates-google-b" }),
+      keepalive: true,
     });
   } catch (_) { /* silently fail */ }
 }
@@ -1191,8 +1192,8 @@ export default function PilatesAdsB() {
     e.preventDefault();
     if (!form.nome.trim() || !form.whatsapp.trim()) return;
     setSubmitted(true);
-    // Salva no Notion (fire-and-forget, não bloqueia o WA)
-    sendLead({ nome: form.nome, whatsapp: form.whatsapp, objetivo: form.horario ? `Horário preferido: ${form.horario}` : '' });
+    // Aguarda salvar no Notion ANTES de abrir o WA
+    await sendLead({ nome: form.nome, whatsapp: form.whatsapp, objetivo: form.horario ? `Horário preferido: ${form.horario}` : '' });
     const msg = `Olá, INNOVA MOVIMENTO! Me cadastrei pelo site para o Pilates Clínico.\n\nNome: ${form.nome}\nWhatsApp: ${form.whatsapp}\nHorário preferido: ${form.horario || "Qualquer horário"}`;
     setTimeout(() => window.open(waLink(msg), "_blank"), 1200);
   }

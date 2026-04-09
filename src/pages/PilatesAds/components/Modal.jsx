@@ -8,6 +8,7 @@ async function sendLead(data) {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ ...data, pagina: '/pilates-google' }),
+      keepalive: true, // garante que o request completa mesmo se a página navegar
     });
   } catch (_) { /* silently fail — não bloqueia o fluxo */ }
 }
@@ -110,8 +111,8 @@ export default function Modal({ open, onClose }) {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    // Salva no Notion (fire-and-forget, não bloqueia o WA)
-    sendLead(form);
+    // Aguarda salvar no Notion ANTES de abrir o WA
+    await sendLead(form);
     const msg = encodeURIComponent(
       `Olá! Me chamo ${form.nome}. Gostaria de agendar minha avaliação de Pilates Clínico. Objetivo: ${form.objetivo}.`
     );
