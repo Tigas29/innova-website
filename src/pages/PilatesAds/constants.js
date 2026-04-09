@@ -1,5 +1,8 @@
 export const WA_PHONE = '5531983444371';
 
+// Endpoint interno do Vercel que salva o lead no Notion
+export const LEADS_API = '/api/lead';
+
 export const WA_URL =
   `https://wa.me/${WA_PHONE}?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20minha%20avalia%C3%A7%C3%A3o%20de%20Pilates%20Cl%C3%ADnico.`;
 

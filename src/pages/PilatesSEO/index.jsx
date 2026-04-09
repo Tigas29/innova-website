@@ -1,5 +1,16 @@
 import { useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
+import { LEADS_API } from '../PilatesAds/constants';
+
+async function sendLead(data) {
+  try {
+    await fetch(LEADS_API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ...data, pagina: '/pilates' }),
+    });
+  } catch (_) { /* silently fail */ }
+}
 import logo from '../../assets/logo.png';
 import atend1 from '../../assets/atend1.jpg';
 import atend2 from '../../assets/atend2.jpg';
@@ -686,8 +697,10 @@ export default function PilatesSEO() {
     canonical.href = 'https://innovamovimento.com.br/pilates';
   }, []);
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
+    // Salva no Notion (fire-and-forget, não bloqueia o WA)
+    sendLead(form);
     const msg = encodeURIComponent(`Olá! Me chamo ${form.nome}. Gostaria de agendar minha avaliação de Pilates Clínico. Objetivo: ${form.objetivo}.`);
     window.open(`https://wa.me/5531983444371?text=${msg}`, '_blank');
   }

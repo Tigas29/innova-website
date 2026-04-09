@@ -1,6 +1,16 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import { WA_PHONE } from '../constants';
+import { WA_PHONE, LEADS_API } from '../constants';
+
+async function sendLead(data) {
+  try {
+    await fetch(LEADS_API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ...data, pagina: '/pilates-google' }),
+    });
+  } catch (_) { /* silently fail — não bloqueia o fluxo */ }
+}
 
 const Overlay = styled.div`
   position: fixed;
@@ -98,8 +108,10 @@ const Note = styled.p`
 export default function Modal({ open, onClose }) {
   const [form, setForm] = useState({ nome: '', whatsapp: '', objetivo: '' });
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
+    // Salva no Notion (fire-and-forget, não bloqueia o WA)
+    sendLead(form);
     const msg = encodeURIComponent(
       `Olá! Me chamo ${form.nome}. Gostaria de agendar minha avaliação de Pilates Clínico. Objetivo: ${form.objetivo}.`
     );
