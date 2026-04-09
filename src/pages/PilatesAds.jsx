@@ -1325,12 +1325,6 @@ export default function PilatesAds() {
             </BulletList>
             <CtaGroup>
               <BtnMain onClick={openModal}>Garantir minha vaga</BtnMain>
-              <BtnWaLink
-                as="button"
-                onClick={openModal}
-              >
-                ou preencher formulário
-              </BtnWaLink>
             </CtaGroup>
             <SocialRow>
               <SocialPill>★ 5.0 no Google</SocialPill>
