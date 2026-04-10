@@ -4,8 +4,20 @@ import logo from "../assets/logo.png";
 import heroPilates from "../assets/hero pilates.jpg";
 import equipeImg from "../assets/imagens todos os profissionais juntos.jpeg";
 
+const LEADS_API = "/api/lead";
 const WA_BASE = "https://wa.me/5531983444371?text=";
 const waLink = (msg) => `${WA_BASE}${encodeURIComponent(msg)}`;
+
+async function sendLead(data) {
+  try {
+    await fetch(LEADS_API, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ ...data, pagina: "/pilates-google" }),
+      keepalive: true,
+    });
+  } catch (_) { /* silently fail */ }
+}
 
 /* ─── MODAL ─── */
 const Overlay = styled.div`
@@ -1176,10 +1188,11 @@ export default function PilatesAds() {
     document.body.style.overflow = modal ? "hidden" : "";
   }, [modal]);
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
     if (!form.nome.trim() || !form.whatsapp.trim()) return;
     setSubmitted(true);
+    await sendLead({ nome: form.nome, whatsapp: form.whatsapp, objetivo: form.horario ? `Horário preferido: ${form.horario}` : "" });
     const msg = `Olá, INNOVA MOVIMENTO! Me cadastrei pelo site para o Pilates Clínico.\n\nNome: ${form.nome}\nWhatsApp: ${form.whatsapp}\nHorário preferido: ${form.horario || "Qualquer horário"}`;
     setTimeout(() => window.open(waLink(msg), "_blank"), 1200);
   }

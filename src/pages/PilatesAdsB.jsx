@@ -1192,7 +1192,6 @@ export default function PilatesAdsB() {
     e.preventDefault();
     if (!form.nome.trim() || !form.whatsapp.trim()) return;
     setSubmitted(true);
-    // Aguarda salvar no Notion ANTES de abrir o WA
     await sendLead({ nome: form.nome, whatsapp: form.whatsapp, objetivo: form.horario ? `Horário preferido: ${form.horario}` : '' });
     const msg = `Olá, INNOVA MOVIMENTO! Me cadastrei pelo site para o Pilates Clínico.\n\nNome: ${form.nome}\nWhatsApp: ${form.whatsapp}\nHorário preferido: ${form.horario || "Qualquer horário"}`;
     setTimeout(() => window.open(waLink(msg), "_blank"), 1200);
