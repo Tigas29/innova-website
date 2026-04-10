@@ -5,13 +5,15 @@ import logo from '../assets/logo.png';
 const LEADS_API = '/api/lead';
 async function sendLead(data) {
   try {
-    await fetch(LEADS_API, {
+    const res = await fetch(LEADS_API, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ ...data, pagina: '/pilates' }),
-      keepalive: true,
     });
-  } catch (_) { /* silently fail */ }
+    if (!res.ok) console.error('[lead] API error:', res.status, await res.text());
+  } catch (err) {
+    console.error('[lead] fetch error:', err);
+  }
 }
 import heroPilates from '../assets/hero pilates.jpg';
 import equipeImg from '../assets/imagens todos os profissionais juntos.jpeg';

@@ -10,13 +10,15 @@ const waLink = (msg) => `${WA_BASE}${encodeURIComponent(msg)}`;
 
 async function sendLead(data) {
   try {
-    await fetch(LEADS_API, {
+    const res = await fetch(LEADS_API, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ ...data, pagina: "/pilates-google" }),
-      keepalive: true,
     });
-  } catch (_) { /* silently fail */ }
+    if (!res.ok) console.error("[lead] API error:", res.status, await res.text());
+  } catch (err) {
+    console.error("[lead] fetch error:", err);
+  }
 }
 
 /* ─── MODAL ─── */
