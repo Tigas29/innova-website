@@ -178,6 +178,23 @@ const BtnWASuccess = styled.a`
   }
 `;
 
+/* ─── SPINNER ─── */
+const spin = keyframes`to { transform: rotate(360deg); }`;
+const LoadingState = styled.div`
+  display: flex; flex-direction: column; align-items: center;
+  justify-content: center; padding: 48px 0; gap: 20px;
+`;
+const SpinnerRing = styled.div`
+  width: 52px; height: 52px;
+  border: 5px solid #e8e8e8;
+  border-top-color: #4bbfa8;
+  border-radius: 50%;
+  animation: ${spin} 0.75s linear infinite;
+`;
+const LoadingText = styled.p`
+  font-size: 15px; color: var(--cinza-medio); font-weight: 500; text-align: center;
+`;
+
 /* ─── TRUST BAR ─── */
 const TrustBar = styled.div`
   position: fixed;
@@ -1194,8 +1211,8 @@ export default function PilatesAds() {
     if (!form.nome.trim() || !form.whatsapp.trim()) return;
     setLoading(true);
     await sendLead({ nome: form.nome, whatsapp: form.whatsapp, objetivo: form.horario ? `Horário preferido: ${form.horario}` : "" });
-    setLoading(false);
-    setSubmitted(true);
+    const msg = `Olá, INNOVA MOVIMENTO! Me cadastrei pelo site para o Pilates Clínico.\n\nNome: ${form.nome}\nWhatsApp: ${form.whatsapp}\nHorário preferido: ${form.horario || "Qualquer horário"}`;
+    window.location.href = waLink(msg);
   }
 
   const openModal = () => {
@@ -1213,7 +1230,12 @@ export default function PilatesAds() {
       >
         <ModalBox $open={modal}>
           <ModalClose onClick={() => setModal(false)}>×</ModalClose>
-          {!submitted ? (
+          {loading ? (
+            <LoadingState>
+              <SpinnerRing />
+              <LoadingText>Enviando seus dados...</LoadingText>
+            </LoadingState>
+          ) : !submitted ? (
             <>
               <ModalTitle>Garanta sua vaga</ModalTitle>
               <ModalSub>

@@ -463,6 +463,22 @@ const FormBtn = styled.button`
 const FormNote = styled.p`
   text-align: center; font-size: 12px; color: var(--cinza-medio); margin-top: 12px;
 `;
+/* ─── SPINNER ─── */
+const spin = keyframes`to { transform: rotate(360deg); }`;
+const LoadingState = styled.div`
+  display: flex; flex-direction: column; align-items: center;
+  justify-content: center; padding: 48px 0; gap: 20px;
+`;
+const SpinnerRing = styled.div`
+  width: 52px; height: 52px;
+  border: 5px solid #e8e8e8;
+  border-top-color: #4bbfa8;
+  border-radius: 50%;
+  animation: ${spin} 0.75s linear infinite;
+`;
+const LoadingText = styled.p`
+  font-size: 15px; color: var(--cinza-medio); font-weight: 500; text-align: center;
+`;
 const TrustList = styled.div`
   display: flex; flex-direction: column; gap: 12px; margin-top: 28px;
 `;
@@ -623,8 +639,8 @@ export default function PilatesSEO() {
     if (!form.nome.trim() || !form.whatsapp.trim() || !form.objetivo) return;
     setLoading(true);
     await sendLead({ nome: form.nome, whatsapp: form.whatsapp, objetivo: form.objetivo });
-    setLoading(false);
-    setSubmitted(true);
+    const msg = `Olá! Me chamo ${form.nome}. Gostaria de agendar minha avaliação de Pilates Clínico. Objetivo: ${form.objetivo}.`;
+    window.location.href = wa(msg);
   }
 
   return (
@@ -906,7 +922,12 @@ export default function PilatesSEO() {
               </TrustList>
             </div>
             <FormBox>
-              {!submitted ? (
+              {loading ? (
+                <LoadingState>
+                  <SpinnerRing />
+                  <LoadingText>Enviando seus dados...</LoadingText>
+                </LoadingState>
+              ) : (
                 <>
                   <FormTitle>Agende sua avaliação</FormTitle>
                   <form onSubmit={handleSubmit}>
@@ -930,32 +951,10 @@ export default function PilatesSEO() {
                         <option>Ainda não sei</option>
                       </select>
                     </FormField>
-                    <FormBtn type="submit" disabled={loading}>
-                      {loading ? 'Enviando...' : 'Agendar Minha Avaliação'}
-                    </FormBtn>
+                    <FormBtn type="submit">Agendar Minha Avaliação</FormBtn>
                     <FormNote>Respondemos em até 2 horas no WhatsApp.</FormNote>
                   </form>
                 </>
-              ) : (
-                <div style={{ textAlign: 'center', padding: '24px 0' }}>
-                  <div style={{ fontSize: 48, marginBottom: 12 }}>✅</div>
-                  <h3 style={{ marginBottom: 8, color: '#1a1a1a' }}>Recebemos seus dados!</h3>
-                  <p style={{ color: '#555', marginBottom: 24, lineHeight: 1.6 }}>
-                    A INNOVA vai entrar em contato pelo WhatsApp em breve para confirmar seu horário.
-                  </p>
-                  <a
-                    href={wa(`Olá! Me chamo ${form.nome}. Acabei de preencher o formulário e gostaria de confirmar minha avaliação de Pilates Clínico.`)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{
-                      display: 'inline-flex', alignItems: 'center', gap: 8,
-                      background: '#25D366', color: '#fff', padding: '14px 28px',
-                      borderRadius: 8, textDecoration: 'none', fontWeight: 700, fontSize: 16
-                    }}
-                  >
-                    Confirmar pelo WhatsApp agora
-                  </a>
-                </div>
               )}
             </FormBox>
           </FormGrid>
