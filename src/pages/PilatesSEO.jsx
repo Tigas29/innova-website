@@ -1,6 +1,18 @@
 import { useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
 import logo from '../assets/logo.png';
+
+const LEADS_API = '/api/lead';
+async function sendLead(data) {
+  try {
+    await fetch(LEADS_API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ...data, pagina: '/pilates' }),
+      keepalive: true,
+    });
+  } catch (_) { /* silently fail */ }
+}
 import heroPilates from '../assets/hero pilates.jpg';
 import equipeImg from '../assets/imagens todos os profissionais juntos.jpeg';
 import luciana from '../assets/luciana-signorini-final.jpg';
@@ -604,8 +616,9 @@ export default function PilatesSEO() {
     };
   }, []);
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
+    await sendLead({ nome: form.nome, whatsapp: form.whatsapp, email: form.email, objetivo: form.objetivo, origem: form.origem });
     const msg = encodeURIComponent(`Olá! Me chamo ${form.nome}. Gostaria de agendar minha avaliação de Pilates Clínico. Objetivo: ${form.objetivo}.`);
     window.open(`https://wa.me/5531983444371?text=${msg}`, '_blank');
   }

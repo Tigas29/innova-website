@@ -3,7 +3,7 @@ import styled, { keyframes } from "styled-components";
 import logo from "../assets/logo.png";
 import heroPilates from "../assets/hero pilates.jpg";
 import equipeImg from "../assets/imagens todos os profissionais juntos.jpeg";
-import { LEADS_API } from "./PilatesAds/constants";
+const LEADS_API = "/api/lead";
 
 const WA_BASE = "https://wa.me/5531983444371?text=";
 const waLink = (msg) => `${WA_BASE}${encodeURIComponent(msg)}`;
