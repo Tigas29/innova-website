@@ -557,6 +557,8 @@ function WaIcon() {
 
 export default function PilatesSEO() {
   const [form, setForm] = useState({ nome: '', whatsapp: '', objetivo: '' });
+  const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     document.title = 'Pilates Clínico em Belo Horizonte com Fisioterapeutas | INNOVA MOVIMENTO';
@@ -618,9 +620,11 @@ export default function PilatesSEO() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    await sendLead({ nome: form.nome, whatsapp: form.whatsapp, email: form.email, objetivo: form.objetivo, origem: form.origem });
-    const msg = encodeURIComponent(`Olá! Me chamo ${form.nome}. Gostaria de agendar minha avaliação de Pilates Clínico. Objetivo: ${form.objetivo}.`);
-    window.open(`https://wa.me/5531983444371?text=${msg}`, '_blank');
+    if (!form.nome.trim() || !form.whatsapp.trim() || !form.objetivo) return;
+    setLoading(true);
+    await sendLead({ nome: form.nome, whatsapp: form.whatsapp, objetivo: form.objetivo });
+    setLoading(false);
+    setSubmitted(true);
   }
 
   return (
@@ -902,31 +906,57 @@ export default function PilatesSEO() {
               </TrustList>
             </div>
             <FormBox>
-              <FormTitle>Agende sua avaliação</FormTitle>
-              <form onSubmit={handleSubmit}>
-                <FormField>
-                  <label>Nome completo *</label>
-                  <input type="text" required placeholder="Seu nome" value={form.nome} onChange={e => setForm({...form, nome: e.target.value})} />
-                </FormField>
-                <FormField>
-                  <label>WhatsApp com DDD *</label>
-                  <input type="tel" required placeholder="(31) 99999-9999" value={form.whatsapp} onChange={e => setForm({...form, whatsapp: e.target.value})} />
-                </FormField>
-                <FormField>
-                  <label>Principal objetivo *</label>
-                  <select required value={form.objetivo} onChange={e => setForm({...form, objetivo: e.target.value})}>
-                    <option value="">Selecione...</option>
-                    <option>Aliviar dor</option>
-                    <option>Reabilitação pós-cirúrgica</option>
-                    <option>Prevenir lesões</option>
-                    <option>Melhorar mobilidade e postura</option>
-                    <option>Complementar tratamento</option>
-                    <option>Ainda não sei</option>
-                  </select>
-                </FormField>
-                <FormBtn type="submit">Agendar Minha Avaliação</FormBtn>
-                <FormNote>Respondemos em até 2 horas no WhatsApp.</FormNote>
-              </form>
+              {!submitted ? (
+                <>
+                  <FormTitle>Agende sua avaliação</FormTitle>
+                  <form onSubmit={handleSubmit}>
+                    <FormField>
+                      <label>Nome completo *</label>
+                      <input type="text" required placeholder="Seu nome" value={form.nome} onChange={e => setForm({...form, nome: e.target.value})} />
+                    </FormField>
+                    <FormField>
+                      <label>WhatsApp com DDD *</label>
+                      <input type="tel" required placeholder="(31) 99999-9999" value={form.whatsapp} onChange={e => setForm({...form, whatsapp: e.target.value})} />
+                    </FormField>
+                    <FormField>
+                      <label>Principal objetivo *</label>
+                      <select required value={form.objetivo} onChange={e => setForm({...form, objetivo: e.target.value})}>
+                        <option value="">Selecione...</option>
+                        <option>Aliviar dor</option>
+                        <option>Reabilitação pós-cirúrgica</option>
+                        <option>Prevenir lesões</option>
+                        <option>Melhorar mobilidade e postura</option>
+                        <option>Complementar tratamento</option>
+                        <option>Ainda não sei</option>
+                      </select>
+                    </FormField>
+                    <FormBtn type="submit" disabled={loading}>
+                      {loading ? 'Enviando...' : 'Agendar Minha Avaliação'}
+                    </FormBtn>
+                    <FormNote>Respondemos em até 2 horas no WhatsApp.</FormNote>
+                  </form>
+                </>
+              ) : (
+                <div style={{ textAlign: 'center', padding: '24px 0' }}>
+                  <div style={{ fontSize: 48, marginBottom: 12 }}>✅</div>
+                  <h3 style={{ marginBottom: 8, color: '#1a1a1a' }}>Recebemos seus dados!</h3>
+                  <p style={{ color: '#555', marginBottom: 24, lineHeight: 1.6 }}>
+                    A INNOVA vai entrar em contato pelo WhatsApp em breve para confirmar seu horário.
+                  </p>
+                  <a
+                    href={wa(`Olá! Me chamo ${form.nome}. Acabei de preencher o formulário e gostaria de confirmar minha avaliação de Pilates Clínico.`)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: 'inline-flex', alignItems: 'center', gap: 8,
+                      background: '#25D366', color: '#fff', padding: '14px 28px',
+                      borderRadius: 8, textDecoration: 'none', fontWeight: 700, fontSize: 16
+                    }}
+                  >
+                    Confirmar pelo WhatsApp agora
+                  </a>
+                </div>
+              )}
             </FormBox>
           </FormGrid>
         </Container>

@@ -1155,6 +1155,7 @@ function handlePhone(e, setForm) {
 export default function PilatesAdsB() {
   const [modal, setModal] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [openFaq, setOpenFaq] = useState(null);
   const [form, setForm] = useState({ nome: "", whatsapp: "", horario: "" });
   const convAll = [...CONVS, ...CONVS];
@@ -1191,14 +1192,15 @@ export default function PilatesAdsB() {
   async function handleSubmit(e) {
     e.preventDefault();
     if (!form.nome.trim() || !form.whatsapp.trim()) return;
-    setSubmitted(true);
+    setLoading(true);
     await sendLead({ nome: form.nome, whatsapp: form.whatsapp, objetivo: form.horario ? `Horário preferido: ${form.horario}` : '' });
-    const msg = `Olá, INNOVA MOVIMENTO! Me cadastrei pelo site para o Pilates Clínico.\n\nNome: ${form.nome}\nWhatsApp: ${form.whatsapp}\nHorário preferido: ${form.horario || "Qualquer horário"}`;
-    setTimeout(() => window.open(waLink(msg), "_blank"), 1200);
+    setLoading(false);
+    setSubmitted(true);
   }
 
   const openModal = () => {
     setSubmitted(false);
+    setLoading(false);
     setModal(true);
   };
 
@@ -1257,7 +1259,9 @@ export default function PilatesAdsB() {
                     <option>Qualquer horário</option>
                   </select>
                 </FormGroup>
-                <BtnForm type="submit">Quero minha vaga</BtnForm>
+                <BtnForm type="submit" disabled={loading}>
+                  {loading ? "Enviando..." : "Quero minha vaga"}
+                </BtnForm>
                 <FormNote>
                   🔒 Seus dados estão seguros. Sem compromisso.
                 </FormNote>
