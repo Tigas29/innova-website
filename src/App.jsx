@@ -22,6 +22,7 @@ import Footer from './components/Footer';
 import PilatesSEO from './pages/PilatesSEO';
 import PilatesAds from './pages/PilatesAds';
 import PilatesAdsB from './pages/PilatesAdsB';
+import PilatesAdsWpp from './pages/PilatesAdsWpp';
 
 function HomePage() {
   useEffect(() => {
@@ -80,6 +81,7 @@ function App() {
         <Route path="/pilates" element={<PilatesSEO />} />
         <Route path="/pilates-google" element={<PilatesAds />} />
         <Route path="/pilates-google-b" element={<PilatesAdsB />} />
+        <Route path="/pilates-google-wpp" element={<PilatesAdsWpp />} />
       </Routes>
     </>
   );
