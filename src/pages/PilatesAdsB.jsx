@@ -3,6 +3,10 @@ import styled, { keyframes } from "styled-components";
 import logo from "../assets/logo.png";
 import heroPilates from "../assets/hero pilates.jpg";
 import equipeImg from "../assets/imagens todos os profissionais juntos.jpeg";
+import espacoSalaGeral from "../assets/espaco-sala-geral.jpg";
+import espacoCadillac from "../assets/espaco-cadillac.jpg";
+import espacoReformer from "../assets/espaco-reformer.jpg";
+import espacoSalaReformers from "../assets/espaco-sala-reformers.jpg";
 const LEADS_API = "/api/lead";
 
 const WA_BASE = "https://wa.me/5531983444371?text=";
@@ -929,6 +933,48 @@ const EquipeBadge = styled.div`
   padding: 7px 16px;
 `;
 
+/* ─── GALERIA ESPAÇO ─── */
+const GaleriaGrid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 260px 260px;
+  gap: 12px;
+  margin-top: 32px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+`;
+const GaleriaFoto = styled.div`
+  overflow: hidden;
+  border-radius: 8px;
+  &:first-child {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+  &:hover img {
+    transform: scale(1.03);
+  }
+  @media (max-width: 600px) {
+    &:first-child {
+      grid-column: auto;
+      grid-row: auto;
+    }
+    img {
+      height: 220px;
+    }
+  }
+`;
+
 /* ─── FAQ ─── */
 const FaqList = styled.div`
   display: flex;
@@ -1504,6 +1550,30 @@ export default function PilatesAdsB() {
             <EquipeBadge>Referência em clubes esportivos</EquipeBadge>
             <EquipeBadge>Formam e treinam a equipe</EquipeBadge>
           </EquipeBadges>
+        </Container>
+      </Section>
+
+      {/* GALERIA ESPAÇO */}
+      <Section>
+        <Container>
+          <SectionLabel>O espaço</SectionLabel>
+          <SectionTitle>
+            Equipamentos profissionais. Ambiente projetado para o seu tratamento.
+          </SectionTitle>
+          <GaleriaGrid>
+            <GaleriaFoto>
+              <img src={espacoSalaGeral} alt="Sala principal INNOVA MOVIMENTO com Cadillac e Reformer" />
+            </GaleriaFoto>
+            <GaleriaFoto>
+              <img src={espacoCadillac} alt="Cadillac profissional INNOVA MOVIMENTO" />
+            </GaleriaFoto>
+            <GaleriaFoto>
+              <img src={espacoReformer} alt="Reformer profissional INNOVA MOVIMENTO" />
+            </GaleriaFoto>
+            <GaleriaFoto>
+              <img src={espacoSalaReformers} alt="Sala de Pilates Clínico INNOVA MOVIMENTO" />
+            </GaleriaFoto>
+          </GaleriaGrid>
         </Container>
       </Section>
 
