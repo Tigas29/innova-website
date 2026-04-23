@@ -673,8 +673,8 @@ const BtnCta = styled.button`
   color: var(--branco);
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 15px;
-  padding: 14px 30px;
+  font-size: 19px;
+  padding: 18px 42px;
   border-radius: 50px;
   border: none;
   cursor: pointer;
@@ -1148,6 +1148,14 @@ const FAQS = [
     q: "Preciso de encaminhamento médico?",
     a: "Para Pilates Clínico, não. Você agenda diretamente. Se tiver exames ou laudos, traga, eles ajudam no planejamento do seu tratamento.",
   },
+  {
+    q: "Quanto dura uma sessão?",
+    a: "As sessões têm duração de 50 minutos. O tempo é inteiramente dedicado a você — sem espera, sem compartilhamento de atenção.",
+  },
+  {
+    q: "Como é a primeira aula?",
+    a: "A primeira aula acontece logo após a avaliação. Com base no que foi identificado, o fisioterapeuta já conduz uma sessão inicial adaptada ao seu quadro — você sai do primeiro dia sabendo exatamente o que vai trabalhar e por quê.",
+  },
 ];
 
 const CONVS = [
@@ -1213,6 +1221,8 @@ export default function PilatesAds() {
     if (!form.nome.trim() || !form.whatsapp.trim()) return;
     setLoading(true);
     await sendLead({ nome: form.nome, whatsapp: form.whatsapp, objetivo: form.horario ? `Horário preferido: ${form.horario}` : "" });
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 'generate_lead', pagina: '/pilates-google' });
     const msg = `Olá, INNOVA MOVIMENTO! Me cadastrei pelo site para o Pilates Clínico.\n\nNome: ${form.nome}\nWhatsApp: ${form.whatsapp}\nHorário preferido: ${form.horario || "Qualquer horário"}`;
     window.location.href = waLink(msg);
   }
@@ -1613,7 +1623,7 @@ export default function PilatesAds() {
             <br />
             Garanta a sua agora.
           </h2>
-          <p>Avaliação sem compromisso. Turmas de no máximo 3 alunos.</p>
+          <p>Avaliação sem compromisso (gratuita). Turmas de no máximo 3 alunos.</p>
           <CtaBtns>
             <BtnWhite onClick={openModal}>Garantir minha vaga</BtnWhite>
             <BtnWaOutline
