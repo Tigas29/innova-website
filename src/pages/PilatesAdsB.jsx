@@ -937,7 +937,7 @@ const EquipeBadge = styled.div`
 const GaleriaGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 260px 260px;
+  grid-template-rows: 260px 260px 220px;
   gap: 12px;
   margin-top: 32px;
   border-radius: var(--radius);
@@ -954,6 +954,9 @@ const GaleriaFoto = styled.div`
     grid-column: 1 / 2;
     grid-row: 1 / 3;
   }
+  &:last-child {
+    grid-column: 1 / -1;
+  }
   img {
     width: 100%;
     height: 100%;
@@ -968,6 +971,9 @@ const GaleriaFoto = styled.div`
     &:first-child {
       grid-column: auto;
       grid-row: auto;
+    }
+    &:last-child {
+      grid-column: auto;
     }
     img {
       height: 220px;
